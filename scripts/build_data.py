@@ -1,17 +1,11 @@
 """
-Nouveaux Récits d'Entreprise — Script d'import SBTi + ADEME
-Télécharge les données ouvertes, les transforme en projects.json
-
-Usage:
-    python scripts/build_data.py
-
-Sources:
-    - SBTi Target Dashboard (XLS, mis à jour chaque jeudi)
-    - ADEME Bilans GES (CSV via data.gouv.fr)
+Nouveaux Recits d'Entreprise - Script d'import SBTi
+Lit les donnees ouvertes SBTi, les transforme en projects.json
 """
 
 import json
 import os
+import re
 import sys
 import hashlib
 from datetime import datetime
@@ -19,412 +13,306 @@ from datetime import datetime
 try:
     import openpyxl
 except ImportError:
-    print("Installing openpyxl...")
     os.system(f"{sys.executable} -m pip install openpyxl --quiet")
     import openpyxl
 
 try:
     import requests
 except ImportError:
-    print("Installing requests...")
     os.system(f"{sys.executable} -m pip install requests --quiet")
     import requests
 
-# ─── CONFIG ─────────────────────────────────────────
 SBTI_URL = "https://files.sciencebasedtargets.org/production/files/companies-excel.xlsx"
-SBTI_LOCAL = "data/companies-excel.xlsx"  # Manual upload fallback
-ADEME_URL = "https://data.ademe.fr/data-fair/api/v1/datasets/bilan-ges/lines?size=10000&format=json"
+SBTI_LOCAL = "data/companies-excel.xlsx"
 OUTPUT_FILE = "data/projects.json"
 EDITORIAL_FILE = "data/editorial.json"
 CACHE_DIR = "scripts/.cache"
 
 SECTOR_MAP = {
-    "Food & Beverage Processing": "Agroalimentaire",
-    "Food & Staples Retailing": "Distribution",
-    "Agricultural Products": "Agroalimentaire",
-    "Textiles, Apparel & Luxury Goods": "Mode & Textile",
-    "Apparel, Accessories & Luxury Goods": "Mode & Textile",
-    "Construction Materials": "BTP & Immobilier",
-    "Real Estate": "BTP & Immobilier",
-    "Homebuilding": "BTP & Immobilier",
-    "Electric Utilities": "Énergie",
-    "Oil, Gas & Consumable Fuels": "Énergie",
-    "Renewable Electricity": "Énergie",
-    "Independent Power Producers & Energy Traders": "Énergie",
-    "Multi-Utilities": "Énergie",
-    "Gas Utilities": "Énergie",
-    "Automobiles": "Transport",
-    "Airlines": "Transport",
-    "Marine Transportation": "Transport",
-    "Trucking": "Transport",
-    "Air Freight & Logistics": "Transport",
-    "Railroads": "Transport",
-    "Software": "Tech & Numérique",
-    "IT Services": "Tech & Numérique",
-    "Technology Hardware, Storage & Peripherals": "Tech & Numérique",
-    "Semiconductors": "Tech & Numérique",
-    "Internet & Direct Marketing Retail": "Tech & Numérique",
-    "Banks": "Finance",
-    "Insurance": "Finance",
-    "Capital Markets": "Finance",
-    "Diversified Financial Services": "Finance",
-    "Consumer Finance": "Finance",
-    "Chemicals": "Industrie chimique",
-    "Steel": "Industrie lourde",
-    "Metals & Mining": "Industrie lourde",
-    "Industrial Machinery & Supplies & Components": "Industrie manufacturière",
-    "Electrical Equipment": "Industrie manufacturière",
-    "Building Products": "Industrie manufacturière",
-    "Containers & Packaging": "Industrie manufacturière",
-    "Paper & Forest Products": "Industrie manufacturière",
-    "Pharmaceuticals": "Santé & Pharma",
-    "Health Care Equipment & Supplies": "Santé & Pharma",
-    "Biotechnology": "Santé & Pharma",
-    "Hotels, Restaurants & Leisure": "Tourisme & Loisirs",
-    "Professional Services": "Services",
-    "Commercial Services & Supplies": "Services",
-    "Media": "Services",
+    "food and beverage": "Agroalimentaire",
+    "retailing": "Distribution",
+    "textile": "Mode & Textile",
+    "apparel": "Mode & Textile",
+    "footwear": "Mode & Textile",
+    "luxury": "Mode & Textile",
+    "construction": "BTP & Immobilier",
+    "real estate": "BTP & Immobilier",
+    "building products": "BTP & Immobilier",
+    "electrical equipment": "Industrie manufacturiere",
+    "consumer durables": "Industrie manufacturiere",
+    "containers": "Industrie manufacturiere",
+    "packaging": "Industrie manufacturiere",
+    "forest and paper": "Industrie manufacturiere",
+    "automobiles": "Transport",
+    "transportation": "Transport",
+    "air freight": "Transport",
+    "marine": "Transport",
+    "software": "Tech & Numerique",
+    "technology hardware": "Tech & Numerique",
+    "telecommunication": "Tech & Numerique",
+    "media": "Tech & Numerique",
+    "banks": "Finance",
+    "financials": "Finance",
+    "insurance": "Finance",
+    "chemicals": "Industrie chimique",
+    "metals": "Industrie lourde",
+    "mining": "Industrie lourde",
+    "steel": "Industrie lourde",
+    "pharma": "Sante & Pharma",
+    "biotech": "Sante & Pharma",
+    "healthcare": "Sante & Pharma",
+    "hotels": "Tourisme & Loisirs",
+    "restaurants": "Tourisme & Loisirs",
+    "leisure": "Tourisme & Loisirs",
+    "professional services": "Services",
+    "commercial services": "Services",
+    "trading companies": "Services",
+    "utilities": "Energie",
+    "energy": "Energie",
+    "oil and gas": "Energie",
 }
 
 REGION_MAP = {
-    "Europe": "Europe",
-    "North America": "Amérique du Nord",
-    "South America": "Amérique latine",
-    "Latin America & the Caribbean": "Amérique latine",
-    "Africa": "Afrique",
-    "Asia": "Asie",
-    "Oceania": "Océanie",
-    "Middle East": "Moyen-Orient",
+    "europe": "Europe",
+    "northern america": "Amerique du Nord",
+    "asia": "Asie",
+    "latin america": "Amerique latine",
+    "africa": "Afrique",
+    "oceania": "Oceanie",
+    "mena": "Moyen-Orient",
 }
 
 FLAG_MAP = {
-    "France": "🇫🇷", "Germany": "🇩🇪", "United Kingdom": "🇬🇧",
-    "United States": "🇺🇸", "Japan": "🇯🇵", "China": "🇨🇳",
-    "Denmark": "🇩🇰", "Sweden": "🇸🇪", "Netherlands": "🇳🇱",
-    "Switzerland": "🇨🇭", "Belgium": "🇧🇪", "Italy": "🇮🇹",
-    "Spain": "🇪🇸", "Norway": "🇳🇴", "Finland": "🇫🇮",
-    "Canada": "🇨🇦", "Australia": "🇦🇺", "Brazil": "🇧🇷",
-    "India": "🇮🇳", "South Korea": "🇰🇷", "Ireland": "🇮🇪",
-    "Austria": "🇦🇹", "Portugal": "🇵🇹", "Luxembourg": "🇱🇺",
-    "Mexico": "🇲🇽", "Singapore": "🇸🇬", "Taiwan": "🇹🇼",
-    "Thailand": "🇹🇭", "South Africa": "🇿🇦", "New Zealand": "🇳🇿",
-    "Poland": "🇵🇱", "Czech Republic": "🇨🇿", "Turkey": "🇹🇷",
-    "Israel": "🇮🇱", "Colombia": "🇨🇴", "Chile": "🇨🇱",
-    "Argentina": "🇦🇷", "Philippines": "🇵🇭", "Malaysia": "🇲🇾",
-    "Indonesia": "🇮🇩", "Vietnam": "🇻🇳", "Peru": "🇵🇪",
-    "Greece": "🇬🇷", "Romania": "🇷🇴", "Hungary": "🇭🇺",
-    "United Arab Emirates": "🇦🇪", "Saudi Arabia": "🇸🇦",
+    "France": "\U0001f1eb\U0001f1f7", "Germany": "\U0001f1e9\U0001f1ea",
+    "United Kingdom": "\U0001f1ec\U0001f1e7", "United States": "\U0001f1fa\U0001f1f8",
+    "Japan": "\U0001f1ef\U0001f1f5", "China": "\U0001f1e8\U0001f1f3",
+    "Denmark": "\U0001f1e9\U0001f1f0", "Sweden": "\U0001f1f8\U0001f1ea",
+    "Netherlands": "\U0001f1f3\U0001f1f1", "Switzerland": "\U0001f1e8\U0001f1ed",
+    "Belgium": "\U0001f1e7\U0001f1ea", "Italy": "\U0001f1ee\U0001f1f9",
+    "Spain": "\U0001f1ea\U0001f1f8", "Norway": "\U0001f1f3\U0001f1f4",
+    "Finland": "\U0001f1eb\U0001f1ee", "Canada": "\U0001f1e8\U0001f1e6",
+    "Australia": "\U0001f1e6\U0001f1fa", "Brazil": "\U0001f1e7\U0001f1f7",
+    "India": "\U0001f1ee\U0001f1f3", "South Korea": "\U0001f1f0\U0001f1f7",
+    "Ireland": "\U0001f1ee\U0001f1ea", "Austria": "\U0001f1e6\U0001f1f9",
+    "Portugal": "\U0001f1f5\U0001f1f9", "Luxembourg": "\U0001f1f1\U0001f1fa",
+    "Mexico": "\U0001f1f2\U0001f1fd", "Singapore": "\U0001f1f8\U0001f1ec",
+    "Taiwan": "\U0001f1f9\U0001f1fc", "Thailand": "\U0001f1f9\U0001f1ed",
+    "South Africa": "\U0001f1ff\U0001f1e6", "New Zealand": "\U0001f1f3\U0001f1ff",
+    "Poland": "\U0001f1f5\U0001f1f1", "Turkey": "\U0001f1f9\U0001f1f7",
+    "Israel": "\U0001f1ee\U0001f1f1", "Colombia": "\U0001f1e8\U0001f1f4",
+    "Chile": "\U0001f1e8\U0001f1f1", "Argentina": "\U0001f1e6\U0001f1f7",
+    "Malaysia": "\U0001f1f2\U0001f1fe", "Indonesia": "\U0001f1ee\U0001f1e9",
+    "Vietnam": "\U0001f1fb\U0001f1f3", "Philippines": "\U0001f1f5\U0001f1ed",
 }
 
 SECTOR_EMOJI = {
-    "Agroalimentaire": "🌾", "Distribution": "🛒", "Mode & Textile": "👗",
-    "BTP & Immobilier": "🏗️", "Énergie": "⚡", "Transport": "🚛",
-    "Tech & Numérique": "💻", "Finance": "🏦", "Industrie chimique": "🧪",
-    "Industrie lourde": "⛏️", "Industrie manufacturière": "🏭",
-    "Santé & Pharma": "💊", "Tourisme & Loisirs": "🏨", "Services": "📋",
-    "Mobilité": "🚗", "Services environnementaux": "♻️",
+    "Agroalimentaire": "\U0001f33e", "Distribution": "\U0001f6d2",
+    "Mode & Textile": "\U0001f457", "BTP & Immobilier": "\U0001f3d7\ufe0f",
+    "Energie": "\u26a1", "Transport": "\U0001f69b",
+    "Tech & Numerique": "\U0001f4bb", "Finance": "\U0001f3e6",
+    "Industrie chimique": "\U0001f9ea", "Industrie lourde": "\u26cf\ufe0f",
+    "Industrie manufacturiere": "\U0001f3ed", "Sante & Pharma": "\U0001f48a",
+    "Tourisme & Loisirs": "\U0001f3e8", "Services": "\U0001f4cb",
 }
 
 
 def download_file(url, filename):
-    """Download a file with caching."""
     os.makedirs(CACHE_DIR, exist_ok=True)
     filepath = os.path.join(CACHE_DIR, filename)
-    print(f"  Downloading {url}...")
     try:
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-            "Accept": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/octet-stream,*/*",
-            "Referer": "https://sciencebasedtargets.org/target-dashboard",
-        }
-        resp = requests.get(url, timeout=120, headers=headers)
+        h = {"User-Agent": "Mozilla/5.0", "Referer": "https://sciencebasedtargets.org"}
+        resp = requests.get(url, timeout=120, headers=h)
         resp.raise_for_status()
         with open(filepath, "wb") as f:
             f.write(resp.content)
-        print(f"  ✓ Downloaded {len(resp.content) / 1024:.0f} KB")
+        print(f"  Downloaded {len(resp.content)//1024} KB")
         return filepath
     except Exception as e:
-        print(f"  ✗ Download failed: {e}")
-        if os.path.exists(filepath):
-            print(f"  → Using cached version")
-            return filepath
+        print(f"  Download failed: {e}")
+        return filepath if os.path.exists(filepath) else None
+
+
+def map_sector(raw):
+    if not raw:
+        return "Autre"
+    low = raw.lower()
+    for key, val in SECTOR_MAP.items():
+        if key in low:
+            return val
+    return "Autre"
+
+
+def map_region(raw):
+    if not raw:
+        return "Autre"
+    low = str(raw).lower()
+    for key, val in REGION_MAP.items():
+        if key in low:
+            return val
+    return "Autre"
+
+
+def extract_reduction(text):
+    if not text:
+        return None
+    m = re.search(r'reduce\s+.*?(\d+(?:\.\d+)?)\s*%', text, re.IGNORECASE)
+    return float(m.group(1)) if m else None
+
+
+def gen_id(name):
+    return int(hashlib.md5(name.encode()).hexdigest()[:8], 16) % 100000 + 1000
+
+
+def build_entry(row):
+    status = str(row.get("near_term_status") or "").strip()
+    if status != "Targets set":
         return None
 
-
-def parse_sbti(filepath):
-    """Parse SBTi companies Excel into structured data."""
-    print("  Parsing SBTi data...")
-    wb = openpyxl.load_workbook(filepath, read_only=True, data_only=True)
-    ws = wb.active
-
-    headers = []
-    rows = []
-    for i, row in enumerate(ws.iter_rows(values_only=True)):
-        if i == 0:
-            headers = [str(h).strip().lower().replace(" ", "_") if h else f"col_{j}" for j, h in enumerate(row)]
-            continue
-        if any(cell is not None for cell in row):
-            rows.append(dict(zip(headers, row)))
-
-    wb.close()
-    print(f"  ✓ Parsed {len(rows)} companies")
-    return rows
-
-
-def map_sector(raw_sector):
-    """Map SBTi sector to our categories."""
-    if not raw_sector:
-        return "Autre"
-    raw = str(raw_sector).strip()
-    if raw in SECTOR_MAP:
-        return SECTOR_MAP[raw]
-    for key, val in SECTOR_MAP.items():
-        if key.lower() in raw.lower() or raw.lower() in key.lower():
-            return val
-    return "Autre"
-
-
-def map_region(raw_region):
-    """Map SBTi region to our categories."""
-    if not raw_region:
-        return "Autre"
-    raw = str(raw_region).strip()
-    for key, val in REGION_MAP.items():
-        if key.lower() in raw.lower():
-            return val
-    return "Autre"
-
-
-def determine_scope(row):
-    """Determine scope from target data."""
-    # Check various column names that might contain scope info
-    for key in row:
-        val = str(row.get(key, "")).lower()
-        if "net-zero" in val or "net zero" in val:
-            return "Net Zero"
-        if "scope 3" in val or "scope3" in val:
-            return "Scope 3"
-    return "Scope 1 & 2"
-
-
-def determine_alignment(row):
-    """Get temperature alignment."""
-    for key in row:
-        if "temperature" in key or "alignment" in key:
-            val = str(row.get(key, ""))
-            if "1.5" in val:
-                return "1.5°C"
-            if "2" in val and "well" in val.lower():
-                return "Well-below 2°C"
-            if "2" in val:
-                return "2°C"
-    return None
-
-
-def get_target_year(row):
-    """Extract target year."""
-    for key in row:
-        if "year" in key and "target" in key:
-            val = row.get(key)
-            if val and str(val).isdigit():
-                return int(val)
-    return None
-
-
-def get_status(row):
-    """Get target status."""
-    for key in row:
-        if "status" in key or "near_term" in key:
-            val = str(row.get(key, "")).strip()
-            if val and val.lower() not in ("none", "nan", ""):
-                return val
-    return None
-
-
-def generate_id(company_name):
-    """Generate a stable numeric ID from company name."""
-    return int(hashlib.md5(company_name.encode()).hexdigest()[:8], 16) % 100000 + 1000
-
-
-def build_sbti_entry(row):
-    """Convert a SBTi row to a project entry."""
-    # Try to find company name
-    name = None
-    for key in ["company_name", "organization", "company", "name"]:
-        if key in row and row[key]:
-            name = str(row[key]).strip()
-            break
+    name = str(row.get("company_name") or "").strip()
     if not name:
         return None
 
-    # Try to find country
-    country = None
-    for key in ["country", "location", "hq_country"]:
-        if key in row and row[key]:
-            country = str(row[key]).strip()
-            break
+    country = str(row.get("location") or "").strip()
+    region = map_region(row.get("region"))
+    sector = map_sector(str(row.get("sector") or ""))
+    org_type = str(row.get("organization_type") or "").strip()
+    classification = str(row.get("near_term_target_classification") or "").strip()
+    target_lang = str(row.get("full_target_language") or "").strip()
+    nz_status = str(row.get("net_zero_status") or "").strip()
 
-    # Try to find sector
-    raw_sector = None
-    for key in ["sector", "industry", "sub_industry", "isic", "cdp_acs"]:
-        if key in row and row[key]:
-            raw_sector = str(row[key]).strip()
-            break
+    # Parse years
+    def parse_year(val):
+        if not val:
+            return None
+        try:
+            return int(float(str(val).replace("FY", "").strip()))
+        except (ValueError, TypeError):
+            return None
 
-    sector = map_sector(raw_sector)
-    region = "Europe"  # Default
-    for key in ["region", "continent"]:
-        if key in row and row[key]:
-            region = map_region(str(row[key]))
-            break
+    target_year = parse_year(row.get("near_term_target_year"))
+    nz_year = parse_year(row.get("net_zero_year"))
 
-    status = get_status(row)
-    if not status or "Targets Set" not in status:
-        return None  # Only keep companies with validated targets
+    reduction = extract_reduction(target_lang)
+    size = "PME" if org_type == "SME" else "Grande entreprise"
+    flag = FLAG_MAP.get(country, "\U0001f3f3\ufe0f")
+    logo = SECTOR_EMOJI.get(sector, "\U0001f3e2")
 
-    alignment = determine_alignment(row)
-    scope = determine_scope(row)
-    target_year = get_target_year(row)
+    # Title
+    parts = []
+    if reduction:
+        parts.append(f"-{reduction:.0f}% d'emissions")
+    if classification:
+        parts.append(f"aligne {classification}")
+    title = " - ".join(parts) if parts else "Objectifs SBTi valides"
 
-    flag = FLAG_MAP.get(country, "🏳️") if country else "🏳️"
-    logo = SECTOR_EMOJI.get(sector, "🏢")
+    # Summary
+    summary = ""
+    if target_lang and len(target_lang) > 30:
+        s = re.sub(r'https?://\S+\s*', '', target_lang)
+        s = re.sub(r'This target was approved.*?SMEs\.\s*', '', s, flags=re.DOTALL)
+        s = re.sub(r'Near-[Tt]erm [Tt]argets?:?\s*', '', s).strip()
+        s = re.sub(r'Overall [Nn]et-[Zz]ero [Tt]arget:?\s*', '', s).strip()
+        summary = s[:300] + "..." if len(s) > 300 else s
+    if not summary:
+        summary = f"{name} a fait valider ses objectifs SBTi ({classification or 'Accord de Paris'}). Secteur : {sector}."
 
-    alignment_text = f" — Aligné {alignment}" if alignment else ""
-    target_text = f"Objectif SBTi validé{alignment_text}"
+    # Stats
+    stats = []
+    if reduction:
+        stats.append({"value": f"-{reduction:.0f}%", "label": "reduction emissions", "color": "#059669"})
+    if classification:
+        stats.append({"value": classification, "label": "alignement", "color": "#0284C7"})
+    if nz_status == "Targets set" and nz_year:
+        stats.append({"value": str(nz_year), "label": "objectif net zero", "color": "#7C3AED"})
+    elif target_year:
+        stats.append({"value": str(target_year), "label": "horizon cible", "color": "#7C3AED"})
+    if not stats:
+        stats.append({"value": "SBTi", "label": "valide", "color": "#0284C7"})
+
+    # Scope
+    scope = "Net Zero" if nz_status == "Targets set" else ("Scope 3" if target_lang and "scope 3" in target_lang.lower() else "Scope 1 & 2")
+
+    # Target text
+    tt = f"SBTi valide - {classification or 'Accord de Paris'}"
     if target_year:
-        target_text += f" (horizon {target_year})"
+        tt += f" (horizon {target_year})"
+    if nz_status == "Targets set" and nz_year:
+        tt += f" - Net Zero {nz_year}"
 
-    default_alignment = "conforme a l'Accord de Paris"
-    summary = f"{name} a fait valider ses objectifs de décarbonation par le SBTi, "
-    summary += f"alignés sur une trajectoire {alignment or default_alignment}. "
-    summary += f"Secteur : {sector}."
-
-    entry = {
-        "id": generate_id(name),
-        "company": name,
-        "title": f"Objectifs SBTi validés — {sector}",
-        "sector": sector,
-        "region": region,
-        "scope": scope,
-        "source": "SBTi",
-        "country": country or "Non renseigné",
-        "countryFlag": flag,
-        "year": 2025,
-        "logo": logo,
-        "size": "Non renseigné",
+    return {
+        "id": gen_id(name), "company": name, "title": title,
+        "sector": sector, "region": region, "scope": scope,
+        "source": "SBTi", "country": country or "?",
+        "countryFlag": flag, "year": 2025, "logo": logo, "size": size,
         "summary": summary,
         "actions": [
-            f"Objectifs de réduction SBTi validés ({scope})",
-            f"Alignement sur trajectoire {alignment or 'Accord de Paris'}",
+            f"Objectifs SBTi valides ({scope})",
+            f"Trajectoire {classification or 'Accord de Paris'}",
         ],
-        "stats": [],
-        "target": target_text,
-        "difficulty": "",
-        "roi": "",
+        "stats": stats, "target": tt,
+        "difficulty": "", "roi": "",
         "sourceUrl": "https://sciencebasedtargets.org/target-dashboard",
         "lastUpdated": datetime.now().strftime("%Y-%m-%d"),
         "contributors": ["Import automatique SBTi"],
-        "verified": True,
-        "autoImport": True,
+        "verified": True, "autoImport": True,
     }
-
-    if alignment:
-        entry["stats"].append({
-            "value": alignment,
-            "label": "alignement température",
-            "color": "#059669"
-        })
-
-    entry["stats"].append({
-        "value": "SBTi",
-        "label": "objectifs validés",
-        "color": "#0284C7"
-    })
-
-    if scope != "Scope 1 & 2":
-        entry["stats"].append({
-            "value": scope,
-            "label": "périmètre couvert",
-            "color": "#7C3AED"
-        })
-
-    return entry
-
-
-def load_editorial():
-    """Load hand-curated editorial entries."""
-    if os.path.exists(EDITORIAL_FILE):
-        with open(EDITORIAL_FILE, "r", encoding="utf-8") as f:
-            entries = json.load(f)
-        print(f"  ✓ Loaded {len(entries)} editorial entries")
-        return entries
-    return []
-
-
-def merge_entries(editorial, sbti_entries):
-    """Merge editorial (priority) with auto-imported entries."""
-    # Editorial entries take priority — matched by company name
-    editorial_names = {e["company"].lower().strip() for e in editorial}
-
-    merged = list(editorial)
-    added = 0
-    for entry in sbti_entries:
-        if entry["company"].lower().strip() not in editorial_names:
-            merged.append(entry)
-            added += 1
-
-    print(f"  ✓ Merged: {len(editorial)} éditorialisées + {added} auto-importées = {len(merged)} total")
-    return merged
 
 
 def main():
-    print("=" * 60)
-    print("🌱 Nouveaux Récits d'Entreprise — Build Data")
-    print("=" * 60)
+    print("=" * 50)
+    print("Nouveaux Recits - Build Data")
+    print("=" * 50)
 
-    # 1. Get SBTi data (local file first, then try download)
-    print("\n📥 Étape 1 : Récupération SBTi...")
-    sbti_file = None
+    # 1. Get file
+    print("\n1. Recuperation SBTi...")
+    f = None
     if os.path.exists(SBTI_LOCAL):
-        sbti_file = SBTI_LOCAL
-        print(f"  ✓ Fichier local trouvé : {SBTI_LOCAL}")
+        f = SBTI_LOCAL
+        print(f"  Fichier local: {f}")
     else:
-        sbti_file = download_file(SBTI_URL, "sbti-companies.xlsx")
-        if not sbti_file:
-            print("  ⚠ Pas de fichier SBTi disponible — seules les fiches éditoriales seront utilisées")
+        f = download_file(SBTI_URL, "sbti.xlsx")
 
-    sbti_entries = []
-    if sbti_file:
-        # 2. Parse SBTi
-        print("\n🔄 Étape 2 : Parsing SBTi...")
-        rows = parse_sbti(sbti_file)
+    entries = []
+    if f:
+        print("\n2. Parsing...")
+        wb = openpyxl.load_workbook(f, read_only=True, data_only=True)
+        ws = wb.active
+        headers = None
+        total = 0
+        for i, row in enumerate(ws.iter_rows(values_only=True)):
+            if i == 0:
+                headers = list(row)
+                continue
+            data = dict(zip(headers, row))
+            e = build_entry(data)
+            if e:
+                entries.append(e)
+            total += 1
+        wb.close()
+        print(f"  {total} lignes -> {len(entries)} avec objectifs valides")
 
-        # 3. Transform
-        print("\n🔧 Étape 3 : Transformation...")
-        for row in rows:
-            entry = build_sbti_entry(row)
-            if entry:
-                sbti_entries.append(entry)
-        print(f"  ✓ {len(sbti_entries)} entreprises avec objectifs validés")
+    # Editorial
+    print("\n3. Fiches editoriales...")
+    editorial = []
+    if os.path.exists(EDITORIAL_FILE):
+        with open(EDITORIAL_FILE, "r", encoding="utf-8") as fh:
+            editorial = json.load(fh)
+        print(f"  {len(editorial)} fiches")
 
-    # 4. Load editorial entries
-    print("\n📝 Étape 4 : Chargement des fiches éditorialisées...")
-    editorial = load_editorial()
+    # Merge
+    print("\n4. Fusion...")
+    names = {e["company"].lower().strip() for e in editorial}
+    added = [e for e in entries if e["company"].lower().strip() not in names]
+    merged = editorial + added
+    print(f"  {len(editorial)} editoriales + {len(added)} SBTi = {len(merged)} total")
 
-    # 5. Merge
-    print("\n🔀 Étape 5 : Fusion...")
-    all_entries = merge_entries(editorial, sbti_entries)
-
-    # 6. Write output
-    print("\n💾 Étape 6 : Écriture...")
+    # Write
+    print("\n5. Ecriture...")
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(all_entries, f, ensure_ascii=False, indent=2)
-    print(f"  ✓ {OUTPUT_FILE} — {len(all_entries)} entrées")
-
-    print(f"\n✅ Terminé ! {len(all_entries)} projets dans la base.")
-    print(f"   → {len(editorial)} fiches éditorialisées (enrichies)")
-    print(f"   → {len(sbti_entries)} fiches auto-importées SBTi")
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as fh:
+        json.dump(merged, fh, ensure_ascii=False, indent=2)
+    print(f"  {OUTPUT_FILE} - {len(merged)} entrees")
+    print(f"\nTermine! {len(merged)} projets.")
 
 
 if __name__ == "__main__":
