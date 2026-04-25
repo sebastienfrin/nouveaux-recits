@@ -32,6 +32,7 @@ except ImportError:
 
 # ─── CONFIG ─────────────────────────────────────────
 SBTI_URL = "https://files.sciencebasedtargets.org/production/files/companies-excel.xlsx"
+SBTI_LOCAL = "data/companies-excel.xlsx"  # Manual upload fallback
 ADEME_URL = "https://data.ademe.fr/data-fair/api/v1/datasets/bilan-ges/lines?size=10000&format=json"
 OUTPUT_FILE = "data/projects.json"
 EDITORIAL_FILE = "data/editorial.json"
@@ -381,9 +382,16 @@ def main():
     print("🌱 Nouveaux Récits d'Entreprise — Build Data")
     print("=" * 60)
 
-    # 1. Download SBTi data
-    print("\n📥 Étape 1 : Téléchargement SBTi...")
-    sbti_file = download_file(SBTI_URL, "sbti-companies.xlsx")
+    # 1. Get SBTi data (local file first, then try download)
+    print("\n📥 Étape 1 : Récupération SBTi...")
+    sbti_file = None
+    if os.path.exists(SBTI_LOCAL):
+        sbti_file = SBTI_LOCAL
+        print(f"  ✓ Fichier local trouvé : {SBTI_LOCAL}")
+    else:
+        sbti_file = download_file(SBTI_URL, "sbti-companies.xlsx")
+        if not sbti_file:
+            print("  ⚠ Pas de fichier SBTi disponible — seules les fiches éditoriales seront utilisées")
 
     sbti_entries = []
     if sbti_file:
