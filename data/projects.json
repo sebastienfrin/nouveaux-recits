@@ -1,0 +1,258 @@
+[
+  {
+    "id": 1,
+    "company": "Danone",
+    "title": "Réduction de 27% des émissions absolues (Scope 1 & 2) en 4 ans",
+    "sector": "Agroalimentaire",
+    "region": "Europe",
+    "scope": "Scope 1 & 2",
+    "source": "SBTi",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "🥛",
+    "summary": "Danone a été la première entreprise alimentaire à obtenir des objectifs FLAG (forêt, terres et agriculture) validés par SBTi. En passant à des chaudières biomasse, en optimisant la logistique et en travaillant avec 15 000 agriculteurs partenaires sur l'agriculture régénérative, l'entreprise a réduit ses émissions directes de 27% entre 2020 et 2024.",
+    "actions": [
+      "Transition vers des chaudières biomasse sur 18 sites industriels",
+      "Programme d'agriculture régénérative avec 15 000 agriculteurs",
+      "Optimisation logistique : -30% de km parcourus via mutualisation",
+      "100% d'électricité renouvelable sur les sites européens d'ici 2025"
+    ],
+    "stats": [
+      { "value": "-27%", "label": "émissions Scope 1&2 vs 2020", "color": "#059669" },
+      { "value": "15K", "label": "agriculteurs engagés", "color": "#0284C7" },
+      { "value": "18", "label": "sites convertis biomasse", "color": "#7C3AED" }
+    ],
+    "target": "Net Zero 2050 — Objectifs SBTi 1.5°C validés",
+    "difficulty": "Élevée — transformation de la chaîne d'approvisionnement agricole",
+    "roi": "Économies de 120M€/an en coûts énergétiques",
+    "sourceUrl": "https://sciencebasedtargets.org/target-dashboard",
+    "lastUpdated": "2025-03-15",
+    "contributors": ["Équipe Nouveaux Récits", "Claire M."],
+    "verified": true
+  },
+  {
+    "id": 2,
+    "company": "Ørsted",
+    "title": "De pétrolier à leader mondial de l'éolien offshore — 98% de réduction des émissions",
+    "sector": "Énergie",
+    "region": "Europe",
+    "scope": "Net Zero",
+    "source": "CDP",
+    "country": "Danemark",
+    "countryFlag": "🇩🇰",
+    "year": 2024,
+    "logo": "💨",
+    "summary": "Ørsted (ex-DONG Energy) est passé d'une entreprise fossile à 85% de son chiffre d'affaires en 2006 au leader mondial de l'éolien offshore en 2024. Score CDP : A. C'est probablement la transformation corporate la plus radicale de l'histoire industrielle européenne.",
+    "actions": [
+      "Cession de l'ensemble des actifs pétroliers et gaziers (2017)",
+      "Investissement de 57 Mds$ dans l'éolien offshore en 10 ans",
+      "Fermeture de la dernière centrale à charbon (2023)",
+      "Objectif : chaîne de valeur 100% neutre en carbone d'ici 2040"
+    ],
+    "stats": [
+      { "value": "-98%", "label": "émissions depuis 2006", "color": "#059669" },
+      { "value": "A", "label": "score CDP Climate", "color": "#D97706" },
+      { "value": "15.5 GW", "label": "capacité éolienne installée", "color": "#0284C7" }
+    ],
+    "target": "Net Zero 2040 (scope 1, 2 & 3) — SBTi validé 1.5°C",
+    "difficulty": "Extrême — pivot stratégique complet du business model",
+    "roi": "Capitalisation boursière x7 entre 2012 et 2024",
+    "sourceUrl": "https://www.cdp.net",
+    "lastUpdated": "2025-02-20",
+    "contributors": ["Équipe Nouveaux Récits"],
+    "verified": true
+  },
+  {
+    "id": 3,
+    "company": "Schneider Electric",
+    "title": "Top 1% mondial en durabilité : -47% d'émissions opérationnelles",
+    "sector": "Industrie lourde",
+    "region": "Europe",
+    "scope": "Scope 1 & 2",
+    "source": "SBTi",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "⚡",
+    "summary": "Schneider Electric a été classé #1 mondial du classement Corporate Knights en 2024. L'entreprise a réduit ses émissions opérationnelles de 47% tout en augmentant son chiffre d'affaires de 30%. Son programme Zero Carbon Project a converti 150 sites à zéro émission opérationnelle.",
+    "actions": [
+      "150 sites à zéro émission opérationnelle (Zero Carbon Project)",
+      "80% d'électricité renouvelable sur l'ensemble des sites",
+      "Programme Top 1000 fournisseurs pour diviser par 2 leurs émissions",
+      "Économie circulaire : 420 000 tonnes métriques de ressources primaires évitées"
+    ],
+    "stats": [
+      { "value": "-47%", "label": "émissions Scope 1&2 vs 2017", "color": "#059669" },
+      { "value": "150", "label": "sites zéro carbone", "color": "#7C3AED" },
+      { "value": "#1", "label": "Corporate Knights 2024", "color": "#D97706" }
+    ],
+    "target": "Net Zero 2050 — Objectifs SBTi 1.5°C validés",
+    "difficulty": "Haute — 135 000 employés dans 100+ pays",
+    "roi": "CA en hausse de 30% sur la période de décarbonation",
+    "sourceUrl": "https://sciencebasedtargets.org/target-dashboard",
+    "lastUpdated": "2025-01-10",
+    "contributors": ["Équipe Nouveaux Récits", "Lucas P."],
+    "verified": true
+  },
+  {
+    "id": 4,
+    "company": "Maersk",
+    "title": "Premier porte-conteneurs au méthanol vert : décarboner le shipping mondial",
+    "sector": "Transport",
+    "region": "Europe",
+    "scope": "Scope 1 & 2",
+    "source": "Climate Action 100+",
+    "country": "Danemark",
+    "countryFlag": "🇩🇰",
+    "year": 2024,
+    "logo": "🚢",
+    "summary": "Maersk, premier armateur mondial, a mis en service en 2023 le Laura Mærsk, premier grand porte-conteneurs fonctionnant au méthanol vert. L'entreprise a commandé 25 navires bi-fuel et investit massivement dans les carburants alternatifs pour décarboner un secteur représentant 3% des émissions mondiales.",
+    "actions": [
+      "Mise en service du premier porte-conteneurs au méthanol vert (2023)",
+      "Commande de 25 navires bi-fuel méthanol pour livraison 2024-2027",
+      "Investissement dans 6 projets de production de méthanol vert",
+      "Engagement contractuel avec les clients via ECO Delivery"
+    ],
+    "stats": [
+      { "value": "25", "label": "navires verts commandés", "color": "#0284C7" },
+      { "value": "-65%", "label": "émissions par conteneur vs 2008", "color": "#059669" },
+      { "value": "2040", "label": "objectif net zero", "color": "#7C3AED" }
+    ],
+    "target": "Net Zero 2040 — Climate Action 100+ focus company",
+    "difficulty": "Extrême — infrastructure portuaire mondiale à transformer",
+    "roi": "Premium de 10-15% sur les offres ECO Delivery, accepté par les clients",
+    "sourceUrl": "https://www.climateaction100.org",
+    "lastUpdated": "2025-04-01",
+    "contributors": ["Équipe Nouveaux Récits"],
+    "verified": true
+  },
+  {
+    "id": 5,
+    "company": "Microsoft",
+    "title": "Carbon negative d'ici 2030 — retirer plus de CO₂ qu'émis depuis 1975",
+    "sector": "Tech & Numérique",
+    "region": "Amérique du Nord",
+    "scope": "Net Zero",
+    "source": "CDP",
+    "country": "États-Unis",
+    "countryFlag": "🇺🇸",
+    "year": 2024,
+    "logo": "💻",
+    "summary": "Microsoft s'est engagé non seulement à atteindre la neutralité carbone, mais à devenir carbon-negative d'ici 2030, et à compenser l'intégralité de ses émissions historiques depuis sa fondation en 1975 d'ici 2050. L'entreprise a créé un fonds climat interne de 1 Md$ et applique une taxe carbone interne depuis 2012.",
+    "actions": [
+      "Taxe carbone interne de 15$/tonne appliquée à toutes les divisions depuis 2012",
+      "Fonds d'innovation climatique de 1 Md$ (Climate Innovation Fund)",
+      "100% d'électricité renouvelable atteint en 2025",
+      "Contrats d'achat de 5.8M tonnes de crédits carbone certifiés"
+    ],
+    "stats": [
+      { "value": "1 Md$", "label": "Climate Innovation Fund", "color": "#0284C7" },
+      { "value": "100%", "label": "électricité renouvelable", "color": "#059669" },
+      { "value": "2030", "label": "objectif carbon negative", "color": "#7C3AED" }
+    ],
+    "target": "Carbon Negative 2030 — Retrait historique total d'ici 2050",
+    "difficulty": "Très élevée — croissance exponentielle des data centers IA",
+    "roi": "Taxe carbone interne a financé 50+ projets d'efficacité énergétique",
+    "sourceUrl": "https://www.cdp.net",
+    "lastUpdated": "2025-03-20",
+    "contributors": ["Équipe Nouveaux Récits", "Sarah K."],
+    "verified": true
+  },
+  {
+    "id": 6,
+    "company": "Holcim",
+    "title": "Décarboner le ciment — le défi des 8% des émissions mondiales",
+    "sector": "BTP & Immobilier",
+    "region": "Europe",
+    "scope": "Scope 1 & 2",
+    "source": "SBTi",
+    "country": "Suisse",
+    "countryFlag": "🇨🇭",
+    "year": 2024,
+    "logo": "🏗️",
+    "summary": "Holcim, leader mondial du ciment, s'attaque à l'un des secteurs les plus difficiles à décarboner (8% des émissions mondiales de CO₂). L'entreprise a développé ECOPact, un béton bas carbone avec -30 à -100% d'émissions, qui représente déjà 25% de ses ventes dans les marchés matures.",
+    "actions": [
+      "Lancement d'ECOPact : béton bas carbone (-30% à -100% d'émissions)",
+      "Investissement dans 4 projets pilotes de capture de CO₂ (CCUS)",
+      "Remplacement de 22% du clinker par des matériaux de substitution",
+      "Objectif : 475 kg CO₂/tonne de ciment d'ici 2030 (vs 560 en 2020)"
+    ],
+    "stats": [
+      { "value": "-22%", "label": "intensité carbone vs 2018", "color": "#059669" },
+      { "value": "25%", "label": "des ventes en béton bas carbone", "color": "#0284C7" },
+      { "value": "4", "label": "projets CCUS en cours", "color": "#7C3AED" }
+    ],
+    "target": "Net Zero 2050 — SBTi 1.5°C validé — Objectif intermédiaire -22% en 2030",
+    "difficulty": "Extrême — chimie du ciment intrinsèquement émettrice",
+    "roi": "ECOPact vendu au même prix, marge préservée grâce au mix matériaux",
+    "sourceUrl": "https://sciencebasedtargets.org/target-dashboard",
+    "lastUpdated": "2025-02-05",
+    "contributors": ["Équipe Nouveaux Récits"],
+    "verified": true
+  },
+  {
+    "id": 7,
+    "company": "H&M Group",
+    "title": "Décarboner la fast fashion — engagement supply chain 1 500 fournisseurs",
+    "sector": "Mode & Textile",
+    "region": "Europe",
+    "scope": "Scope 3",
+    "source": "SBTi",
+    "country": "Suède",
+    "countryFlag": "🇸🇪",
+    "year": 2024,
+    "logo": "👗",
+    "summary": "H&M engage ses 1 500 fournisseurs à fixer leurs propres objectifs climatiques via le CDP Supply Chain. L'entreprise a réduit l'intensité carbone de ses produits de 36% et développé Looop, une machine de recyclage textile en magasin qui transforme un vieux vêtement en neuf en 5h.",
+    "actions": [
+      "CDP Supply Chain : 1 500 fournisseurs engagés à déclarer leurs émissions",
+      "Looop : machine de recyclage textile en magasin (pilote Stockholm)",
+      "-36% d'intensité carbone par produit vs 2019",
+      "63% de matériaux recyclés ou issus de sources durables"
+    ],
+    "stats": [
+      { "value": "-36%", "label": "intensité carbone/produit", "color": "#059669" },
+      { "value": "1 500", "label": "fournisseurs engagés CDP", "color": "#0284C7" },
+      { "value": "63%", "label": "matériaux durables", "color": "#7C3AED" }
+    ],
+    "target": "Net Zero 2040 (toute la chaîne de valeur) — SBTi validé",
+    "difficulty": "Élevée — 90% des émissions dans la supply chain (Scope 3)",
+    "roi": "Collections Conscious génèrent +15% de trafic en magasin",
+    "sourceUrl": "https://sciencebasedtargets.org/target-dashboard",
+    "lastUpdated": "2025-01-25",
+    "contributors": ["Équipe Nouveaux Récits", "Maria L."],
+    "verified": true
+  },
+  {
+    "id": 8,
+    "company": "BNP Paribas",
+    "title": "Première banque européenne à publier des objectifs de décarbonation par secteur",
+    "sector": "Finance",
+    "region": "Europe",
+    "scope": "Scope 3",
+    "source": "Climate Action 100+",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "🏦",
+    "summary": "BNP Paribas a été la première banque européenne à publier des objectifs de réduction d'émissions financées secteur par secteur : pétrole & gaz, automobile, ciment, acier, aluminium et électricité. La banque a cessé tout financement d'expansion fossile et réduit son exposition au charbon de 41% depuis 2020.",
+    "actions": [
+      "Publication d'objectifs d'émissions financées pour 6 secteurs clés",
+      "Arrêt total du financement d'expansion fossile",
+      "-41% d'exposition au charbon thermique depuis 2020",
+      "Financement de 40 Mds€ en projets de transition énergétique"
+    ],
+    "stats": [
+      { "value": "-41%", "label": "exposition charbon vs 2020", "color": "#059669" },
+      { "value": "40 Mds€", "label": "financements transition", "color": "#0284C7" },
+      { "value": "6", "label": "secteurs avec objectifs publiés", "color": "#7C3AED" }
+    ],
+    "target": "Alignement portefeuille Net Zero 2050 — NZBA member",
+    "difficulty": "Très élevée — émissions financées Scope 3 massives",
+    "roi": "Les green bonds représentent le segment de croissance le plus rapide",
+    "sourceUrl": "https://www.climateaction100.org",
+    "lastUpdated": "2025-03-10",
+    "contributors": ["Équipe Nouveaux Récits"],
+    "verified": true
+  }
+]

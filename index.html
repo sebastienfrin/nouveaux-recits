@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nouveaux Récits d'Entreprise — Trajectoires de décarbonation qui fonctionnent</title>
+<meta name="description" content="Base de données ouverte des entreprises qui réussissent leur décarbonation. Cas réels, chiffrés, sourcés pour professeurs et conférenciers.">
+<meta name="theme-color" content="#0F2921">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--green-950:#0F2921;--green-900:#1B3A2D;--green-800:#2D5A3F;--green-700:#40916C;
+--green-600:#52B788;--green-500:#6EE7B7;--green-100:#D1FAE5;--green-50:#ECFDF5;
+--text:#1a1a1a;--text-2:#4b5563;--text-3:#9ca3af;--bg:#FAFAF7;--card:#fff;
+--border:#e5e7eb;--serif:'Source Serif 4',Georgia,serif;--sans:'IBM Plex Sans',system-ui,sans-serif;
+}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font-family:var(--sans);cursor:pointer}
+input{font-family:var(--sans)}
+
+/* HEADER */
+.header{background:linear-gradient(160deg,var(--green-950),var(--green-900) 40%,var(--green-800));
+position:sticky;top:0;z-index:100;box-shadow:0 4px 30px rgba(0,0,0,.2)}
+.header-inner{max-width:1260px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:var(--serif);font-weight:900;font-size:1.1rem;color:#fff;letter-spacing:-.5px}
+.logo-badge{font-size:.6rem;color:var(--green-500);font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-left:8px}
+.nav{display:flex;gap:4px}
+.nav-btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:#fff;padding:6px 14px;border-radius:10px;font-size:.78rem;font-weight:600;transition:background .2s}
+.nav-btn:hover{background:rgba(255,255,255,.18)}
+
+/* HERO */
+.hero{background:linear-gradient(175deg,var(--green-950),var(--green-900) 60%,#1a4a35);padding:52px 24px 60px;text-align:center;color:#fff;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;opacity:.03;background-image:radial-gradient(circle at 2px 2px,#fff 1px,transparent 0);background-size:32px 32px}
+.hero-label{font-size:.7rem;color:var(--green-500);font-weight:800;text-transform:uppercase;letter-spacing:3px;margin-bottom:14px;position:relative}
+.hero h1{font-family:var(--serif);font-size:clamp(1.8rem,5vw,2.6rem);font-weight:900;line-height:1.15;max-width:700px;margin:0 auto 14px;position:relative}
+.hero p{font-size:1rem;opacity:.7;max-width:540px;margin:0 auto 28px;line-height:1.7;position:relative}
+.search-wrap{max-width:560px;margin:0 auto;position:relative}
+.search-input{width:100%;padding:16px 20px 16px 50px;border-radius:16px;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:var(--serif);outline:none;backdrop-filter:blur(10px);letter-spacing:.2px}
+.search-input::placeholder{color:rgba(255,255,255,.4)}
+.search-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);font-size:1.15rem;opacity:.5}
+.hero-meta{margin-top:18px;display:flex;justify-content:center;gap:20px;font-size:.75rem;opacity:.5;position:relative;flex-wrap:wrap}
+
+/* FILTERS */
+.filters{max-width:1260px;margin:0 auto;padding:22px 24px 0}
+.filter-group{margin-bottom:10px}
+.filter-label{font-size:.65rem;font-weight:800;color:var(--text-3);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+.filter-row{display:flex;gap:5px;flex-wrap:wrap}
+.filter-groups{display:flex;gap:28px;flex-wrap:wrap}
+.pill{padding:5px 14px;border-radius:20px;font-size:.78rem;font-weight:400;border:1.5px solid var(--border);background:#fff;color:var(--text-2);transition:all .2s;white-space:nowrap}
+.pill.active{border-color:var(--green-900);background:var(--green-900);color:#fff;font-weight:700}
+.pill:hover:not(.active){border-color:var(--text-3)}
+.results-bar{margin-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.results-count{font-size:.82rem;color:var(--text-3);font-style:italic}
+
+/* GRID */
+.grid-section{max-width:1260px;margin:0 auto;padding:20px 24px 40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+.empty{text-align:center;padding:60px 20px;color:var(--text-3)}
+.empty-icon{font-size:3rem;margin-bottom:12px}
+
+/* CARD */
+.card{background:var(--card);border-radius:20px;overflow:hidden;cursor:pointer;box-shadow:0 1px 8px rgba(0,0,0,.05);transition:all .3s cubic-bezier(.25,.8,.25,1);display:flex;flex-direction:column}
+.card:hover{transform:translateY(-5px);box-shadow:0 12px 40px rgba(27,58,45,.12)}
+.card-header{padding:14px 18px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #f3f4f6}
+.card-logo{font-size:1.8rem;flex-shrink:0}
+.card-company{font-size:.95rem;font-weight:800;color:#111;font-family:var(--serif)}
+.card-meta{font-size:.68rem;color:var(--text-3)}
+.card-verified{background:var(--green-50);color:#059669;font-size:.6rem;font-weight:700;padding:3px 8px;border-radius:8px;display:flex;align-items:center;gap:3px;flex-shrink:0}
+.card-body{padding:16px 18px;flex:1}
+.card-sector{font-size:.68rem;font-weight:800;color:var(--green-600);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.card h3{font-size:.92rem;font-weight:700;color:var(--green-900);margin-bottom:10px;line-height:1.4;font-family:var(--serif)}
+.card p{font-size:.8rem;color:var(--text-2);line-height:1.6;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.stats-row{display:flex;gap:6px;flex-wrap:wrap}
+.stat{text-align:center;padding:14px 8px;flex:1;min-width:90px;border-radius:14px}
+.stat-value{font-size:1.5rem;font-weight:900;font-family:var(--serif);line-height:1}
+.stat-label{font-size:.68rem;color:var(--text-2);margin-top:6px;line-height:1.3}
+.card-footer{padding:10px 18px;border-top:1px solid #f3f4f6;display:flex;justify-content:space-between;align-items:center}
+.card-source{font-size:.65rem;color:var(--text-3);display:flex;align-items:center;gap:4px}
+.source-dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.card-date{font-size:.65rem;color:#d1d5db}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:40px 16px;overflow-y:auto;backdrop-filter:blur(4px)}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:24px;max-width:720px;width:100%;box-shadow:0 25px 80px rgba(0,0,0,.25);overflow:hidden;animation:modalIn .3s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.modal-header{background:linear-gradient(135deg,var(--green-950),var(--green-900),var(--green-800));padding:32px 36px;color:#fff;position:relative}
+.modal-close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.15);border:none;border-radius:50%;width:36px;height:36px;color:#fff;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.modal-close:hover{background:rgba(255,255,255,.3)}
+.modal-company-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.modal-logo{font-size:2.8rem}
+.modal-company-name{font-size:1.6rem;font-weight:900;font-family:var(--serif)}
+.modal-company-meta{font-size:.85rem;opacity:.7}
+.modal-title{font-size:1.15rem;font-weight:600;line-height:1.4;font-family:var(--serif);opacity:.95}
+.modal-content{padding:28px 36px}
+.modal-stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.modal-stat{text-align:center;padding:18px 14px;flex:1;min-width:110px;border-radius:16px}
+.modal-stat-value{font-size:2rem;font-weight:900;font-family:var(--serif)}
+.modal-stat-label{font-size:.75rem;color:var(--text-2);margin-top:4px}
+.modal-summary{font-size:.95rem;color:#374151;line-height:1.8;margin-bottom:24px}
+.modal-section-title{font-size:.85rem;font-weight:800;color:var(--green-900);margin-bottom:10px;font-family:var(--serif);text-transform:uppercase;letter-spacing:1.5px}
+.action-item{padding:10px 14px;border-radius:10px;margin-bottom:4px;font-size:.85rem;color:#374151;display:flex;gap:10px;align-items:flex-start}
+.action-item:nth-child(odd){background:#f9fafb}
+.action-num{color:#059669;font-weight:800;font-size:.8rem;flex-shrink:0}
+.modal-meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.meta-card{padding:12px 14px;background:#f9fafb;border-radius:12px;border-left:3px solid var(--green-900)}
+.meta-label{font-size:.65rem;color:var(--text-3);font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px}
+.meta-value{font-size:.82rem;color:#374151;line-height:1.4}
+.contrib-box{padding:16px 18px;background:#FFFBEB;border-radius:14px;border:1px solid #FDE68A;margin-bottom:20px}
+.contrib-title{font-size:.75rem;font-weight:700;color:#92400E;margin-bottom:6px}
+.contrib-text{font-size:.8rem;color:#78716C}
+.modal-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn-primary{background:var(--green-900);color:#fff;border:none;padding:12px 24px;border-radius:12px;font-weight:700;font-size:.82rem}
+.btn-secondary{background:#fff;color:var(--green-900);border:2px solid var(--green-900);padding:12px 24px;border-radius:12px;font-weight:700;font-size:.82rem}
+.btn-ghost{background:#fff;color:var(--text-2);border:1.5px solid var(--border);padding:12px 24px;border-radius:12px;font-weight:600;font-size:.82rem}
+
+/* SOURCES PANEL */
+.panel-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+.panel-overlay.open{display:flex}
+.panel{background:#fff;border-radius:24px;max-width:640px;width:100%;padding:36px 40px;box-shadow:0 25px 80px rgba(0,0,0,.2);max-height:85vh;overflow-y:auto;animation:modalIn .3s ease}
+.panel h2{font-size:1.4rem;font-weight:900;color:var(--green-900);font-family:var(--serif);margin-bottom:8px}
+.panel>p{font-size:.85rem;color:var(--text-2);margin-bottom:24px;line-height:1.6}
+.source-card{padding:16px 18px;border-radius:14px;margin-bottom:10px}
+.source-card-header{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.source-card-dot{width:10px;height:10px;border-radius:50%}
+.source-card-name{font-size:.95rem;font-weight:800;color:#111;font-family:var(--serif)}
+.source-card-desc{font-size:.82rem;color:var(--text-2);margin-bottom:6px}
+.source-card-link{font-size:.75rem;font-weight:600;text-decoration:none}
+.contrib-option{padding:16px 18px;background:#f9fafb;border-radius:14px;display:flex;gap:14px;align-items:flex-start;margin-bottom:8px;border:1.5px solid transparent;transition:border-color .2s;cursor:pointer}
+.contrib-option:hover{border-color:var(--green-900)}
+.contrib-option-icon{font-size:1.5rem;flex-shrink:0}
+.contrib-option-title{font-size:.9rem;font-weight:700;color:var(--green-900);font-family:var(--serif)}
+.contrib-option-desc{font-size:.8rem;color:var(--text-2);margin-top:2px}
+.arch-box{padding:16px 18px;background:var(--green-50);border-radius:14px;border:1px solid #BBF7D0;margin-bottom:20px}
+.arch-title{font-size:.8rem;font-weight:700;color:#166534;margin-bottom:4px}
+.arch-text{font-size:.78rem;color:var(--text-2);line-height:1.6}
+.btn-full{width:100%;margin-top:16px}
+
+/* CTA */
+.cta{max-width:1260px;margin:0 auto;padding:0 24px 48px}
+.cta-inner{background:linear-gradient(135deg,var(--green-950),var(--green-900));border-radius:24px;padding:40px 48px;color:#fff;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;position:relative;overflow:hidden}
+.cta-inner::after{content:'';position:absolute;right:-40px;top:-40px;width:200px;height:200px;border-radius:50%;background:rgba(110,231,183,.06)}
+.cta h2{font-size:1.5rem;font-weight:900;font-family:var(--serif);margin-bottom:8px}
+.cta p{font-size:.9rem;opacity:.7;line-height:1.6}
+.btn-accent{background:var(--green-500);color:var(--green-950);border:none;padding:14px 32px;border-radius:14px;font-weight:800;font-size:.9rem;position:relative}
+
+/* FOOTER */
+.footer{background:var(--green-950);color:rgba(255,255,255,.4);padding:28px 24px;text-align:center;font-size:.75rem}
+.footer-title{color:rgba(255,255,255,.6);font-weight:600;margin-bottom:8px}
+.footer-sub{margin-top:8px;font-size:.68rem;opacity:.6}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .header-inner{padding:0 16px}
+  .logo{font-size:.95rem}
+  .nav-btn span.nav-label{display:none}
+  .hero{padding:36px 16px 44px}
+  .filters,.grid-section,.cta{padding-left:16px;padding-right:16px}
+  .grid{grid-template-columns:1fr}
+  .modal-content{padding:20px}
+  .modal-header{padding:24px 20px}
+  .modal-meta-grid{grid-template-columns:1fr}
+  .cta-inner{padding:28px 24px}
+  .panel{padding:24px 20px}
+  .filter-groups{gap:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+<div class="header-inner">
+  <div style="display:flex;align-items:baseline">
+    <span class="logo">Nouveaux Récits d'Entreprise</span>
+    <span class="logo-badge">β open data</span>
+  </div>
+  <nav class="nav">
+    <button class="nav-btn" onclick="openSources()">📊 <span class="nav-label">Sources</span></button>
+    <button class="nav-btn" onclick="openContribute()">✏️ <span class="nav-label">Contribuer</span></button>
+  </nav>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-label">Base de données ouverte & collaborative</div>
+<h1>Les entreprises qui réussissent leur décarbonation</h1>
+<p>Cas réels, chiffrés, sourcés. Pour inspirer professeurs, conférenciers et décideurs qui veulent montrer que la transition fonctionne.</p>
+<div class="search-wrap">
+  <span class="search-icon">⌕</span>
+  <input type="text" class="search-input" placeholder="Rechercher une entreprise, un secteur, un projet…" id="searchInput" oninput="applyFilters()">
+</div>
+<div class="hero-meta">
+  <span id="totalCount">📁 0 projets documentés</span>
+  <span>🔍 5 sources vérifiées</span>
+  <span>✏️ Contributif & open source</span>
+</div>
+</section>
+
+<!-- FILTERS -->
+<section class="filters">
+<div class="filter-group">
+  <div class="filter-label">Secteur</div>
+  <div class="filter-row" id="sectorFilters"></div>
+</div>
+<div class="filter-groups">
+  <div>
+    <div class="filter-label">Périmètre</div>
+    <div class="filter-row" id="scopeFilters"></div>
+  </div>
+  <div>
+    <div class="filter-label">Région</div>
+    <div class="filter-row" id="regionFilters"></div>
+  </div>
+  <div>
+    <div class="filter-label">Source</div>
+    <div class="filter-row" id="sourceFilters"></div>
+  </div>
+</div>
+<div class="results-bar">
+  <span class="results-count" id="resultsCount"></span>
+  <div class="filter-row">
+    <button class="pill active" data-sort="recent" onclick="setSort('recent')">Plus récents</button>
+    <button class="pill" data-sort="alpha" onclick="setSort('alpha')">A → Z</button>
+  </div>
+</div>
+</section>
+
+<!-- GRID -->
+<section class="grid-section">
+<div class="grid" id="projectGrid"></div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+<div class="cta-inner">
+  <div style="position:relative;max-width:480px">
+    <h2>Vous connaissez un cas inspirant ?</h2>
+    <p>Cette plateforme est collaborative. Proposez un projet, corrigez un chiffre, ajoutez une source. Tout est versionné et transparent.</p>
+  </div>
+  <button class="btn-accent" onclick="openContribute()">✏️ Contribuer</button>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-title">Nouveaux Récits d'Entreprise — Plateforme libre & open source</div>
+<div>Données issues de SBTi, CDP, Climate Action 100+, ADEME · Contributif · Hébergement gratuit</div>
+<div class="footer-sub">Projet pro bono · Aucune donnée personnelle collectée · Code source ouvert</div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="projectModal" onclick="closeModal()">
+<div class="modal" onclick="event.stopPropagation()" id="modalContent"></div>
+</div>
+
+<!-- SOURCES PANEL -->
+<div class="panel-overlay" id="sourcesPanel" onclick="closeSources()">
+<div class="panel" onclick="event.stopPropagation()">
+  <h2>Nos sources de données</h2>
+  <p>Chaque fiche est alimentée par des bases de données publiques et vérifiables.</p>
+  <div id="sourcesList"></div>
+  <button class="btn-primary btn-full" onclick="closeSources()">Fermer</button>
+</div>
+</div>
+
+<!-- CONTRIBUTE PANEL -->
+<div class="panel-overlay" id="contributePanel" onclick="closeContribute()">
+<div class="panel" onclick="event.stopPropagation()">
+  <h2>Contribuer à la plateforme</h2>
+  <p>Cette plateforme fonctionne sur un modèle collaboratif, type Wikipedia. Chaque contribution est tracée et vérifiable.</p>
+  <div>
+    <div class="contrib-option" onclick="window.open('https://github.com/VOTRE-USERNAME/nouveaux-recits/edit/main/data/projects.json','_blank')">
+      <span class="contrib-option-icon">📄</span>
+      <div><div class="contrib-option-title">Proposer un nouveau cas</div><div class="contrib-option-desc">Soumettez une fiche projet avec sources vérifiées. L'équipe valide sous 48h.</div></div>
+    </div>
+    <div class="contrib-option" onclick="window.open('https://github.com/VOTRE-USERNAME/nouveaux-recits/edit/main/data/projects.json','_blank')">
+      <span class="contrib-option-icon">✏️</span>
+      <div><div class="contrib-option-title">Modifier une fiche existante</div><div class="contrib-option-desc">Corrigez un chiffre, ajoutez une source. Chaque modification est loguée avec horodatage.</div></div>
+    </div>
+    <div class="contrib-option" onclick="window.open('https://github.com/VOTRE-USERNAME/nouveaux-recits/issues/new','_blank')">
+      <span class="contrib-option-icon">🔍</span>
+      <div><div class="contrib-option-title">Signaler une erreur</div><div class="contrib-option-desc">Un chiffre obsolète ? Une source invalide ? Signalez-le pour vérification.</div></div>
+    </div>
+  </div>
+  <div class="arch-box">
+    <div class="arch-title">🏗️ Architecture technique</div>
+    <div class="arch-text">Les fiches sont stockées en JSON sur un repo GitHub public. Les modifications se font via Pull Request — tout est versionné, tracé et réversible. Hébergement gratuit sur Netlify.</div>
+  </div>
+  <button class="btn-primary btn-full" onclick="closeContribute()">Compris</button>
+</div>
+</div>
+
+<script>
+const SOURCES_INFO = {
+  "SBTi": { url: "https://sciencebasedtargets.org/target-dashboard", desc: "10 000+ entreprises avec objectifs validés, données téléchargeables en XLS", color: "#059669" },
+  "CDP": { url: "https://data.cdp.net", desc: "Scores A-F pour des milliers d'entreprises, Open Data Portal", color: "#0284C7" },
+  "Climate Action 100+": { url: "https://climateaction100.org/whos-involved/companies", desc: "169 plus gros émetteurs mondiaux évalués", color: "#D97706" },
+  "ADEME": { url: "https://data.ademe.fr", desc: "Base Carbone®, Plans de Transition Sectoriels, Open Data", color: "#7C3AED" },
+  "Rapports RSE": { url: "#", desc: "Rapports annuels de durabilité des entreprises", color: "#6B7280" }
+};
+
+const SECTORS = ["Tous","Industrie lourde","Énergie","Transport","Agroalimentaire","Tech & Numérique","BTP & Immobilier","Finance","Mode & Textile"];
+const SCOPES = ["Tous","Scope 1 & 2","Scope 3","Net Zero"];
+const REGIONS = ["Toutes","Europe","Amérique du Nord","Asie","Afrique","Amérique latine"];
+const SOURCES_LIST = ["Toutes","SBTi","CDP","Climate Action 100+","ADEME","Rapports RSE"];
+
+let projects = [];
+let filters = { sector: "Tous", scope: "Tous", region: "Toutes", source: "Toutes" };
+let sortBy = "recent";
+
+// Load data
+fetch("data/projects.json")
+  .then(r => r.json())
+  .then(data => { projects = data; init(); })
+  .catch(() => { document.getElementById("projectGrid").innerHTML = '<div class="empty"><div class="empty-icon">⚠️</div><div>Erreur de chargement des données.</div></div>'; });
+
+function init() {
+  document.getElementById("totalCount").textContent = `📁 ${projects.length} projets documentés`;
+  buildFilters("sectorFilters", SECTORS, "sector");
+  buildFilters("scopeFilters", SCOPES, "scope");
+  buildFilters("regionFilters", REGIONS, "region");
+  buildFilters("sourceFilters", SOURCES_LIST, "source");
+  buildSources();
+  applyFilters();
+}
+
+function buildFilters(containerId, items, key) {
+  const c = document.getElementById(containerId);
+  c.innerHTML = items.map(item =>
+    `<button class="pill${filters[key] === item ? ' active' : ''}" onclick="setFilter('${key}','${item}')">${item}</button>`
+  ).join('');
+}
+
+function setFilter(key, value) {
+  filters[key] = value;
+  buildFilters(
+    key === "sector" ? "sectorFilters" : key === "scope" ? "scopeFilters" : key === "region" ? "regionFilters" : "sourceFilters",
+    key === "sector" ? SECTORS : key === "scope" ? SCOPES : key === "region" ? REGIONS : SOURCES_LIST,
+    key
+  );
+  applyFilters();
+}
+
+function setSort(s) {
+  sortBy = s;
+  document.querySelectorAll('[data-sort]').forEach(b => b.classList.toggle('active', b.dataset.sort === s));
+  applyFilters();
+}
+
+function applyFilters() {
+  const q = document.getElementById("searchInput").value.toLowerCase();
+  let filtered = projects.filter(p => {
+    const matchSearch = !q || p.company.toLowerCase().includes(q) || p.title.toLowerCase().includes(q) || p.summary.toLowerCase().includes(q) || p.sector.toLowerCase().includes(q) || p.country.toLowerCase().includes(q);
+    return matchSearch
+      && (filters.sector === "Tous" || p.sector === filters.sector)
+      && (filters.scope === "Tous" || p.scope === filters.scope)
+      && (filters.region === "Toutes" || p.region === filters.region)
+      && (filters.source === "Toutes" || p.source === filters.source);
+  });
+  filtered.sort((a, b) => sortBy === "recent" ? b.year - a.year : a.company.localeCompare(b.company));
+  document.getElementById("resultsCount").textContent = `${filtered.length} projet${filtered.length > 1 ? 's' : ''} trouvé${filtered.length > 1 ? 's' : ''}`;
+  renderGrid(filtered);
+}
+
+function renderGrid(items) {
+  const grid = document.getElementById("projectGrid");
+  if (!items.length) {
+    grid.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div><div style="font-size:1rem;font-family:var(--serif)">Aucun projet ne correspond à ces critères.</div><div style="font-size:.85rem;margin-top:8px">Essayez d\'élargir vos filtres.</div></div>';
+    return;
+  }
+  grid.innerHTML = items.map(p => `
+    <article class="card" onclick="openModal(${p.id})">
+      <div class="card-header">
+        <span class="card-logo">${p.logo}</span>
+        <div style="flex:1">
+          <div class="card-company">${p.company}</div>
+          <div class="card-meta">${p.countryFlag} ${p.country} · ${p.sector}</div>
+        </div>
+        ${p.verified ? '<span class="card-verified">✓ Vérifié</span>' : ''}
+      </div>
+      <div class="card-body">
+        <h3>${p.title}</h3>
+        <p>${p.summary}</p>
+        <div class="stats-row">
+          ${p.stats.map(s => `<div class="stat" style="background:${s.color}08;border:1px solid ${s.color}15"><div class="stat-value" style="color:${s.color}">${s.value}</div><div class="stat-label">${s.label}</div></div>`).join('')}
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="card-source"><span class="source-dot" style="background:${(SOURCES_INFO[p.source]||{}).color||'#6B7280'}"></span>${p.source}</span>
+        <span class="card-date">MàJ ${p.lastUpdated}</span>
+      </div>
+    </article>
+  `).join('');
+}
+
+function openModal(id) {
+  const p = projects.find(x => x.id === id);
+  if (!p) return;
+  document.getElementById("modalContent").innerHTML = `
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-company-row">
+        <span class="modal-logo">${p.logo}</span>
+        <div>
+          <div class="modal-company-name">${p.company}</div>
+          <div class="modal-company-meta">${p.countryFlag} ${p.country} · ${p.sector}</div>
+        </div>
+      </div>
+      <div class="modal-title">${p.title}</div>
+    </div>
+    <div class="modal-content">
+      <div class="modal-stats">
+        ${p.stats.map(s => `<div class="modal-stat" style="background:${s.color}08;border:1.5px solid ${s.color}20"><div class="modal-stat-value" style="color:${s.color}">${s.value}</div><div class="modal-stat-label">${s.label}</div></div>`).join('')}
+      </div>
+      <p class="modal-summary">${p.summary}</p>
+      <div style="margin-bottom:24px">
+        <div class="modal-section-title">Actions clés</div>
+        ${p.actions.map((a, i) => `<div class="action-item"><span class="action-num">${String(i+1).padStart(2,'0')}</span>${a}</div>`).join('')}
+      </div>
+      <div class="modal-meta-grid">
+        <div class="meta-card"><div class="meta-label">🎯 Objectif</div><div class="meta-value">${p.target}</div></div>
+        <div class="meta-card"><div class="meta-label">⚙️ Difficulté</div><div class="meta-value">${p.difficulty}</div></div>
+        <div class="meta-card"><div class="meta-label">💰 Impact économique</div><div class="meta-value">${p.roi}</div></div>
+        <div class="meta-card"><div class="meta-label">📎 Source</div><div class="meta-value">${p.source}</div></div>
+      </div>
+      <div class="contrib-box">
+        <div class="contrib-title">📝 Historique des contributions</div>
+        <div class="contrib-text">Contributeurs : ${p.contributors.join(', ')} · Dernière mise à jour : ${p.lastUpdated}</div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-primary">📥 Télécharger la fiche</button>
+        <button class="btn-secondary" onclick="openContribute();closeModal()">✏️ Proposer une modification</button>
+        <button class="btn-ghost" onclick="navigator.share?.({title:p.company,url:location.href}).catch(()=>{})">🔗 Partager</button>
+      </div>
+    </div>
+  `;
+  document.getElementById("projectModal").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  document.getElementById("projectModal").classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+function buildSources() {
+  document.getElementById("sourcesList").innerHTML = Object.entries(SOURCES_INFO).map(([name, info]) => `
+    <div class="source-card" style="border:1.5px solid ${info.color}25;background:${info.color}06">
+      <div class="source-card-header">
+        <span class="source-card-dot" style="background:${info.color}"></span>
+        <span class="source-card-name">${name}</span>
+      </div>
+      <div class="source-card-desc">${info.desc}</div>
+      <a href="${info.url}" target="_blank" rel="noopener" class="source-card-link" style="color:${info.color}">Accéder à la source →</a>
+    </div>
+  `).join('');
+}
+
+function openSources() { document.getElementById("sourcesPanel").classList.add("open"); document.body.style.overflow="hidden"; }
+function closeSources() { document.getElementById("sourcesPanel").classList.remove("open"); document.body.style.overflow=""; }
+function openContribute() { document.getElementById("contributePanel").classList.add("open"); document.body.style.overflow="hidden"; }
+function closeContribute() { document.getElementById("contributePanel").classList.remove("open"); document.body.style.overflow=""; }
+
+document.addEventListener("keydown", e => { if (e.key === "Escape") { closeModal(); closeSources(); closeContribute(); }});
+</script>
+</body>
+</html>

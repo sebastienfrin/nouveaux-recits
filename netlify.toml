@@ -1,0 +1,15 @@
+# No build needed - pure static site
+[build]
+  publish = "."
+
+# Redirect www to root
+[[redirects]]
+  from = "https://www.nouveaux-recits.eu/*"
+  to = "https://nouveaux-recits.eu/:splat"
+  status = 301
+
+# Cache static assets
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
