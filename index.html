@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nouveaux Récits d'Entreprise — Trajectoires de décarbonation qui fonctionnent</title>
-<meta name="description" content="Base de données ouverte des entreprises qui réussissent leur décarbonation. Cas réels, chiffrés, sourcés pour professeurs et conférenciers.">
+<title>Nouveaux Récits d'Entreprise — Changer ? Certains l'ont déjà fait.</title>
+<meta name="description" content="Changer ? Certains l'ont déjà fait. Base de données ouverte des entreprises qui réussissent leur décarbonation. Cas réels, chiffrés, sourcés.">
 <meta name="theme-color" content="#0F2921">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -188,8 +188,8 @@ position:sticky;top:0;z-index:100;box-shadow:0 4px 30px rgba(0,0,0,.2)}
 <!-- HERO -->
 <section class="hero">
 <div class="hero-label">Base de données ouverte & collaborative</div>
-<h1>Les entreprises qui réussissent leur décarbonation</h1>
-<p>Cas réels, chiffrés, sourcés. Pour inspirer professeurs, conférenciers et décideurs qui veulent montrer que la transition fonctionne.</p>
+<h1>Changer ? Certains l'ont déjà fait.</h1>
+<p>Des entreprises ont engagé leur décarbonation — et ça marche. Cas réels, chiffrés, sourcés. Pour professeurs, conférenciers et décideurs.</p>
 <div class="search-wrap">
   <span class="search-icon">⌕</span>
   <input type="text" class="search-input" placeholder="Rechercher une entreprise, un secteur, un projet…" id="searchInput" oninput="applyFilters()">
@@ -274,15 +274,15 @@ position:sticky;top:0;z-index:100;box-shadow:0 4px 30px rgba(0,0,0,.2)}
   <h2>Contribuer à la plateforme</h2>
   <p>Cette plateforme fonctionne sur un modèle collaboratif, type Wikipedia. Chaque contribution est tracée et vérifiable.</p>
   <div>
-    <div class="contrib-option" onclick="window.open('https://github.com/VOTRE-USERNAME/nouveaux-recits/edit/main/data/projects.json','_blank')">
+    <div class="contrib-option" onclick="window.open('https://github.com/sebastienfrin/nouveaux-recits/edit/main/data/projects.json','_blank')">
       <span class="contrib-option-icon">📄</span>
       <div><div class="contrib-option-title">Proposer un nouveau cas</div><div class="contrib-option-desc">Soumettez une fiche projet avec sources vérifiées. L'équipe valide sous 48h.</div></div>
     </div>
-    <div class="contrib-option" onclick="window.open('https://github.com/VOTRE-USERNAME/nouveaux-recits/edit/main/data/projects.json','_blank')">
+    <div class="contrib-option" onclick="window.open('https://github.com/sebastienfrin/nouveaux-recits/edit/main/data/projects.json','_blank')">
       <span class="contrib-option-icon">✏️</span>
       <div><div class="contrib-option-title">Modifier une fiche existante</div><div class="contrib-option-desc">Corrigez un chiffre, ajoutez une source. Chaque modification est loguée avec horodatage.</div></div>
     </div>
-    <div class="contrib-option" onclick="window.open('https://github.com/VOTRE-USERNAME/nouveaux-recits/issues/new','_blank')">
+    <div class="contrib-option" onclick="window.open('https://github.com/sebastienfrin/nouveaux-recits/issues/new','_blank')">
       <span class="contrib-option-icon">🔍</span>
       <div><div class="contrib-option-title">Signaler une erreur</div><div class="contrib-option-desc">Un chiffre obsolète ? Une source invalide ? Signalez-le pour vérification.</div></div>
     </div>
@@ -304,14 +304,18 @@ const SOURCES_INFO = {
   "Rapports RSE": { url: "#", desc: "Rapports annuels de durabilité des entreprises", color: "#6B7280" }
 };
 
-const SECTORS = ["Tous","Industrie lourde","Énergie","Transport","Agroalimentaire","Tech & Numérique","BTP & Immobilier","Finance","Mode & Textile"];
+let SECTORS = ["Tous"];
 const SCOPES = ["Tous","Scope 1 & 2","Scope 3","Net Zero"];
-const REGIONS = ["Toutes","Europe","Amérique du Nord","Asie","Afrique","Amérique latine"];
+let REGIONS = ["Toutes"];
 const SOURCES_LIST = ["Toutes","SBTi","CDP","Climate Action 100+","ADEME","Rapports RSE"];
+const SIZES = ["Toutes","TPE","PME","ETI","Grande entreprise"];
+const TYPES = ["Tous","Fiches enrichies","Données SBTi"];
 
 let projects = [];
-let filters = { sector: "Tous", scope: "Tous", region: "Toutes", source: "Toutes" };
+let filters = { sector: "Tous", scope: "Tous", region: "Toutes", source: "Toutes", size: "Toutes", type: "Tous" };
 let sortBy = "recent";
+let currentPage = 1;
+const PAGE_SIZE = 24;
 
 // Load data
 fetch("data/projects.json")
@@ -320,6 +324,12 @@ fetch("data/projects.json")
   .catch(() => { document.getElementById("projectGrid").innerHTML = '<div class="empty"><div class="empty-icon">⚠️</div><div>Erreur de chargement des données.</div></div>'; });
 
 function init() {
+  // Build dynamic sector & region lists from data
+  const sectors = new Set(projects.map(p => p.sector).filter(Boolean));
+  SECTORS = ["Tous", ...Array.from(sectors).sort()];
+  const regions = new Set(projects.map(p => p.region).filter(Boolean));
+  REGIONS = ["Toutes", ...Array.from(regions).sort()];
+
   document.getElementById("totalCount").textContent = `📁 ${projects.length} projets documentés`;
   buildFilters("sectorFilters", SECTORS, "sector");
   buildFilters("scopeFilters", SCOPES, "scope");
@@ -355,48 +365,75 @@ function setSort(s) {
 function applyFilters() {
   const q = document.getElementById("searchInput").value.toLowerCase();
   let filtered = projects.filter(p => {
-    const matchSearch = !q || p.company.toLowerCase().includes(q) || p.title.toLowerCase().includes(q) || p.summary.toLowerCase().includes(q) || p.sector.toLowerCase().includes(q) || p.country.toLowerCase().includes(q);
+    const matchSearch = !q || p.company.toLowerCase().includes(q) || p.title.toLowerCase().includes(q) || (p.summary||'').toLowerCase().includes(q) || (p.sector||'').toLowerCase().includes(q) || (p.country||'').toLowerCase().includes(q);
+    const matchType = filters.type === "Tous" || (filters.type === "Fiches enrichies" ? !p.autoImport : p.autoImport);
     return matchSearch
       && (filters.sector === "Tous" || p.sector === filters.sector)
       && (filters.scope === "Tous" || p.scope === filters.scope)
       && (filters.region === "Toutes" || p.region === filters.region)
-      && (filters.source === "Toutes" || p.source === filters.source);
+      && (filters.source === "Toutes" || p.source === filters.source)
+      && matchType;
   });
-  filtered.sort((a, b) => sortBy === "recent" ? b.year - a.year : a.company.localeCompare(b.company));
-  document.getElementById("resultsCount").textContent = `${filtered.length} projet${filtered.length > 1 ? 's' : ''} trouvé${filtered.length > 1 ? 's' : ''}`;
-  renderGrid(filtered);
+  // Sort: editorial first, then by year or alpha
+  filtered.sort((a, b) => {
+    // Editorial (non-auto) entries first
+    if (!a.autoImport && b.autoImport) return -1;
+    if (a.autoImport && !b.autoImport) return 1;
+    return sortBy === "recent" ? (b.year||0) - (a.year||0) : (a.company||'').localeCompare(b.company||'');
+  });
+  const total = filtered.length;
+  const totalPages = Math.ceil(total / PAGE_SIZE);
+  if (currentPage > totalPages) currentPage = 1;
+  const paged = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+  const enriched = filtered.filter(p => !p.autoImport).length;
+  document.getElementById("resultsCount").innerHTML = `${total} projet${total > 1 ? 's' : ''} trouvé${total > 1 ? 's' : ''} <span style="opacity:.6">· dont ${enriched} fiches enrichies</span>`;
+  renderGrid(paged, total, totalPages);
 }
 
-function renderGrid(items) {
+function renderGrid(items, total, totalPages) {
   const grid = document.getElementById("projectGrid");
   if (!items.length) {
     grid.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div><div style="font-size:1rem;font-family:var(--serif)">Aucun projet ne correspond à ces critères.</div><div style="font-size:.85rem;margin-top:8px">Essayez d\'élargir vos filtres.</div></div>';
     return;
   }
-  grid.innerHTML = items.map(p => `
-    <article class="card" onclick="openModal(${p.id})">
+  let html = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px">';
+  html += items.map(p => `
+    <article class="card" onclick="openModal(${p.id})" style="${p.autoImport ? 'border-left:3px solid #d1d5db' : ''}">
       <div class="card-header">
-        <span class="card-logo">${p.logo}</span>
+        <span class="card-logo">${p.logo || '🏢'}</span>
         <div style="flex:1">
           <div class="card-company">${p.company}</div>
-          <div class="card-meta">${p.countryFlag} ${p.country} · ${p.sector}</div>
+          <div class="card-meta">${p.countryFlag || '🏳️'} ${p.country || ''} · ${p.sector || ''}</div>
         </div>
-        ${p.verified ? '<span class="card-verified">✓ Vérifié</span>' : ''}
+        ${p.autoImport
+          ? '<span style="background:#f3f4f6;color:#6b7280;font-size:.6rem;font-weight:600;padding:3px 8px;border-radius:8px">Auto SBTi</span>'
+          : (p.verified ? '<span class="card-verified">✓ Enrichie</span>' : '')
+        }
       </div>
       <div class="card-body">
         <h3>${p.title}</h3>
-        <p>${p.summary}</p>
-        <div class="stats-row">
-          ${p.stats.map(s => `<div class="stat" style="background:${s.color}08;border:1px solid ${s.color}15"><div class="stat-value" style="color:${s.color}">${s.value}</div><div class="stat-label">${s.label}</div></div>`).join('')}
-        </div>
+        <p>${p.summary || ''}</p>
+        ${(p.stats && p.stats.length) ? `<div class="stats-row">${p.stats.map(s => `<div class="stat" style="background:${s.color}08;border:1px solid ${s.color}15"><div class="stat-value" style="color:${s.color}">${s.value}</div><div class="stat-label">${s.label}</div></div>`).join('')}</div>` : ''}
       </div>
       <div class="card-footer">
-        <span class="card-source"><span class="source-dot" style="background:${(SOURCES_INFO[p.source]||{}).color||'#6B7280'}"></span>${p.source}</span>
-        <span class="card-date">MàJ ${p.lastUpdated}</span>
+        <span class="card-source"><span class="source-dot" style="background:${(SOURCES_INFO[p.source]||{}).color||'#6B7280'}"></span>${p.source || ''}</span>
+        <span class="card-date">${p.size && p.size !== 'Non renseigné' ? p.size + ' · ' : ''}MàJ ${p.lastUpdated || ''}</span>
       </div>
     </article>
   `).join('');
+  html += '</div>';
+
+  // Pagination
+  if (totalPages > 1) {
+    html += '<div style="display:flex;justify-content:center;gap:8px;margin-top:24px;flex-wrap:wrap">';
+    if (currentPage > 1) html += `<button class="pill" onclick="goPage(${currentPage-1})">← Précédent</button>`;
+    html += `<span style="padding:6px 12px;font-size:.82rem;color:var(--text-3)">Page ${currentPage} / ${totalPages} (${total} résultats)</span>`;
+    if (currentPage < totalPages) html += `<button class="pill" onclick="goPage(${currentPage+1})">Suivant →</button>`;
+    html += '</div>';
+  }
+  grid.innerHTML = html;
 }
+function goPage(n) { currentPage = n; applyFilters(); window.scrollTo({top:400,behavior:'smooth'}); }
 
 function openModal(id) {
   const p = projects.find(x => x.id === id);
