@@ -131,7 +131,12 @@ def download_file(url, filename):
     filepath = os.path.join(CACHE_DIR, filename)
     print(f"  Downloading {url}...")
     try:
-        resp = requests.get(url, timeout=120)
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Accept": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/octet-stream,*/*",
+            "Referer": "https://sciencebasedtargets.org/target-dashboard",
+        }
+        resp = requests.get(url, timeout=120, headers=headers)
         resp.raise_for_status()
         with open(filepath, "wb") as f:
             f.write(resp.content)
@@ -288,8 +293,9 @@ def build_sbti_entry(row):
     if target_year:
         target_text += f" (horizon {target_year})"
 
+    default_alignment = "conforme a l'Accord de Paris"
     summary = f"{name} a fait valider ses objectifs de décarbonation par le SBTi, "
-    summary += f"alignés sur une trajectoire {alignment or 'conforme à l\\'Accord de Paris'}. "
+    summary += f"alignés sur une trajectoire {alignment or default_alignment}. "
     summary += f"Secteur : {sector}."
 
     entry = {
