@@ -1,0 +1,39 @@
+name: 🌱 Update data from SBTi
+
+on:
+  schedule:
+    - cron: '0 10 * * 4'
+  workflow_dispatch:
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install openpyxl requests
+
+      - name: Run build script
+        run: python scripts/build_data.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "Nouveaux Récits Bot"
+          git config user.email "bot@nouveaux-recits.eu"
+          git add data/projects.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🔄 Mise à jour automatique des données SBTi — $(date +%Y-%m-%d)"
+            git push
+          fi
