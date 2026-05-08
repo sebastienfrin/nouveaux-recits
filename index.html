@@ -62,7 +62,10 @@ button{font-family:var(--ss);cursor:pointer}input{font-family:var(--ss)}
 .cd-badge.auto{background:#f3f4f6;color:#6b7280}
 .cd-body{padding:14px 16px;flex:1}
 .cd-body h3{font-size:.85rem;font-weight:700;color:var(--g8);margin-bottom:8px;line-height:1.35;font-family:var(--sf)}
-.cd-body p{font-size:.77rem;color:var(--t2);line-height:1.55;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cd-body p{font-size:.77rem;color:var(--t2);line-height:1.55;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cd-body p.expanded{-webkit-line-clamp:unset;display:block}
+.rm-btn{font-size:.72rem;color:var(--g6);font-weight:600;background:none;border:none;padding:2px 0 10px;cursor:pointer;display:none}
+.rm-btn.vis{display:inline-block}
 .st-r{display:flex;gap:5px;flex-wrap:wrap}
 .st{text-align:center;padding:10px 6px;flex:1;min-width:70px;border-radius:12px}
 .st-v{font-size:1.2rem;font-weight:900;font-family:var(--sf);line-height:1}
@@ -298,7 +301,8 @@ function R(items,tot,tp){
       </div>
       <div class="cd-body">
         <h3>${p.title}</h3>
-        <p>${p.summary||''}</p>
+        <p id="sum-${p.id}">${p.summary||''}</p>
+        <button class="rm-btn" id="rm-${p.id}" onclick="event.stopPropagation();togRM(${p.id})">Lire plus ↓</button>
         ${stats?`<div class="st-r">${stats}</div>`:''}
       </div>
       <div class="cd-ft">
@@ -322,6 +326,7 @@ function R(items,tot,tp){
     h+='</div>';
   }
   g.innerHTML=h;
+  requestAnimationFrame(()=>checkRM());
 }
 
 function gP(n){pg=n;D();window.scrollTo({top:380,behavior:'smooth'});}
@@ -371,6 +376,26 @@ function oM(id){
 }
 
 function cM(){document.getElementById("Mo").classList.remove("open");document.body.style.overflow="";}
+
+function togRM(id){
+  let p=document.getElementById('sum-'+id);
+  let b=document.getElementById('rm-'+id);
+  if(p.classList.contains('expanded')){
+    p.classList.remove('expanded');b.textContent='Lire plus ↓';
+  }else{
+    p.classList.add('expanded');b.textContent='Réduire ↑';
+  }
+}
+
+// After rendering, detect which summaries are actually truncated and show their "Lire plus" button
+function checkRM(){
+  document.querySelectorAll('.cd-body p[id^="sum-"]').forEach(p=>{
+    let id=p.id.replace('sum-','');
+    let btn=document.getElementById('rm-'+id);
+    if(btn&&p.scrollHeight>p.clientHeight+2){btn.classList.add('vis');}
+  });
+}
+
 function openP(id){document.getElementById(id+"P").classList.add("open");document.body.style.overflow="hidden";}
 function closeP(id){document.getElementById(id+"P").classList.remove("open");document.body.style.overflow="";}
 document.addEventListener("keydown",e=>{if(e.key==="Escape"){cM();closeP('src');closeP('ctr');}});
