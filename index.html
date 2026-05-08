@@ -36,6 +36,19 @@ button{font-family:var(--ss);cursor:pointer}input{font-family:var(--ss)}
 .src-ic{position:absolute;left:18px;top:50%;transform:translateY(-50%);font-size:1.15rem;opacity:.5}
 .hero-m{margin-top:18px;display:flex;justify-content:center;gap:20px;font-size:.75rem;opacity:.5;flex-wrap:wrap}
 
+.brk{max-width:1260px;margin:0 auto;padding:20px 24px 0}
+.brk-tabs{display:flex;gap:8px;flex-wrap:wrap}
+.brk-tab{flex:1;min-width:140px;padding:14px 16px;border-radius:14px;border:2px solid var(--bd);background:#fff;cursor:pointer;text-align:left;transition:.2s;display:flex;gap:10px;align-items:flex-start}
+.brk-tab:hover{border-color:var(--g6)}
+.brk-tab.on{border-color:var(--g8);background:var(--g0)}
+.brk-em{font-size:1.3rem;flex-shrink:0}
+.brk-ti{display:block;font-size:.85rem;font-weight:800;color:var(--g8);font-family:var(--sf);line-height:1.2}
+.brk-su{display:block;font-size:.68rem;color:var(--t3);margin-top:2px;line-height:1.3}
+.disc{margin-top:12px;padding:14px 16px;border-radius:12px;background:#FFFBEB;border:1px solid #FDE68A;display:flex;gap:10px;align-items:flex-start;font-size:.78rem;color:#78716C;line-height:1.55}
+.disc-ic{font-size:1.1rem;flex-shrink:0;margin-top:1px}
+.disc strong{color:#92400E;font-weight:700}
+.disc em{font-style:normal;font-weight:600;color:#92400E}
+
 .flt{max-width:1260px;margin:0 auto;padding:20px 24px 0}
 .flt-g{margin-bottom:8px}
 .flt-l{font-size:.63rem;font-weight:800;color:var(--t3);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
@@ -59,12 +72,13 @@ button{font-family:var(--ss);cursor:pointer}input{font-family:var(--ss)}
 .cd-meta{font-size:.65rem;color:var(--t3)}
 .cd-badge{font-size:.58rem;font-weight:700;padding:2px 8px;border-radius:6px;flex-shrink:0}
 .cd-badge.enr{background:var(--g0);color:#059669}
+.cd-badge.b2{background:#FEF3C7;color:#92400E}
 .cd-badge.auto{background:#f3f4f6;color:#6b7280}
 .cd-body{padding:14px 16px;flex:1}
 .cd-body h3{font-size:.85rem;font-weight:700;color:var(--g8);margin-bottom:8px;line-height:1.35;font-family:var(--sf)}
 .cd-body p{font-size:.77rem;color:var(--t2);line-height:1.55;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .cd-body p.expanded{-webkit-line-clamp:unset;display:block}
-.rm-btn{font-size:.72rem;color:var(--g6);font-weight:600;background:none;border:none;padding:2px 0 10px;cursor:pointer;display:none}
+.rm-btn{display:none;background:none;border:none;color:var(--g6);font-size:.7rem;font-weight:600;padding:2px 0;margin-bottom:10px;cursor:pointer}
 .rm-btn.vis{display:inline-block}
 .st-r{display:flex;gap:5px;flex-wrap:wrap}
 .st{text-align:center;padding:10px 6px;flex:1;min-width:70px;border-radius:12px}
@@ -114,6 +128,7 @@ button{font-family:var(--ss);cursor:pointer}input{font-family:var(--ss)}
   .hd-in{padding:0 14px}.logo{font-size:.9rem}.nav-b .nl{display:none}
   .hero{padding:32px 14px 40px}.flt,.gr-s,.cta-s{padding-left:14px;padding-right:14px}
   .gr{grid-template-columns:1fr}.flt-gs{gap:12px}
+  .brk-tabs{flex-direction:column}.brk-tab{min-width:auto}
   .ml-bd{padding:18px}.ml-hd{padding:22px 18px}.ml-mg{grid-template-columns:1fr}
   .cta-in{padding:24px 20px}.pn-c{padding:24px 20px}
 }
@@ -135,6 +150,32 @@ button{font-family:var(--ss);cursor:pointer}input{font-family:var(--ss)}
   <p>Des entreprises ont engagé leur décarbonation — et ça marche. Cas réels, chiffrés, sourcés. Pour professeurs, conférenciers et décideurs.</p>
   <div class="src-w"><span class="src-ic">⌕</span><input type="text" class="src-i" placeholder="Rechercher une entreprise, un secteur, un pays…" id="q" oninput="D()"></div>
   <div class="hero-m"><span id="tot">📁 Chargement…</span><span>🔍 Sources vérifiées</span><span>✏️ Open source</span></div>
+</section>
+
+<section class="brk">
+  <div class="brk-tabs">
+    <button class="brk-tab on" data-b="1" onclick="sB(1)">
+      <span class="brk-em">🌱</span>
+      <span class="brk-ti">Certains l'ont déjà fait</span>
+      <span class="brk-su">Entreprises dont le modèle est la transition</span>
+    </button>
+    <button class="brk-tab" data-b="2" onclick="sB(2)">
+      <span class="brk-em">🔄</span>
+      <span class="brk-ti">Certains le font déjà</span>
+      <span class="brk-su">Grands groupes avec des actions concrètes</span>
+    </button>
+    <button class="brk-tab" data-b="0" onclick="sB(0)">
+      <span class="brk-em">📁</span>
+      <span class="brk-ti">Tout voir</span>
+      <span class="brk-su">Toutes les fiches</span>
+    </button>
+  </div>
+  <div class="disc" id="disc2" style="display:none">
+    <span class="disc-ic">⚠️</span>
+    <div>
+      <strong>Note de transparence</strong> — Ces fiches documentent des <em>actions concrètes et mesurables</em>, pas une validation globale de l'entreprise. Un grand groupe peut mener des initiatives positives tout en ayant un modèle d'ensemble encore incompatible avec les limites planétaires. Nous documentons les faits, pas les intentions.
+    </div>
+  </div>
 </section>
 
 <section class="flt">
@@ -212,7 +253,7 @@ const SI={
 
 const SCOPES=["Tous","Scope 1 & 2","Scope 3","Net Zero"];
 const SIZES=["Toutes","PME","Grande entreprise"];
-let P=[],F={sec:"Tous",sco:"Tous",reg:"Toutes",siz:"Toutes"},so="r",pg=1,PS=30;
+let P=[],F={sec:"Tous",sco:"Tous",reg:"Toutes",siz:"Toutes"},so="r",pg=1,PS=30,curB=1;
 
 // Build sources panel
 document.getElementById("srcL").innerHTML=Object.entries(SI).map(([n,i])=>
@@ -263,7 +304,8 @@ function D(){
   let q=(document.getElementById("q").value||"").toLowerCase();
   let fl=P.filter(p=>{
     let ms=!q||((p.company||'')+(p.title||'')+(p.summary||'')+(p.sector||'')+(p.country||'')).toLowerCase().includes(q);
-    return ms
+    let bm=curB===0||(!p.autoImport&&(p.brick||1)===curB)||(p.autoImport&&curB===0);
+    return ms&&bm
       &&(F.sec==="Tous"||p.sector===F.sec)
       &&(F.sco==="Tous"||p.scope===F.sco)
       &&(F.reg==="Toutes"||p.region===F.reg)
@@ -289,7 +331,7 @@ function R(items,tot,tp){
   let h='<div class="gr">';
   h+=items.map(p=>{
     let sc=(SI[p.source]||{}).c||'#6B7280';
-    let badge=p.autoImport?'<span class="cd-badge auto">SBTi</span>':'<span class="cd-badge enr">✓ Enrichie</span>';
+    let badge=p.autoImport?'<span class="cd-badge auto">SBTi</span>':(p.brick===2?'<span class="cd-badge b2">Action documentée</span>':'<span class="cd-badge enr">✓ Modèle engagé</span>');
     let stats=(p.stats||[]).map(s=>
       `<div class="st" style="background:${s.color}08;border:1px solid ${s.color}15"><div class="st-v" style="color:${s.color}">${s.value}</div><div class="st-l">${s.label}</div></div>`
     ).join('');
@@ -326,10 +368,31 @@ function R(items,tot,tp){
     h+='</div>';
   }
   g.innerHTML=h;
-  requestAnimationFrame(()=>checkRM());
+  requestAnimationFrame(checkRM);
 }
 
-function gP(n){pg=n;D();window.scrollTo({top:380,behavior:'smooth'});}
+function checkRM(){
+  document.querySelectorAll('.cd-body p[id^="sum-"]').forEach(p=>{
+    let btn=document.getElementById('rm-'+p.id.replace('sum-',''));
+    if(btn&&p.scrollHeight>p.clientHeight+2)btn.classList.add('vis');
+  });
+}
+
+function togRM(id){
+  let p=document.getElementById('sum-'+id);
+  let b=document.getElementById('rm-'+id);
+  if(!p||!b)return;
+  let exp=p.classList.toggle('expanded');
+  b.textContent=exp?'Réduire ↑':'Lire plus ↓';
+}
+
+function sB(b){curB=b;pg=1;
+  document.querySelectorAll('.brk-tab').forEach(t=>t.classList.toggle('on',parseInt(t.dataset.b)===b));
+  document.getElementById('disc2').style.display=b===2?'flex':'none';
+  D();
+}
+
+function gP(n){pg=n;D();window.scrollTo({top:480,behavior:'smooth'});}
 
 function oM(id){
   let p=P.find(x=>x.id===id);if(!p)return;
@@ -362,6 +425,10 @@ function oM(id){
         ${p.difficulty?`<div class="ml-mc"><label>⚙️ Difficulté</label><div>${p.difficulty}</div></div>`:''}
         ${p.roi?`<div class="ml-mc"><label>💰 Impact économique</label><div>${p.roi}</div></div>`:''}
       </div>
+      ${p.brick===2?`<div style="padding:14px 16px;background:#FEF3C7;border-radius:12px;border:1px solid #FDE68A;margin-bottom:16px">
+        <div style="font-size:.72rem;font-weight:700;color:#92400E;margin-bottom:4px">⚠️ Note de transparence</div>
+        <div style="font-size:.78rem;color:#78716C;line-height:1.5">Cette fiche documente des <strong style="color:#92400E">actions concrètes et mesurables</strong>, pas une validation globale de l'entreprise. Le modèle d'ensemble peut rester incompatible avec les limites planétaires.</div>
+      </div>`:''}
       <div style="padding:14px 16px;background:#FFFBEB;border-radius:12px;border:1px solid #FDE68A;margin-bottom:16px">
         <div style="font-size:.72rem;font-weight:700;color:#92400E;margin-bottom:4px">📝 Contributions</div>
         <div style="font-size:.78rem;color:#78716C">Contributeurs : ${(p.contributors||[]).join(', ')} · MàJ ${p.lastUpdated||''}</div>
@@ -376,26 +443,6 @@ function oM(id){
 }
 
 function cM(){document.getElementById("Mo").classList.remove("open");document.body.style.overflow="";}
-
-function togRM(id){
-  let p=document.getElementById('sum-'+id);
-  let b=document.getElementById('rm-'+id);
-  if(p.classList.contains('expanded')){
-    p.classList.remove('expanded');b.textContent='Lire plus ↓';
-  }else{
-    p.classList.add('expanded');b.textContent='Réduire ↑';
-  }
-}
-
-// After rendering, detect which summaries are actually truncated and show their "Lire plus" button
-function checkRM(){
-  document.querySelectorAll('.cd-body p[id^="sum-"]').forEach(p=>{
-    let id=p.id.replace('sum-','');
-    let btn=document.getElementById('rm-'+id);
-    if(btn&&p.scrollHeight>p.clientHeight+2){btn.classList.add('vis');}
-  });
-}
-
 function openP(id){document.getElementById(id+"P").classList.add("open");document.body.style.overflow="hidden";}
 function closeP(id){document.getElementById(id+"P").classList.remove("open");document.body.style.overflow="";}
 document.addEventListener("keydown",e=>{if(e.key==="Escape"){cM();closeP('src');closeP('ctr');}});
