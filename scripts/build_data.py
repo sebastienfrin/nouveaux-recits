@@ -158,9 +158,14 @@ def build_sbti_entry(row):
     summary = ""
     if target_lang and len(target_lang) > 30:
         s = re.sub(r'https?://\S+\s*', '', target_lang)
-        s = re.sub(r'This target was approved.*?(?:SMEs|enterprises)\.\s*', '', s, flags=re.DOTALL|re.I)
-        s = re.sub(r'^Near-[Tt]erm [Tt]argets?:?\s*', '', s.strip())
-        summary = (s[:800] + "...") if len(s) > 800 else s
+        # Remove all variants of SBTi boilerplate approval text
+        s = re.sub(r'This target was approved.*?(?:SMEs?|enterprises|companies)\)?\.\s*', '', s, flags=re.DOTALL|re.I)
+        # Remove "Near-term Targets:" and "Long-term Targets:" prefixes
+        s = re.sub(r'^(?:Near|Long)-[Tt]erm [Tt]argets?:?\s*', '', s.strip())
+        s = re.sub(r'(?:Near|Long)-[Tt]erm [Tt]argets?:?\s*', '\n', s)
+        # Remove trailing asterisks
+        s = re.sub(r'\*+\s*$', '', s.strip())
+        summary = s.strip()
     if not summary:
         summary = f"{name} a fait valider ses objectifs SBTi ({classification or 'Accord de Paris'}). Secteur : {sector}."
 
