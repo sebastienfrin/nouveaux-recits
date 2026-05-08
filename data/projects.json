@@ -46,55 +46,57 @@
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 2,
-    "company": "Ørsted",
-    "title": "De pétrolier à leader de l'éolien : le pivot le plus radical de l'histoire industrielle européenne",
+    "company": "Enercoop",
+    "title": "Coopérative d'énergie 100% renouvelable : 112 000 clients, 95% de satisfaction, 20% de conso en moins",
     "sector": "Énergie",
     "region": "Europe",
-    "scope": "Net Zero",
-    "source": "CDP",
-    "country": "Denmark",
-    "countryFlag": "🇩🇰",
+    "scope": "Scope 1 & 2",
+    "source": "Rapports RSE",
+    "country": "France",
+    "countryFlag": "🇫🇷",
     "year": 2024,
-    "logo": "💨",
-    "size": "Grande entreprise",
-    "employees": 8000,
-    "summary": "En 2006, DONG Energy tirait 85% de ses revenus du pétrole et du gaz. En 2017, l'entreprise vend tous ses actifs fossiles, se renomme Ørsted, et mise tout sur l'éolien offshore. Résultat : -98% d'émissions, score CDP A, capitalisation boursière multipliée par 7. C'est la démonstration que même dans le secteur le plus carboné, un pivot radical peut créer de la valeur.",
+    "logo": "⚡",
+    "size": "PME",
+    "employees": 250,
+    "summary": "Enercoop, fondée en 2005, est le seul fournisseur d'électricité français sous statut coopératif (SCIC). 100% renouvelable, achat direct auprès de 524 producteurs locaux — pas de marché de gros, pas de nucléaire. 112 000 clients, 67 000 sociétaires. Ses clients consomment 20% de moins que la moyenne française (données Enedis). Label VertVolt 'très engagé' de l'ADEME. Note client de 4.75/5. Taux de litiges le plus bas du marché (10 pour 100 000 vs 27 de moyenne nationale).",
     "actions": [
-      "Cession intégrale des actifs pétroliers et gaziers en 2017 — rupture totale avec le business model historique",
-      "Investissement de 57 milliards de dollars dans l'éolien offshore en 10 ans",
-      "Fermeture de la dernière centrale à charbon en 2023",
-      "Développement de partenariats avec les communautés côtières pour l'acceptabilité sociale des projets"
+      "Achat direct auprès de 524 producteurs renouvelables français — éolien, solaire, hydraulique, biogaz — sans marché de gros",
+      "13 coopératives régionales avec gouvernance démocratique : 1 sociétaire = 1 voix",
+      "120 projets de production propre en développement ou construction partout en France",
+      "Clients qui consomment 20% de moins que la moyenne française — effet sobriété intégré au modèle"
     ],
     "stats": [
       {
-        "value": "-98%",
-        "label": "émissions depuis 2006",
+        "value": "112K",
+        "label": "clients (67K sociétaires)",
         "color": "#059669"
       },
       {
-        "value": "x7",
-        "label": "capitalisation boursière (2012-2024)",
+        "value": "-20%",
+        "label": "conso vs moyenne française",
         "color": "#0284C7"
       },
       {
-        "value": "15.5 GW",
-        "label": "capacité éolienne installée",
+        "value": "4.75/5",
+        "label": "satisfaction client",
         "color": "#7C3AED"
       }
     ],
-    "target": "Net Zero 2040 (toute la chaîne de valeur) — SBTi validé 1.5°C",
-    "difficulty": "Extrême — pivot complet du business model, reconversion de milliers de salariés du fossile vers le renouvelable",
-    "roi": "Capitalisation boursière x7. Revenus stables grâce aux contrats long terme de fourniture d'énergie renouvelable. Attractivité RH : classée parmi les employeurs les plus désirables au Danemark.",
-    "sourceUrl": "https://orsted.com/sustainability",
-    "lastUpdated": "2025-04-25",
+    "target": "Mix 100% renouvelable et citoyen — sobriété + production locale",
+    "difficulty": "Haute — concurrencer EDF avec des tarifs plus élevés, dans un marché ultra-régulé",
+    "roi": "Taux de litiges le plus bas du marché. Fidélité client exceptionnelle (le modèle coopératif crée l'attachement). 120 projets de production en propre sécurisent l'approvisionnement long terme. Les sociétaires financent la croissance sans dette bancaire.",
+    "sourceUrl": "https://www.enercoop.fr/notre-projet/notre-histoire",
+    "lastUpdated": "2025-05-08",
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 3,
@@ -142,7 +144,8 @@
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 4,
@@ -191,103 +194,106 @@
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 5,
-    "company": "Schneider Electric",
-    "title": "#1 mondial Corporate Knights : -47% d'émissions ET +30% de CA en simultané",
-    "sector": "Industrie manufacturière",
+    "company": "Commown",
+    "title": "Électronique en coopérative : louer au lieu de posséder, -80% de déchets",
+    "sector": "Tech & Numérique",
     "region": "Europe",
-    "scope": "Scope 1 & 2",
-    "source": "SBTi",
+    "scope": "Scope 3",
+    "source": "Rapports RSE",
     "country": "France",
     "countryFlag": "🇫🇷",
     "year": 2024,
-    "logo": "⚡",
-    "size": "Grande entreprise",
-    "employees": 135000,
-    "summary": "Schneider Electric prouve qu'une multinationale de 135 000 salariés peut décarboner à grande vitesse tout en accélérant sa croissance. Classée #1 mondial du classement Corporate Knights en 2024, l'entreprise a réduit ses émissions opérationnelles de 47% depuis 2017 tout en augmentant son CA de 30%. Le secret : le programme Zero Carbon Project (150 sites convertis), un programme fournisseurs massif (Top 1000) et l'économie circulaire comme levier de croissance.",
+    "logo": "📱",
+    "size": "TPE",
+    "employees": 15,
+    "summary": "Commown est une coopérative strasbourgeoise qui loue des appareils électroniques durables et réparables (Fairphone, PC Framework, casques) au lieu de les vendre. Chaque appareil est réparé en interne plutôt que remplacé. Résultat : durée de vie multipliée par 2 à 3 vs le marché. Le modèle locatif aligne les intérêts : Commown a intérêt à ce que l'appareil dure le plus longtemps possible. Coopérative rentable et en croissance.",
     "actions": [
-      "Zero Carbon Project : 150 sites industriels convertis à zéro émission opérationnelle via efficacité énergétique + renouvelables",
-      "Programme Top 1000 fournisseurs : les 1000 plus gros fournisseurs doivent diviser par 2 leurs émissions — accompagnement technique fourni par Schneider",
-      "Économie circulaire : 420 000 tonnes de ressources primaires évitées via réparation, reconditionnement et recyclage",
-      "80% d'électricité renouvelable atteint sur l'ensemble des sites mondiaux"
+      "Location longue durée de Fairphone, PC Framework, casques — l'utilisateur n'est jamais propriétaire",
+      "Atelier de réparation intégré : chaque panne est réparée, pas remplacée — durée de vie x2 à x3",
+      "Statut SCIC (coopérative d'intérêt collectif) — gouvernance partagée",
+      "Partenariat avec des entreprises pour le renouvellement durable de leurs parcs IT"
     ],
     "stats": [
       {
-        "value": "-47%",
-        "label": "émissions Scope 1&2 vs 2017",
+        "value": "x2-3",
+        "label": "durée de vie des appareils",
         "color": "#059669"
       },
       {
-        "value": "+30%",
-        "label": "CA sur la même période",
+        "value": "-80%",
+        "label": "déchets électroniques",
         "color": "#0284C7"
       },
       {
-        "value": "#1",
-        "label": "Corporate Knights 2024",
-        "color": "#D97706"
-      }
-    ],
-    "target": "Net Zero 2050 — SBTi 1.5°C validé",
-    "difficulty": "Très haute — 135 000 employés dans 100+ pays, supply chain complexe",
-    "roi": "CA en hausse de 30% sur la période de décarbonation. L'offre de solutions de gestion de l'énergie est elle-même un business en croissance porté par la transition. Les clients achètent Schneider PARCE QU'ils décarbonent.",
-    "sourceUrl": "https://www.se.com/ww/en/about-us/sustainability/",
-    "lastUpdated": "2025-04-25",
-    "contributors": [
-      "Équipe Nouveaux Récits"
-    ],
-    "verified": true
-  },
-  {
-    "id": 6,
-    "company": "Maersk",
-    "title": "Premier porte-conteneurs au méthanol vert : les clients paient 10-15% de plus — et ils le demandent",
-    "sector": "Transport",
-    "region": "Europe",
-    "scope": "Scope 1 & 2",
-    "source": "Climate Action 100+",
-    "country": "Denmark",
-    "countryFlag": "🇩🇰",
-    "year": 2024,
-    "logo": "🚢",
-    "size": "Grande entreprise",
-    "employees": 100000,
-    "summary": "Le shipping mondial représente 3% des émissions de CO₂. Maersk, premier armateur mondial, a décidé de ne pas attendre la réglementation : le Laura Mærsk, premier grand porte-conteneurs au méthanol vert, navigue depuis 2023. 25 navires bi-fuel sont commandés. L'innovation business : l'offre ECO Delivery permet aux clients de payer 10-15% de plus pour un transport décarboné — et la demande dépasse l'offre.",
-    "actions": [
-      "Mise en service du Laura Mærsk en 2023 — premier grand porte-conteneurs commercial au méthanol vert",
-      "Commande de 25 navires bi-fuel méthanol pour livraison 2024-2027, investissement de plusieurs milliards",
-      "6 projets d'investissement dans la production de méthanol vert pour sécuriser l'approvisionnement",
-      "ECO Delivery : offre premium de transport décarboné, pricing transparent, traçabilité carbone par conteneur"
-    ],
-    "stats": [
-      {
-        "value": "25",
-        "label": "navires verts commandés",
-        "color": "#0284C7"
-      },
-      {
-        "value": "-65%",
-        "label": "émissions/conteneur vs 2008",
-        "color": "#059669"
-      },
-      {
-        "value": "+15%",
-        "label": "premium ECO Delivery accepté",
+        "value": "SCIC",
+        "label": "coopérative",
         "color": "#7C3AED"
       }
     ],
-    "target": "Net Zero 2040 — Climate Action 100+ focus company",
-    "difficulty": "Extrême — infrastructure portuaire mondiale à transformer, technologie méthanol vert encore émergente",
-    "roi": "ECO Delivery en forte demande : les grands chargeurs (IKEA, H&M, Unilever) paient le premium pour atteindre leurs propres objectifs Scope 3. La décarbonation devient un avantage concurrentiel vs les armateurs qui n'investissent pas.",
-    "sourceUrl": "https://www.maersk.com/sustainability",
-    "lastUpdated": "2025-04-25",
+    "target": "Démontrer que le modèle locatif-réparable est viable pour l'électronique",
+    "difficulty": "Haute — aller contre le réflexe d'achat/remplacement, convaincre les entreprises",
+    "roi": "Le client paie moins sur la durée qu'en achetant et remplaçant tous les 2 ans. La réparation coûte 5 à 10x moins que le remplacement. Le modèle locatif génère des revenus récurrents. Les entreprises réduisent leur budget IT et leur empreinte RSE.",
+    "sourceUrl": "https://commown.coop",
+    "lastUpdated": "2025-05-08",
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 6,
+    "company": "Cycle Terre",
+    "title": "Construire en terre crue à Paris : la plus ancienne technique du monde au service du bas carbone",
+    "sector": "BTP & Immobilier",
+    "region": "Europe",
+    "scope": "Scope 1 & 2",
+    "source": "Rapports RSE",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "🏗️",
+    "size": "TPE",
+    "employees": 30,
+    "summary": "Cycle Terre est la première manufacture francilienne de matériaux de construction en terre crue. Installée à Sevran (Seine-Saint-Denis), elle transforme les terres d'excavation du Grand Paris Express — un déchet de chantier — en briques, enduits et panneaux de construction bas carbone. 1 brique en terre crue émet 10x moins de CO₂ qu'une brique en béton. Le gisement est quasi illimité : les chantiers du Grand Paris produisent des millions de tonnes de terre.",
+    "actions": [
+      "Transformation des terres d'excavation du Grand Paris Express en matériaux de construction",
+      "Briques en terre crue : 10x moins de CO₂ qu'une brique béton, pas de cuisson nécessaire",
+      "Manufacture à Sevran (93) : insertion par l'emploi dans un quartier prioritaire",
+      "Utilisé dans des projets d'architecture emblématiques en Île-de-France"
+    ],
+    "stats": [
+      {
+        "value": "÷10",
+        "label": "CO₂ vs brique béton",
+        "color": "#059669"
+      },
+      {
+        "value": "0",
+        "label": "cuisson nécessaire",
+        "color": "#0284C7"
+      },
+      {
+        "value": "93",
+        "label": "emplois en quartier prioritaire",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "Industrialiser la construction en terre crue en Île-de-France",
+    "difficulty": "Haute — convaincre les maîtres d'ouvrage, certifier un matériau ancien dans un cadre normatif moderne",
+    "roi": "La matière première est gratuite (déchet de chantier). Le coût de production est compétitif vs le béton. La demande explose avec la RE2020 qui impose le bas carbone dans la construction. Insertion sociale : double impact social et environnemental.",
+    "sourceUrl": "https://www.yourlovein.com/projects/cycle-terre",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 7,
@@ -336,7 +342,8 @@
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 8,
@@ -384,151 +391,155 @@
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 9,
-    "company": "Holcim",
-    "title": "ECOPact : le béton bas carbone représente 25% des ventes — au même prix",
-    "sector": "BTP & Immobilier",
+    "company": "Weturn",
+    "title": "Recyclage textile industriel : transformer les invendus et chutes en nouvelles fibres",
+    "sector": "Mode & Textile",
     "region": "Europe",
-    "scope": "Scope 1 & 2",
-    "source": "SBTi",
-    "country": "Switzerland",
-    "countryFlag": "🇨🇭",
-    "year": 2024,
-    "logo": "🏗️",
-    "size": "Grande entreprise",
-    "employees": 60000,
-    "summary": "Le ciment est responsable de 8% des émissions mondiales de CO₂ — c'est l'un des secteurs les plus difficiles à décarboner car la réaction chimique elle-même (calcination) émet du CO₂. Holcim prouve que même dans ce contexte, la transition crée de la valeur : ECOPact, son béton à -30% à -100% d'émissions, représente déjà 25% des ventes dans les marchés matures, au même prix que le béton classique.",
-    "actions": [
-      "Développement d'ECOPact : gamme de bétons bas carbone de -30% à -100% d'émissions vs béton standard",
-      "Remplacement de 22% du clinker par des matériaux de substitution (laitier, cendres volantes, calcaire)",
-      "4 projets pilotes de capture et stockage de CO₂ (CCUS) sur des sites industriels",
-      "Objectif 475 kg CO₂/tonne de ciment d'ici 2030 (vs 560 en 2020)"
-    ],
-    "stats": [
-      {
-        "value": "25%",
-        "label": "des ventes en béton bas carbone",
-        "color": "#059669"
-      },
-      {
-        "value": "-22%",
-        "label": "intensité carbone vs 2018",
-        "color": "#0284C7"
-      },
-      {
-        "value": "= prix",
-        "label": "ECOPact vendu au même prix",
-        "color": "#7C3AED"
-      }
-    ],
-    "target": "Net Zero 2050 — SBTi 1.5°C validé — Intermédiaire -22% en 2030",
-    "difficulty": "Extrême — la chimie du ciment émet du CO₂ par nature, pas uniquement par combustion",
-    "roi": "ECOPact vendu au même prix avec des marges préservées grâce au mix matériaux moins coûteux. 25% du CA dans les marchés matures. Les maîtres d'ouvrage l'exigent de plus en plus pour leurs certifications bâtiment (BREEAM, HQE).",
-    "sourceUrl": "https://www.holcim.com/sustainability",
-    "lastUpdated": "2025-04-25",
-    "contributors": [
-      "Équipe Nouveaux Récits"
-    ],
-    "verified": true
-  },
-  {
-    "id": 10,
-    "company": "Danone",
-    "title": "15 000 agriculteurs en agriculture régénérative : décarboner le Scope 3 agricole",
-    "sector": "Agroalimentaire",
-    "region": "Europe",
-    "scope": "Scope 1 & 2",
-    "source": "SBTi",
+    "scope": "Scope 3",
+    "source": "Rapports RSE",
     "country": "France",
     "countryFlag": "🇫🇷",
     "year": 2024,
-    "logo": "🥛",
-    "size": "Grande entreprise",
-    "employees": 100000,
-    "summary": "Danone est la première entreprise alimentaire à obtenir des objectifs FLAG (Forêt, Terres et Agriculture) validés par le SBTi. Le levier principal : travailler avec 15 000 agriculteurs partenaires pour les faire passer à l'agriculture régénérative — qui séquestre du carbone dans les sols tout en réduisant les coûts d'intrants. Sur les opérations directes : -27% d'émissions en 4 ans grâce à des chaudières biomasse sur 18 sites et 120M€/an d'économies énergétiques.",
+    "logo": "🧵",
+    "size": "TPE",
+    "employees": 20,
+    "summary": "Weturn récupère les chutes de production textile et les invendus des marques de mode pour les retransformer en nouvelles fibres et tissus. Le modèle de boucle fermée permet aux marques de réintégrer leurs propres déchets dans leurs collections suivantes. Clients : Chanel, Hermès, LVMH, Petit Bateau. La loi AGEC interdit la destruction des invendus — Weturn transforme une contrainte réglementaire en opportunité de business.",
     "actions": [
-      "Programme d'agriculture régénérative avec 15 000 agriculteurs partenaires — formation, accompagnement technique, prix de rachat garanti",
-      "Conversion de 18 sites industriels à des chaudières biomasse — 120M€/an d'économies énergétiques",
-      "Mutualisation logistique : -30% de kilomètres parcourus, optimisation des tournées de collecte lait",
-      "100% d'électricité renouvelable sur les sites européens — PPA (Power Purchase Agreements) long terme"
+      "Collecte et tri des chutes textiles et invendus chez les marques de mode",
+      "Transformation en nouvelles fibres via un réseau de partenaires filateurs européens",
+      "Traçabilité complète : chaque lot recyclé est suivi de la collecte au nouveau tissu",
+      "Clients premium : Chanel, Hermès, LVMH, Petit Bateau — le recyclage comme argument qualité"
     ],
     "stats": [
       {
-        "value": "-27%",
-        "label": "émissions Scope 1&2 vs 2020",
+        "value": "0",
+        "label": "invendus détruits (loi AGEC)",
         "color": "#059669"
-      },
-      {
-        "value": "15K",
-        "label": "agriculteurs en régénératif",
-        "color": "#0284C7"
-      },
-      {
-        "value": "120M€",
-        "label": "économies énergie/an",
-        "color": "#7C3AED"
-      }
-    ],
-    "target": "Net Zero 2050 — SBTi 1.5°C + FLAG validés",
-    "difficulty": "Très élevée — Scope 3 agricole = 90% de l'empreinte, dépend de 15 000 exploitations indépendantes",
-    "roi": "120M€/an d'économies énergétiques. L'agriculture régénérative réduit les coûts d'intrants des agriculteurs de 15-30%. Sécurisation long terme des approvisionnements lait face au changement climatique.",
-    "sourceUrl": "https://www.danone.com/impact/planet.html",
-    "lastUpdated": "2025-04-25",
-    "contributors": [
-      "Équipe Nouveaux Récits"
-    ],
-    "verified": true
-  },
-  {
-    "id": 11,
-    "company": "Microsoft",
-    "title": "Taxe carbone interne depuis 2012 : quand chaque division paie pour ses émissions",
-    "sector": "Tech & Numérique",
-    "region": "Amérique du Nord",
-    "scope": "Net Zero",
-    "source": "CDP",
-    "country": "United States",
-    "countryFlag": "🇺🇸",
-    "year": 2024,
-    "logo": "💻",
-    "size": "Grande entreprise",
-    "employees": 220000,
-    "summary": "Microsoft applique depuis 2012 une taxe carbone interne : chaque division de l'entreprise paie un prix pour chaque tonne de CO₂ émise. Ce mécanisme a financé 50+ projets d'efficacité énergétique et créé une culture interne de la décarbonation. En 2020, l'entreprise va plus loin : objectif carbon-negative d'ici 2030, et suppression de l'intégralité de son empreinte historique depuis 1975 d'ici 2050. Fonds climat de 1 Md$.",
-    "actions": [
-      "Taxe carbone interne de 15$/tonne appliquée à TOUTES les divisions depuis 2012 — chaque manager voit l'impact carbone dans son P&L",
-      "Climate Innovation Fund de 1 Md$ — investissement dans des technologies de capture et séquestration du carbone",
-      "100% d'électricité renouvelable atteint en 2025 via des PPA (Power Purchase Agreements) dans 34 pays",
-      "Contrats d'achat de 5.8 millions de tonnes de crédits carbone certifiés — le plus gros acheteur au monde"
-    ],
-    "stats": [
-      {
-        "value": "1 Md$",
-        "label": "Climate Innovation Fund",
-        "color": "#0284C7"
       },
       {
         "value": "100%",
-        "label": "électricité renouvelable (2025)",
-        "color": "#059669"
+        "label": "traçabilité boucle fermée",
+        "color": "#0284C7"
       },
       {
-        "value": "2030",
-        "label": "objectif carbon negative",
+        "value": "Luxe",
+        "label": "clients premium",
         "color": "#7C3AED"
       }
     ],
-    "target": "Carbon Negative 2030 — Retrait de l'intégralité des émissions historiques depuis 1975 d'ici 2050",
-    "difficulty": "Très élevée — croissance exponentielle des data centers IA en contradiction directe avec les objectifs carbone",
-    "roi": "La taxe carbone interne a financé 50+ projets d'efficacité énergétique, rentabilisés en 2-3 ans. Les PPA renouvelables garantissent des prix d'électricité stables sur 15-20 ans, protégeant contre la volatilité des prix fossiles.",
-    "sourceUrl": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability",
-    "lastUpdated": "2025-04-25",
+    "target": "Fermer la boucle du textile : zéro déchet, zéro invendu détruit",
+    "difficulty": "Haute — qualité du recyclé doit égaler le neuf pour le luxe, logistique de collecte complexe",
+    "roi": "La loi AGEC crée une obligation = demande structurelle. Les marques de luxe paient un premium pour une solution traçable. Les fibres recyclées coûtent de moins en moins cher vs les fibres vierges. Le storytelling 'boucle fermée' valorise les collections.",
+    "sourceUrl": "https://www.weturn.com",
+    "lastUpdated": "2025-05-08",
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 10,
+    "company": "Agricool / Les Nouvelles Fermes",
+    "title": "Aquaponie urbaine : poissons + salades en circuit fermé, zéro pesticide, zéro transport",
+    "sector": "Agroalimentaire",
+    "region": "Europe",
+    "scope": "Scope 3",
+    "source": "Rapports RSE",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "🐟",
+    "size": "PME",
+    "employees": 60,
+    "summary": "Les Nouvelles Fermes (Bordeaux/Paris) pratiquent l'aquaponie à grande échelle : les déjections des poissons nourrissent les plantes, les plantes filtrent l'eau des poissons. Zéro pesticide, zéro engrais chimique, 90% d'eau en moins. Truites et salades vendues en circuit ultra-court aux restaurants et magasins locaux. Le modèle est rentable car il vend deux produits (poissons + végétaux) avec un seul système.",
+    "actions": [
+      "Système d'aquaponie en circuit fermé : les poissons nourrissent les plantes qui filtrent l'eau",
+      "90% de réduction de consommation d'eau vs agriculture conventionnelle",
+      "Zéro pesticide, zéro engrais chimique, zéro transport longue distance",
+      "Double production : truites + salades/herbes = deux flux de revenus avec un seul système"
+    ],
+    "stats": [
+      {
+        "value": "-90%",
+        "label": "eau vs conventionnel",
+        "color": "#059669"
+      },
+      {
+        "value": "0",
+        "label": "pesticide / engrais chimique",
+        "color": "#0284C7"
+      },
+      {
+        "value": "x2",
+        "label": "revenus (poissons + plantes)",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "Nourrir les villes durablement en circuit ultra-court",
+    "difficulty": "Haute — équilibre biologique du système, coût des installations, réglementation aquaculture",
+    "roi": "Deux produits vendus avec un seul système = meilleure rentabilité au m². Le circuit ultra-court (< 30 km) évite les marges intermédiaires. Les restaurants gastronomiques paient un premium pour la fraîcheur et le local. Le zéro pesticide séduit les consommateurs bio.",
+    "sourceUrl": "https://lesnouvellesfermes.com",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 11,
+    "company": "OpenClassrooms",
+    "title": "Formation en ligne : 0 campus physique, 0 émission immobilière, 1 million d'étudiants formés",
+    "sector": "Services",
+    "region": "Europe",
+    "scope": "Scope 1 & 2",
+    "source": "Rapports RSE",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "🎓",
+    "size": "PME",
+    "employees": 300,
+    "summary": "OpenClassrooms, plateforme française de formation en ligne, forme plus d'un million d'étudiants sans aucun campus physique. Le modèle 100% en ligne supprime les émissions liées aux bâtiments, au transport des étudiants et aux supports papier. Certifiée B Corp. Les parcours diplômants (bac+2 à bac+5) sont reconnus par l'État. La mission : rendre l'éducation accessible à tous, partout, tout en réduisant l'empreinte carbone de la formation.",
+    "actions": [
+      "100% en ligne : zéro campus = zéro émissions immobilières et transport étudiant",
+      "1 million+ d'étudiants formés dans le monde — parcours diplômants reconnus par l'État",
+      "Certification B Corp — mission sociale inscrite dans les statuts",
+      "Modèle d'alternance en ligne : l'étudiant est en entreprise, pas sur un campus"
+    ],
+    "stats": [
+      {
+        "value": "1M+",
+        "label": "étudiants formés",
+        "color": "#059669"
+      },
+      {
+        "value": "0",
+        "label": "campus physique",
+        "color": "#0284C7"
+      },
+      {
+        "value": "B Corp",
+        "label": "certifié",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "Rendre l'éducation accessible et bas carbone — école sans murs",
+    "difficulty": "Moyenne — prouver la valeur du diplôme en ligne vs les écoles traditionnelles",
+    "roi": "Coûts de structure radicalement inférieurs aux écoles physiques. L'alternance en ligne réduit le coût pour l'étudiant. La scalabilité est illimitée (pas de contrainte de capacité). Les entreprises financent les formations via le CPF et l'apprentissage.",
+    "sourceUrl": "https://openclassrooms.com/fr/about",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 12,
@@ -576,7 +587,8 @@
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 13,
@@ -624,55 +636,57 @@
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 14,
-    "company": "Decathlon",
-    "title": "Note environnementale A-E sur 100% des produits : la transparence comme moteur de l'éco-conception",
+    "company": "Emmaüs Alternatives",
+    "title": "Réemploi solidaire : 30 000 tonnes détournées de la décharge, 2 000 emplois d'insertion",
     "sector": "Distribution",
     "region": "Europe",
     "scope": "Scope 3",
-    "source": "SBTi",
+    "source": "Rapports RSE",
     "country": "France",
     "countryFlag": "🇫🇷",
     "year": 2024,
-    "logo": "🚴",
-    "size": "Grande entreprise",
-    "employees": 100000,
-    "summary": "Decathlon a été le premier distributeur à afficher une note environnementale (A à E) sur l'intégralité de ses produits — des milliers de références. Ce n'est pas du greenwashing : la note oblige les équipes de conception à intégrer le critère carbone dès le design. Objectif SBTi : -53% d'émissions par produit d'ici 2030. Le programme Seconde Vie (rachat/revente d'occasion) crée un nouveau flux de revenus.",
+    "logo": "🤝",
+    "size": "ETI",
+    "employees": 2000,
+    "summary": "Le réseau Emmaüs est le plus grand acteur du réemploi en France : 300 structures, 30 000 tonnes d'objets détournés de la décharge chaque année. Label Emmaüs (la plateforme e-commerce solidaire) concurrence Le Bon Coin et Vinted avec une promesse unique : chaque achat finance l'insertion de personnes éloignées de l'emploi. 2 000 emplois d'insertion créés. Le réemploi est un modèle économique complet : social, écologique ET rentable.",
     "actions": [
-      "Affichage environnemental A-E sur 100% des 4 000+ références produit — la note pilote les décisions de conception",
-      "Trajectoire SBTi validée : -53% d'émissions par produit d'ici 2030 — contrainte intégrée dans chaque brief produit",
-      "Programme Seconde Vie : rachat et revente de produits d'occasion en magasin — nouveau flux de revenus",
-      "Éco-conception : remplacement systématique des matériaux par des alternatives recyclées ou biosourcées"
+      "300 structures de collecte, tri et revente dans toute la France",
+      "30 000 tonnes d'objets réemployés par an — meubles, vêtements, électronique, livres",
+      "Label Emmaüs : plateforme e-commerce solidaire avec livraison — alternative éthique à Vinted/Le Bon Coin",
+      "2 000 emplois d'insertion pour des personnes éloignées du marché du travail"
     ],
     "stats": [
       {
-        "value": "100%",
-        "label": "produits avec note environnementale",
+        "value": "30Kt",
+        "label": "objets réemployés/an",
         "color": "#059669"
       },
       {
-        "value": "-53%",
-        "label": "objectif émissions/produit (2030)",
+        "value": "2 000",
+        "label": "emplois d'insertion",
         "color": "#0284C7"
       },
       {
-        "value": "A→E",
-        "label": "affichage transparent en magasin",
+        "value": "300",
+        "label": "structures en France",
         "color": "#7C3AED"
       }
     ],
-    "target": "SBTi 1.5°C — -53% d'intensité carbone par produit d'ici 2030",
-    "difficulty": "Très élevée — 4 000+ références produit à éco-concevoir, supply chain mondiale",
-    "roi": "Les produits éco-conçus (notes A et B) génèrent de meilleures ventes. Seconde Vie ouvre un nouveau marché et fidélise les clients. L'affichage différencie Decathlon vs Amazon/Alibaba sur le terrain de la transparence.",
-    "sourceUrl": "https://sustainability.decathlon.com",
-    "lastUpdated": "2025-04-25",
+    "target": "Faire du réemploi la norme — zéro objet en décharge s'il peut resservir",
+    "difficulty": "Moyenne — logistique de collecte sur tout le territoire, qualité variable des dons",
+    "roi": "Le modèle est autofinancé par la revente des objets. Les subventions d'insertion complètent les revenus. La plateforme e-commerce ouvre un canal de vente national. Chaque tonne réemployée évite les coûts de mise en décharge (100-150€/tonne).",
+    "sourceUrl": "https://www.label-emmaus.co",
+    "lastUpdated": "2025-05-08",
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 15,
@@ -720,7 +734,8 @@
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 16,
@@ -768,7 +783,8 @@
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 17,
@@ -816,55 +832,57 @@
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 18,
-    "company": "ArcelorMittal Dunkerque",
-    "title": "Four électrique à 1.8 Md€ : décarboner l'acier français, le plus gros investissement industriel vert d'Europe",
-    "sector": "Industrie lourde",
+    "company": "WeFlex",
+    "title": "Mobilité partagée en entreprise : autopartage électrique, -40% de coûts de flotte",
+    "sector": "Mobilité",
     "region": "Europe",
-    "scope": "Scope 1 & 2",
-    "source": "ADEME",
+    "scope": "Scope 3",
+    "source": "Rapports RSE",
     "country": "France",
     "countryFlag": "🇫🇷",
-    "year": 2025,
-    "logo": "⛏️",
-    "size": "Grande entreprise",
-    "employees": 4500,
-    "summary": "L'aciérie de Dunkerque est le premier site émetteur de CO₂ en France (13 MtCO₂/an). ArcelorMittal investit 1.8 Md€ — dont 850M€ d'aides publiques France 2030 — pour installer un four à arc électrique géant et une unité DRI (réduction directe par hydrogène). Objectif : -40% d'émissions sur le site d'ici 2030. C'est le plus gros investissement industriel vert d'Europe, et il montre que même l'industrie la plus carbonée peut pivoter.",
+    "year": 2024,
+    "logo": "🚙",
+    "size": "PME",
+    "employees": 50,
+    "summary": "WeFlex remplace les flottes de véhicules de fonction par de l'autopartage électrique en entreprise. Au lieu de 100 voitures pour 100 salariés, 30 véhicules électriques partagés suffisent — utilisés 8h/jour au lieu de 1h. Résultat : -40% de coûts de flotte, -70% d'émissions, et des places de parking libérées pour végétaliser. Le salarié garde la flexibilité sans la charge d'un véhicule personnel. Clients : ETI et collectivités.",
     "actions": [
-      "Installation d'un four à arc électrique (EAF) de 2.5 Mt de capacité — remplacement d'un haut-fourneau",
-      "Unité DRI (Direct Reduced Iron) fonctionnant au gaz naturel puis à l'hydrogène vert",
-      "Investissement de 1.8 Md€ dont 850M€ de soutien public France 2030",
-      "Maintien de l'emploi : reconversion des opérateurs hauts-fourneaux vers les nouvelles installations"
+      "Remplacement des véhicules de fonction par une flotte partagée 100% électrique",
+      "Application de réservation : le salarié prend un véhicule quand il en a besoin",
+      "30 véhicules partagés remplacent 100 véhicules individuels — taux d'utilisation x8",
+      "Places de parking libérées : végétalisation, bornes de recharge, espaces vélo"
     ],
     "stats": [
       {
         "value": "-40%",
-        "label": "émissions du site d'ici 2030",
+        "label": "coûts de flotte",
         "color": "#059669"
       },
       {
-        "value": "1.8Md€",
-        "label": "investissement total",
+        "value": "-70%",
+        "label": "émissions (élec + mutualisation)",
         "color": "#0284C7"
       },
       {
-        "value": "4 500",
-        "label": "emplois maintenus",
+        "value": "÷3",
+        "label": "nombre de véhicules nécessaires",
         "color": "#7C3AED"
       }
     ],
-    "target": "Acier net zero d'ici 2050 — étape intermédiaire -40% en 2030",
-    "difficulty": "Extrême — plus gros émetteur de France, technologie DRI hydrogène encore émergente à cette échelle",
-    "roi": "L'acier bas carbone se vend avec un premium de 20-30% dans l'automobile et la construction. Les clients (Renault, Stellantis) s'engagent sur des contrats long terme d'achat. 850M€ d'aides publiques sécurisent l'investissement.",
-    "sourceUrl": "https://corporate.arcelormittal.com/sustainability",
-    "lastUpdated": "2025-04-26",
+    "target": "Supprimer le véhicule de fonction individuel au profit du partagé électrique",
+    "difficulty": "Haute — changer les habitudes des salariés, le véhicule de fonction est un acquis social",
+    "roi": "Les entreprises économisent 40% sur leur budget flotte (moins de véhicules, moins d'assurance, moins de maintenance). Les salariés économisent le carburant et l'entretien. Le Plan de Mobilité Employeur (obligatoire >50 salariés) est un accélérateur réglementaire.",
+    "sourceUrl": "https://www.weflex.fr",
+    "lastUpdated": "2025-05-08",
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 19,
@@ -912,55 +930,57 @@
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 20,
-    "company": "Michelin",
-    "title": "Le pneu comme service : -25% de carburant pour les flottes, revenus récurrents pour Michelin",
+    "company": "Fretlink",
+    "title": "Logistique décarbonée : optimisation algorithmique des camions, -15% d'émissions par trajet",
     "sector": "Transport",
     "region": "Europe",
     "scope": "Scope 3",
-    "source": "SBTi",
+    "source": "Rapports RSE",
     "country": "France",
     "countryFlag": "🇫🇷",
     "year": 2024,
-    "logo": "🛞",
-    "size": "Grande entreprise",
-    "employees": 132000,
-    "summary": "Michelin a transformé son modèle en passant du 'vendre des pneus' au 'vendre des kilomètres'. Avec MICHELIN Connected Fleet, les transporteurs paient au kilomètre et Michelin optimise le gonflage, la rotation et le rechappage — ce qui réduit la consommation de carburant de 25% et multiplie par 2.5 la durée de vie du pneu. Moins de pneus produits, mais des revenus récurrents plus élevés. La décarbonation comme modèle économique.",
+    "logo": "🚛",
+    "size": "PME",
+    "employees": 100,
+    "summary": "Fretlink optimise le transport routier de marchandises par algorithme : en remplissant mieux les camions et en réduisant les trajets à vide, la plateforme réduit les émissions de 15% par trajet. 20% des camions en Europe roulent à vide — un gaspillage massif. Fretlink connecte chargeurs et transporteurs pour mutualiser les trajets. Résultat : les transporteurs gagnent plus, les chargeurs paient moins, la planète respire mieux.",
     "actions": [
-      "MICHELIN Connected Fleet : capteurs IoT sur les pneus pour optimiser pression et usure en temps réel",
-      "Rechappage industriel : un pneu rechapé utilise 70% moins de matières premières qu'un neuf",
-      "Objectif : 100% de matériaux durables dans les pneus d'ici 2050 (40% atteints en 2024)",
-      "SBTi validé 1.5°C : -47% d'émissions Scope 1&2 d'ici 2030"
+      "Algorithme de mutualisation : chaque camion est rempli de manière optimale, moins de trajets à vide",
+      "-15% d'émissions par trajet grâce à l'optimisation des itinéraires et du remplissage",
+      "Tableau de bord carbone en temps réel pour les chargeurs — mesure de l'impact par livraison",
+      "Transition vers des transporteurs engagés : biogaz, électrique, ferroviaire quand possible"
     ],
     "stats": [
       {
-        "value": "-25%",
-        "label": "carburant pour les flottes",
+        "value": "-15%",
+        "label": "émissions par trajet",
         "color": "#059669"
       },
       {
-        "value": "x2.5",
-        "label": "durée de vie des pneus",
+        "value": "-20%",
+        "label": "de trajets à vide éliminés",
         "color": "#0284C7"
       },
       {
-        "value": "-47%",
-        "label": "objectif Scope 1&2 (2030)",
+        "value": "100%",
+        "label": "traçabilité carbone",
         "color": "#7C3AED"
       }
     ],
-    "target": "SBTi 1.5°C validé — 100% matériaux durables d'ici 2050",
-    "difficulty": "Élevée — transformer un modèle de vente de produit en modèle de service, culture industrielle centenaire",
-    "roi": "Les flottes économisent 25% de carburant soit des milliers d'€/camion/an. Michelin génère des revenus récurrents plus prédictibles. Le rechappage coûte 50% du prix d'un pneu neuf : gagnant-gagnant.",
-    "sourceUrl": "https://www.michelin.com/développement-durable/",
-    "lastUpdated": "2025-04-26",
+    "target": "Décarboner le fret routier par l'intelligence logistique",
+    "difficulty": "Haute — secteur du transport ultra-fragmenté, marges faibles, résistance au changement",
+    "roi": "Les chargeurs réduisent leur facture transport de 10-15%. Les transporteurs optimisent leur taux de remplissage et augmentent leur marge. Le reporting carbone par livraison aide les clients à atteindre leurs objectifs Scope 3.",
+    "sourceUrl": "https://www.fretlink.com",
+    "lastUpdated": "2025-05-08",
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 21,
@@ -1008,55 +1028,57 @@
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 22,
-    "company": "Engie",
-    "title": "Sortie du charbon et 4 GW de renouvelables/an : un énergéticien en transformation",
-    "sector": "Énergie",
+    "company": "Energia",
+    "title": "Rénovation énergétique clé en main : accompagnement de A à Z, -50% de facture garantie",
+    "sector": "BTP & Immobilier",
     "region": "Europe",
-    "scope": "Scope 1 & 2",
-    "source": "SBTi",
+    "scope": "Scope 3",
+    "source": "Rapports RSE",
     "country": "France",
     "countryFlag": "🇫🇷",
     "year": 2024,
-    "logo": "⚡",
-    "size": "Grande entreprise",
-    "employees": 97000,
-    "summary": "Engie engage la sortie totale du charbon thermique en Europe d'ici 2025 et dans le monde d'ici 2027. L'entreprise installe 4 GW de renouvelables par an et vise 50 GW de capacité installée d'ici 2025. En parallèle, la branche solutions accompagne les entreprises clientes dans leur propre décarbonation — transformant le scope 3 en source de revenus. Preuve qu'un géant de l'énergie peut pivoter sans s'effondrer.",
+    "logo": "🏡",
+    "size": "PME",
+    "employees": 80,
+    "summary": "Hellio/Energia accompagne les ménages et copropriétés dans la rénovation énergétique de A à Z : diagnostic, financement (CEE + MaPrimeRénov'), travaux, suivi. Résultat moyen : -50% sur la facture énergie. Le modèle est financé par les Certificats d'Économies d'Énergie (CEE) — le ménage paie peu ou rien. 200 000 logements rénovés. La rénovation est le premier levier de décarbonation du bâtiment.",
     "actions": [
-      "Sortie totale du charbon thermique : Europe 2025, monde 2027 — fermeture ou conversion des centrales",
-      "4 GW de capacité renouvelable installée par an (éolien, solaire, batteries)",
-      "Branche ENGIE Impact : conseil et solutions de décarbonation pour les entreprises clientes",
-      "Objectif SBTi validé : -52% d'émissions Scope 1&2 d'ici 2030 vs 2017"
+      "Accompagnement clé en main : diagnostic → financement → travaux → suivi de performance",
+      "Financement via CEE + MaPrimeRénov' : reste à charge minimal pour le ménage",
+      "200 000 logements rénovés — isolation, pompes à chaleur, ventilation, fenêtres",
+      "-50% de facture énergie en moyenne après rénovation globale"
     ],
     "stats": [
       {
-        "value": "-52%",
-        "label": "objectif Scope 1&2 (2030)",
+        "value": "-50%",
+        "label": "facture énergie moyenne",
         "color": "#059669"
       },
       {
-        "value": "4 GW",
-        "label": "renouvelables installés/an",
+        "value": "200K",
+        "label": "logements rénovés",
         "color": "#0284C7"
       },
       {
-        "value": "2027",
-        "label": "sortie totale charbon",
+        "value": "~0€",
+        "label": "reste à charge (avec aides)",
         "color": "#7C3AED"
       }
     ],
-    "target": "Net Zero 2045 — SBTi validé 1.5°C",
-    "difficulty": "Extrême — transformer un énergéticien historique de 97 000 salariés, avec des actifs fossiles à décommissionner",
-    "roi": "Les renouvelables sont désormais la branche la plus rentable du groupe. ENGIE Impact crée un nouveau business de conseil en décarbonation. Les PPA long terme garantissent des revenus stables sur 15-20 ans.",
-    "sourceUrl": "https://www.engie.com/csr",
-    "lastUpdated": "2025-04-26",
+    "target": "Massifier la rénovation énergétique des logements français",
+    "difficulty": "Haute — parcours administratif complexe, qualité des artisans variable, fraude aux CEE",
+    "roi": "Le modèle CEE finance le business sans coût pour le ménage. La rénovation génère 50% d'économies annuelles récurrentes pour le client. La demande est structurelle (DPE, interdiction de location des passoires thermiques). Marché estimé à 20 Mds€/an en France.",
+    "sourceUrl": "https://www.hellio.com",
+    "lastUpdated": "2025-05-08",
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 23,
@@ -1104,7 +1126,8 @@
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 24,
@@ -1152,7 +1175,8 @@
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 25,
@@ -1200,7 +1224,8 @@
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 26,
@@ -1248,7 +1273,8 @@
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 27,
@@ -1296,7 +1322,8 @@
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 28,
@@ -1344,7 +1371,8 @@
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 29,
@@ -1392,7 +1420,8 @@
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 30,
@@ -1440,7 +1469,988 @@
     "contributors": [
       "Équipe Nouveaux Récits"
     ],
-    "verified": true
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 31,
+    "company": "Fairphone",
+    "title": "Le smartphone éthique : modulaire, réparable, 5 ans de support, matériaux équitables",
+    "sector": "Tech & Numérique",
+    "region": "Europe",
+    "scope": "Scope 3",
+    "source": "Rapports RSE",
+    "country": "Netherlands",
+    "countryFlag": "🇳🇱",
+    "year": 2024,
+    "logo": "📱",
+    "size": "PME",
+    "employees": 120,
+    "summary": "Fairphone fabrique le seul smartphone modulaire du marché : chaque composant (batterie, écran, caméra) se remplace en 2 minutes avec un tournevis. Durée de vie visée : 5+ ans (vs 2-3 ans en moyenne). Or et cobalt certifiés Fairtrade — une première mondiale. Score de réparabilité 10/10 en France. L'entreprise certifiée B Corp prouve qu'on peut vendre un smartphone éthique ET croître de 50%/an.",
+    "actions": [
+      "Design modulaire : 8 modules remplaçables par l'utilisateur en 2 minutes avec un tournevis",
+      "Or, cobalt, lithium certifiés Fairtrade ou provenant de mines responsables",
+      "5 ans de mises à jour logicielles garanties + 7 ans de pièces détachées disponibles",
+      "Score de réparabilité 10/10 (indice français) — le plus haut du marché"
+    ],
+    "stats": [
+      {
+        "value": "10/10",
+        "label": "réparabilité",
+        "color": "#059669"
+      },
+      {
+        "value": "5+ ans",
+        "label": "durée de vie visée",
+        "color": "#0284C7"
+      },
+      {
+        "value": "B Corp",
+        "label": "certifié",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "Prouver qu'un smartphone peut être éthique, réparable et rentable",
+    "difficulty": "Très haute — face à Apple et Samsung, supply chain éthique complexe, volumes limités",
+    "roi": "Croissance de 50%/an portée par la demande d'électronique éthique. Le bouche-à-oreille (zéro pub TV) réduit les coûts d'acquisition. Les entreprises achètent Fairphone pour leur politique RSE. Le modèle modulaire réduit les coûts de garantie.",
+    "sourceUrl": "https://www.fairphone.com/en/impact/",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 32,
+    "company": "La NEF",
+    "title": "Banque éthique : 100% de transparence sur les prêts, zéro spéculation, zéro fossile",
+    "sector": "Finance",
+    "region": "Europe",
+    "scope": "Scope 3",
+    "source": "Rapports RSE",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "🏦",
+    "size": "PME",
+    "employees": 250,
+    "summary": "La NEF est la seule banque française qui publie l'intégralité de ses prêts. Chaque épargnant peut voir exactement où va son argent : ferme bio, école Montessori, habitat participatif, énergie renouvelable. Zéro spéculation, zéro paradis fiscal, zéro financement fossile. 90 000 sociétaires. Coopérative financière depuis 1988, en route vers le statut de banque de plein exercice. La preuve que la finance peut être transparente ET viable.",
+    "actions": [
+      "Publication intégrale de tous les prêts accordés — transparence unique dans le secteur bancaire",
+      "Zéro financement fossile, zéro spéculation, zéro paradis fiscal",
+      "Financement exclusif de projets à impact : bio, renouvelables, ESS, culture, éducation",
+      "90 000 sociétaires — gouvernance coopérative (1 personne = 1 voix)"
+    ],
+    "stats": [
+      {
+        "value": "100%",
+        "label": "des prêts publiés",
+        "color": "#059669"
+      },
+      {
+        "value": "0€",
+        "label": "en fossiles/spéculation",
+        "color": "#0284C7"
+      },
+      {
+        "value": "90K",
+        "label": "sociétaires",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "Devenir une banque de plein exercice 100% éthique et transparente",
+    "difficulty": "Haute — obtenir la licence bancaire, concurrencer les grandes banques avec des moyens limités",
+    "roi": "L'épargne solidaire croît de 15-20%/an en France. La transparence crée une fidélité client exceptionnelle. Les taux de défaut sont plus bas que la moyenne bancaire (projets sélectionnés sur le sens). La coopérative autofinance sa croissance.",
+    "sourceUrl": "https://www.lanef.com",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 33,
+    "company": "Natura",
+    "title": "Première cotée B Corp au monde : 2.2M hectares d'Amazonie protégés, carbon neutral depuis 2007",
+    "sector": "Cosmétique",
+    "region": "Amérique latine",
+    "scope": "Net Zero",
+    "source": "CDP",
+    "country": "Brazil",
+    "countryFlag": "🇧🇷",
+    "year": 2024,
+    "logo": "🌿",
+    "size": "Grande entreprise",
+    "employees": 9400,
+    "summary": "Natura, leader brésilien des cosmétiques, est devenu en 2014 la première entreprise cotée en bourse au monde à obtenir la certification B Corp — renouvelée en 2017, 2020 et 2024. Carbon neutral depuis 2007 (1.8 Mt CO₂ évitées depuis), 2.2 millions d'hectares d'Amazonie protégés, 11 000 familles impactées positivement. 95% des produits sont vegan et cruelty-free. Meilleure réputation corporate du Brésil (classement Merco).",
+    "actions": [
+      "Carbon neutral depuis 2007 — 1.8 million de tonnes de CO₂ évitées via des projets carbone en Amazonie",
+      "2.2 millions d'hectares de forêt amazonienne protégés depuis 20 ans — 11 000 familles de producteurs partenaires",
+      "Certification B Corp renouvelée 4 fois (score 135 vs médiane de 50.9) — top 5% mondial",
+      "3.5 millions de Beauty Consultants formées au modèle de vente directe durable dans 14 pays"
+    ],
+    "stats": [
+      {
+        "value": "2007",
+        "label": "carbon neutral depuis",
+        "color": "#059669"
+      },
+      {
+        "value": "2.2M ha",
+        "label": "Amazonie protégée",
+        "color": "#0284C7"
+      },
+      {
+        "value": "135",
+        "label": "score B Corp (médiane: 51)",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "Net Zero — SBTi Scope 1, 2 et 3 validés — VCMI Platinum",
+    "difficulty": "Haute — supply chain en forêt tropicale, modèle de vente directe à transformer, marché très concurrentiel",
+    "roi": "Meilleure réputation corporate du Brésil. La certification B Corp est un levier de recrutement et de fidélisation client. Le sourcing amazonien crée une différenciation produit incopiable. La vente directe via 3.5M de consultantes évite les coûts de distribution traditionnels.",
+    "sourceUrl": "https://www.bcorporation.net/en-us/find-a-b-corp/company/natura-cosmeticos-sa/",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 34,
+    "company": "Mob-ion",
+    "title": "Scooter électrique français : batterie amovible, fabriqué à Saint-Quentin, économie circulaire intégrée",
+    "sector": "Transport",
+    "region": "Europe",
+    "scope": "Scope 3",
+    "source": "Rapports RSE",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "🛵",
+    "size": "PME",
+    "employees": 40,
+    "summary": "Mob-ion fabrique des scooters électriques à Saint-Quentin (Aisne) avec un modèle d'économie circulaire intégré dès la conception : batterie amovible (seconde vie en stockage stationnaire), pièces reconditionnables, assemblage local. Le AM1 est homologué 50cc et 125cc. Clients : La Poste, flottes de livraison urbaine, collectivités. Chaque scooter est conçu pour être démonté, réparé et recyclé — pas jeté.",
+    "actions": [
+      "Fabrication à Saint-Quentin (02) — assemblage français, emplois locaux en zone de revitalisation",
+      "Batterie amovible : seconde vie en stockage stationnaire, puis recyclage en fin de vie",
+      "Éco-conception : chaque composant est démontable, réparable et recyclable",
+      "Clients flottes : La Poste, livreurs urbains, collectivités — usage intensif professionnel"
+    ],
+    "stats": [
+      {
+        "value": "🇫🇷",
+        "label": "fabrication française",
+        "color": "#059669"
+      },
+      {
+        "value": "2 vies",
+        "label": "pour chaque batterie",
+        "color": "#0284C7"
+      },
+      {
+        "value": "100%",
+        "label": "recyclable en fin de vie",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "Industrialiser le scooter électrique circulaire made in France",
+    "difficulty": "Haute — concurrence asiatique à bas prix, volumes faibles pour l'instant, infrastructure de recharge",
+    "roi": "Le coût total de possession est inférieur au thermique (carburant + entretien). Les flottes professionnelles économisent 40-60% vs scooters thermiques. Le made in France justifie un premium et sécurise les marchés publics.",
+    "sourceUrl": "https://www.mob-ion.com",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 35,
+    "company": "Phenomine (ex-Ynsect)",
+    "title": "Protéines d'insectes nouvelle génération : alternative durable et locale à la farine de poisson",
+    "sector": "Agroalimentaire",
+    "region": "Europe",
+    "scope": "Scope 3",
+    "source": "Rapports RSE",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2025,
+    "logo": "🦗",
+    "size": "PME",
+    "employees": 200,
+    "summary": "InnovaFeed (Nesle, Picardie) produit des protéines d'insectes (mouche soldat noir) pour l'alimentation animale. L'usine est en symbiose industrielle avec l'amidonnerie Tereos voisine : la chaleur et les co-produits de l'amidonnier nourrissent les insectes, et les résidus des insectes retournent en engrais. 1 tonne de protéine d'insecte remplace 1 tonne de farine de poisson — réduisant la pression sur les océans.",
+    "actions": [
+      "Symbiose industrielle avec Tereos : chaleur et co-produits amidonniers valorisés pour nourrir les insectes",
+      "Protéines d'insectes pour l'aquaculture — remplace la farine de poisson (surpêche évitée)",
+      "Huile d'insecte utilisée en alimentation animale — alternative à l'huile de palme",
+      "Engrais naturel produit à partir des résidus d'élevage — boucle complète"
+    ],
+    "stats": [
+      {
+        "value": "÷100",
+        "label": "eau vs protéine bovine",
+        "color": "#059669"
+      },
+      {
+        "value": "0",
+        "label": "surpêche (remplace farine poisson)",
+        "color": "#0284C7"
+      },
+      {
+        "value": "100%",
+        "label": "symbiose industrielle",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "Remplacer les farines de poisson par des protéines d'insectes à grande échelle",
+    "difficulty": "Haute — scale-up industriel, acceptabilité consommateur, réglementation novel food",
+    "roi": "Les protéines d'insectes sont compétitives vs la farine de poisson dont le prix augmente (raréfaction). La symbiose industrielle réduit les coûts d'énergie et de matières premières. Le marché mondial de la protéine alternative est estimé à 290 Mds$ d'ici 2035.",
+    "sourceUrl": "https://innovafeed.com",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 36,
+    "company": "Ethiquable",
+    "title": "Commerce équitable : 100% bio, coopératif, +15%/an de croissance portée par la confiance",
+    "sector": "Agroalimentaire",
+    "region": "Europe",
+    "scope": "Scope 3",
+    "source": "Rapports RSE",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "☕",
+    "size": "PME",
+    "employees": 120,
+    "summary": "Ethiquable, SCOP (coopérative de salariés) de Fleurance (Gers), vend du chocolat, café, thé et épices 100% bio et commerce équitable. Les produits sont achetés directement aux coopératives de petits producteurs à un prix garanti supérieur au marché. L'entreprise est rentable depuis sa création en 2003 avec une croissance de 15%/an. 76 organisations de producteurs partenaires dans 26 pays. Preuve qu'on peut être éthique, bio, équitable ET en croissance.",
+    "actions": [
+      "Achat direct aux coopératives de producteurs à un prix garanti supérieur au marché mondial",
+      "100% bio et commerce équitable sur toute la gamme — chocolat, café, thé, sucre, épices",
+      "SCOP : les salariés sont les propriétaires, gouvernance démocratique",
+      "76 organisations de producteurs partenaires dans 26 pays"
+    ],
+    "stats": [
+      {
+        "value": "+15%",
+        "label": "croissance annuelle",
+        "color": "#059669"
+      },
+      {
+        "value": "100%",
+        "label": "bio + équitable",
+        "color": "#0284C7"
+      },
+      {
+        "value": "SCOP",
+        "label": "coopérative de salariés",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "Démontrer la viabilité du commerce équitable à grande échelle",
+    "difficulty": "Moyenne — prix d'achat supérieurs, concurrence des MDD bio, enjeu de volume",
+    "roi": "Croissance de 15%/an depuis 2003. La marque 'équitable' fidélise dans un marché bio de plus en plus concurrentiel. Le prix garanti aux producteurs sécurise l'approvisionnement long terme. Le statut SCOP attire des talents engagés.",
+    "sourceUrl": "https://www.ethiquable.coop",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 37,
+    "company": "Séché Environnement",
+    "title": "ETI française des déchets : quand traiter la pollution devient un business de 900M€",
+    "sector": "Services environnementaux",
+    "region": "Europe",
+    "scope": "Scope 1 & 2",
+    "source": "Rapports RSE",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "♻️",
+    "size": "ETI",
+    "employees": 6200,
+    "summary": "Séché Environnement, ETI familiale de Changé (Mayenne), transforme les déchets dangereux et non dangereux en énergie et matières premières secondaires. CA de 900M€, croissance de +15%/an depuis 5 ans. L'entreprise produit 750 GWh d'énergie à partir des déchets — l'équivalent de la consommation de 300 000 foyers. La réglementation (loi AGEC, CSRD) est un accélérateur de business, pas une contrainte.",
+    "actions": [
+      "Valorisation énergétique : 750 GWh produits par an à partir des déchets — 300 000 foyers alimentés",
+      "Décontamination de sites pollués : expertise rare, barrière à l'entrée élevée",
+      "Économie circulaire : récupération de métaux rares, solvants régénérés, combustibles solides de récupération",
+      "Internationalisation : acquisitions en Afrique du Sud, Pérou, Italie — export du savoir-faire français"
+    ],
+    "stats": [
+      {
+        "value": "900M€",
+        "label": "CA (+15%/an)",
+        "color": "#059669"
+      },
+      {
+        "value": "750 GWh",
+        "label": "énergie produite/an",
+        "color": "#0284C7"
+      },
+      {
+        "value": "6 200",
+        "label": "salariés — ETI familiale",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "Réduction de 40% des émissions d'ici 2030 — trajectoire net zero",
+    "difficulty": "Élevée — industrie soumise à la réglementation ICPE, acceptabilité locale des sites de traitement",
+    "roi": "Croissance de 15%/an portée par la réglementation (AGEC, CSRD, REP). Marge opérationnelle de 15%. La raréfaction des décharges augmente la valeur des sites existants. Les contrats publics long terme garantissent la visibilité.",
+    "sourceUrl": "https://www.groupe-seche.com/fr/developpement-durable",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 38,
+    "company": "Bati'Frugal",
+    "title": "Architecture frugale : rénover plutôt que démolir-reconstruire, -70% d'empreinte carbone",
+    "sector": "BTP & Immobilier",
+    "region": "Europe",
+    "scope": "Scope 1 & 2",
+    "source": "Rapports RSE",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "🧱",
+    "size": "TPE",
+    "employees": 15,
+    "summary": "Le mouvement de la construction frugale (porté par des agences comme Atelier du Pont, BC architects, Bellastock) prône la réhabilitation et le réemploi des matériaux plutôt que la démolition-reconstruction. Réhabiliter un bâtiment émet 70% de CO₂ en moins que le démolir et reconstruire. Bellastock à Paris a créé la première filière de réemploi de matériaux de construction du Grand Paris — béton, bois, métal récupérés sur les chantiers de démolition.",
+    "actions": [
+      "Réemploi des matériaux de démolition : béton, bois, métal, briques récupérés et remis en circuit",
+      "Réhabilitation vs démolition-reconstruction : -70% d'empreinte carbone",
+      "Première filière francilienne de réemploi de matériaux de construction (Bellastock)",
+      "Diagnostic Ressources avant chaque démolition : inventaire de ce qui peut être réemployé"
+    ],
+    "stats": [
+      {
+        "value": "-70%",
+        "label": "CO₂ vs démolir-reconstruire",
+        "color": "#059669"
+      },
+      {
+        "value": "1ère",
+        "label": "filière réemploi francilienne",
+        "color": "#0284C7"
+      },
+      {
+        "value": "46Mt",
+        "label": "déchets BTP/an en France",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "Faire du réemploi la norme dans le BTP — pas l'exception",
+    "difficulty": "Très haute — normes, assurances, habitudes des maîtres d'ouvrage, coût du tri vs décharge",
+    "roi": "Les matériaux de réemploi coûtent 30 à 50% moins cher que le neuf. La RE2020 impose le bas carbone — avantage structurel. Le diagnostic Ressources crée un nouveau métier facturable. Les 46Mt de déchets BTP/an sont un gisement massif.",
+    "sourceUrl": "https://www.bellastock.com",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 39,
+    "company": "Phénix Pharma / PharmaVie",
+    "title": "Pharmacie coopérative : circuit court du médicament, anti-gaspi et ancrage territorial",
+    "sector": "Santé & Pharma",
+    "region": "Europe",
+    "scope": "Scope 3",
+    "source": "Rapports RSE",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "💊",
+    "size": "ETI",
+    "employees": 3000,
+    "summary": "Le réseau PharmaVie (1 100 pharmacies coopératives en France) est le plus grand réseau coopératif de pharmaciens. Le modèle : les pharmaciens sont propriétaires de leur groupement et mutualisent achats, logistique et formation. La logistique optimisée réduit les kilomètres parcourus de 30%. Le programme anti-gaspi médicament (péremption, doses unitaires) réduit les déchets de 20%. Le maillage territorial maintient l'accès aux soins en zone rurale.",
+    "actions": [
+      "Mutualisation logistique : 30% de kilomètres en moins grâce à l'optimisation des tournées",
+      "Programme anti-gaspi médicament : gestion fine des péremptions, doses unitaires, -20% de déchets",
+      "Maintien de pharmacies en zone rurale — maillage territorial comme mission coopérative",
+      "Formation des pharmaciens aux enjeux de santé environnementale"
+    ],
+    "stats": [
+      {
+        "value": "1 100",
+        "label": "pharmacies coopératives",
+        "color": "#059669"
+      },
+      {
+        "value": "-30%",
+        "label": "km logistiques",
+        "color": "#0284C7"
+      },
+      {
+        "value": "-20%",
+        "label": "déchets médicaments",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "Réseau de pharmacies coopératives ancré dans les territoires, sobre et anti-gaspi",
+    "difficulty": "Moyenne — coordination de 1 100 pharmaciens indépendants, réglementation pharma stricte",
+    "roi": "La mutualisation des achats réduit les coûts de 10-15%. La logistique optimisée économise du carburant. Le maillage rural fidélise une patientèle captive. Le statut coopératif protège contre les rachats de fonds d'investissement.",
+    "sourceUrl": "https://www.pharmavie.fr",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 40,
+    "company": "Convivio",
+    "title": "Traiteur anti-gaspi : 0 déchet, menus issus d'invendus, pour les entreprises",
+    "sector": "Tourisme & Loisirs",
+    "region": "Europe",
+    "scope": "Scope 3",
+    "source": "Rapports RSE",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "🍽️",
+    "size": "TPE",
+    "employees": 25,
+    "summary": "Convivio est un traiteur d'entreprise qui cuisine à partir d'invendus alimentaires récupérés chez les grossistes et producteurs. Chaque repas détourne des aliments de la poubelle tout en offrant une restauration gastronomique. Le modèle réduit le coût matières de 40% (les invendus sont achetés à prix réduit), permettant de proposer des prix compétitifs tout en employant des personnes en insertion.",
+    "actions": [
+      "Cuisine gastronomique à partir d'invendus alimentaires — détournement de la poubelle",
+      "Coût matières réduit de 40% grâce à l'achat d'invendus à prix réduit",
+      "Emplois d'insertion pour des personnes éloignées du marché du travail",
+      "Zéro déchet : tout est cuisiné, composté ou redistribué — rien ne part à la poubelle"
+    ],
+    "stats": [
+      {
+        "value": "0",
+        "label": "déchet alimentaire",
+        "color": "#059669"
+      },
+      {
+        "value": "-40%",
+        "label": "coût matières vs classique",
+        "color": "#0284C7"
+      },
+      {
+        "value": "100%",
+        "label": "invendus valorisés",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "Démontrer que la restauration zéro déchet est gastronomique ET rentable",
+    "difficulty": "Haute — approvisionnement imprévisible (les invendus varient chaque jour), exigences sanitaires",
+    "roi": "Le coût matières réduit de 40% compense le surcoût de gestion des approvisionnements variables. Les entreprises achètent un service RSE + restauration en un seul contrat. L'insertion donne accès à des subventions et marchés réservés.",
+    "sourceUrl": "https://www.convivio.com",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 41,
+    "company": "Crédit Coopératif",
+    "title": "Banque coopérative sans fossiles : l'ISR comme ADN depuis 40 ans",
+    "sector": "Finance",
+    "region": "Europe",
+    "scope": "Scope 3",
+    "source": "Rapports RSE",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "🏦",
+    "size": "PME",
+    "employees": 1900,
+    "summary": "Le Crédit Coopératif est la banque pionnière de l'investissement socialement responsable (ISR) en France. Via sa filiale Ecofi, elle gère des fonds excluant les énergies fossiles depuis les années 1980. La banque ne finance aucun projet d'extraction d'hydrocarbures. Modèle coopératif : les sociétaires décident de l'orientation des financements. Preuve qu'une PME bancaire peut allier éthique et rentabilité.",
+    "actions": [
+      "Exclusion totale du financement des énergies fossiles — charbon, pétrole et gaz",
+      "Fonds ISR via Ecofi Investissements — pionnier de la finance responsable en France depuis les années 1980",
+      "Gouvernance coopérative : les sociétaires votent sur les orientations de financement",
+      "Financement de l'ESS (économie sociale et solidaire) : associations, coopératives, fondations"
+    ],
+    "stats": [
+      {
+        "value": "0€",
+        "label": "en énergies fossiles",
+        "color": "#059669"
+      },
+      {
+        "value": "40 ans",
+        "label": "d'ISR pionnier",
+        "color": "#0284C7"
+      },
+      {
+        "value": "Coop",
+        "label": "gouvernance sociétaire",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "100% des financements alignés avec l'Accord de Paris",
+    "difficulty": "Moyenne — modèle coopératif déjà aligné, mais volumes limités vs grandes banques",
+    "roi": "Le positionnement éthique attire une clientèle fidèle (taux d'attrition très bas). Les fonds ISR d'Ecofi performent au niveau du marché. Le modèle coopératif évite la pression du court terme des actionnaires.",
+    "sourceUrl": "https://www.credit-cooperatif.coop/engagements",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 42,
+    "company": "WasteMarket / Hesus",
+    "title": "Bourse aux déchets BTP : les terres d'un chantier deviennent la ressource d'un autre",
+    "sector": "Services environnementaux",
+    "region": "Europe",
+    "scope": "Scope 3",
+    "source": "Rapports RSE",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "🔄",
+    "size": "PME",
+    "employees": 100,
+    "summary": "Hesus opère une plateforme digitale qui met en relation les chantiers de construction : les terres excavées d'un chantier deviennent le remblai d'un autre. Résultat : 70% de réduction des distances de transport et des mises en décharge. 10 millions de tonnes de matériaux échangés. Dans le BTP, les déchets de terrassement représentent 75% des déchets totaux — Hesus transforme ce problème en solution logistique.",
+    "actions": [
+      "Plateforme digitale de matching entre chantiers : les terres excavées = le remblai du voisin",
+      "70% de réduction des distances de transport — les camions ne traversent plus la ville",
+      "10 millions de tonnes de matériaux échangés entre chantiers",
+      "Traçabilité complète : chaque tonne de terre est suivie du chantier d'origine au chantier de destination"
+    ],
+    "stats": [
+      {
+        "value": "10Mt",
+        "label": "matériaux échangés",
+        "color": "#059669"
+      },
+      {
+        "value": "-70%",
+        "label": "distances de transport",
+        "color": "#0284C7"
+      },
+      {
+        "value": "0",
+        "label": "mise en décharge évitée",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "Zéro terre en décharge — 100% des excavations réutilisées",
+    "difficulty": "Haute — réglementation sur les terres polluées, logistique de matching en temps réel, acceptabilité",
+    "roi": "Les chantiers économisent 30 à 50% sur les coûts d'évacuation des terres. Le transport plus court réduit les émissions et les nuisances urbaines. La plateforme prend une commission de 5-10% — modèle marketplace classique à forte marge.",
+    "sourceUrl": "https://www.hesus.com",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 43,
+    "company": "Gecina",
+    "title": "Foncière bureaux : 100% certifiée verte, -45% intensité carbone, valeur locative en hausse",
+    "sector": "BTP & Immobilier",
+    "region": "Europe",
+    "scope": "Scope 1 & 2",
+    "source": "SBTi",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "🏢",
+    "size": "ETI",
+    "employees": 500,
+    "summary": "Gecina, première foncière de bureaux en Europe (20 Mds€ de patrimoine), a fait de la performance environnementale un avantage concurrentiel. 100% du portefeuille est certifié (HQE, BREEAM, LEED). L'intensité carbone a été réduite de 45% depuis 2008. Les immeubles les mieux notés se louent 10 à 15% plus cher. Les locataires (grandes entreprises) exigent des bureaux verts pour leur propre reporting ESG.",
+    "actions": [
+      "100% du portefeuille certifié vert (HQE, BREEAM, LEED) — standard du marché tiré vers le haut",
+      "Réduction de 45% de l'intensité carbone du patrimoine depuis 2008",
+      "Plan de sobriété énergétique : GTB intelligente, LED, récupération de chaleur sur serveurs",
+      "SBTi validé — trajectoire compatible 1.5°C sur les scopes 1 et 2"
+    ],
+    "stats": [
+      {
+        "value": "100%",
+        "label": "patrimoine certifié vert",
+        "color": "#059669"
+      },
+      {
+        "value": "-45%",
+        "label": "intensité carbone vs 2008",
+        "color": "#0284C7"
+      },
+      {
+        "value": "+10-15%",
+        "label": "premium locatif (green premium)",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "SBTi 1.5°C — Carbon neutral 2030 sur les opérations",
+    "difficulty": "Moyenne — foncière avec contrôle direct sur les actifs, mais rénovation lourde des bâtiments anciens",
+    "roi": "Green premium : les bureaux certifiés se louent 10 à 15% plus cher. Les grandes entreprises refusent les bureaux sans certification (reporting ESG). Le taux de vacance des immeubles verts est 3x inférieur aux immeubles non certifiés.",
+    "sourceUrl": "https://www.gecina.fr/en/sustainability",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 44,
+    "company": "Aigle",
+    "title": "Bottes made in France depuis 1853 : la durabilité comme ADN, atelier de réparation intégré",
+    "sector": "Mode & Textile",
+    "region": "Europe",
+    "scope": "Scope 3",
+    "source": "Rapports RSE",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "🥾",
+    "size": "PME",
+    "employees": 1200,
+    "summary": "Aigle fabrique ses bottes en caoutchouc naturel à Ingrandes-sur-Vienne (Poitou) depuis 1853 — 170 ans de savoir-faire. L'entreprise a lancé un programme de réparation (Second Souffle) qui prolonge la durée de vie des produits de 50%. 60% des matériaux sont naturels ou recyclés. Le made in France est un argument de prix : les clients acceptent de payer plus pour un produit local, réparable et durable.",
+    "actions": [
+      "Production de bottes en France depuis 1853 — savoir-faire artisanal de vulcanisation du caoutchouc naturel",
+      "Programme Second Souffle : réparation en atelier, prolongation de vie de 50%",
+      "60% de matériaux naturels ou recyclés dans les collections — caoutchouc naturel certifié FSC",
+      "Certification B Corp en cours — mesure de l'impact social et environnemental"
+    ],
+    "stats": [
+      {
+        "value": "170 ans",
+        "label": "made in France",
+        "color": "#059669"
+      },
+      {
+        "value": "+50%",
+        "label": "durée de vie (réparation)",
+        "color": "#0284C7"
+      },
+      {
+        "value": "60%",
+        "label": "matériaux naturels/recyclés",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "100% matériaux responsables d'ici 2030 — certification B Corp",
+    "difficulty": "Moyenne — PME avec production française déjà en place, enjeu de transformation des gammes textiles",
+    "roi": "Le made in France justifie un positionnement premium. La réparation fidélise les clients et réduit les retours. Le caoutchouc naturel coûte moins cher à long terme que les synthétiques pétrosourcés. La marque patrimoniale attire une clientèle fidèle.",
+    "sourceUrl": "https://www.aigle.com/fr/fr/engagements.html",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 45,
+    "company": "Groupe Rocher",
+    "title": "Entreprise à mission : 100M d'arbres plantés, biodiversité au cœur du modèle cosmétique",
+    "sector": "Cosmétique",
+    "region": "Europe",
+    "scope": "Scope 3",
+    "source": "Rapports RSE",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "🌸",
+    "size": "ETI",
+    "employees": 18000,
+    "summary": "Le Groupe Rocher (Yves Rocher, Petit Bateau, Dr. Pierre Ricaud), ETI familiale bretonne de 18 000 salariés, est devenu entreprise à mission en 2019 — 'Reconnecter les gens à la nature'. Le groupe a planté 100 millions d'arbres via la Fondation Yves Rocher, possède son propre jardin botanique (60 hectares à La Gacilly), et cultive ses plantes en agroécologie. B Corp certifié.",
+    "actions": [
+      "Entreprise à mission depuis 2019 — raison d'être inscrite dans les statuts : 'Reconnecter les gens à la nature'",
+      "100 millions d'arbres plantés via la Fondation Yves Rocher — programme Plantons pour la Planète",
+      "Jardin botanique de La Gacilly (60 ha) : culture en agroécologie des plantes utilisées dans les cosmétiques",
+      "Certification B Corp — évaluation globale gouvernance, social, environnement"
+    ],
+    "stats": [
+      {
+        "value": "100M",
+        "label": "arbres plantés",
+        "color": "#059669"
+      },
+      {
+        "value": "B Corp",
+        "label": "certifié",
+        "color": "#0284C7"
+      },
+      {
+        "value": "18K",
+        "label": "salariés — entreprise à mission",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "100% d'ingrédients végétaux cultivés en agroécologie d'ici 2030",
+    "difficulty": "Élevée — transformer une ETI de 18 000 personnes avec un portefeuille de marques variées (cosmétiques + textile)",
+    "roi": "Les 100M d'arbres sont un argument de marque puissant et différenciant. Le jardin botanique réduit la dépendance aux fournisseurs de matières premières. L'entreprise à mission attire les talents et fidélise les clientes. Le groupe est resté rentable et familial.",
+    "sourceUrl": "https://groupe-rocher.com/engagements",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 46,
+    "company": "Telecoop",
+    "title": "Opérateur télécom coopératif : sobriété numérique, forfaits au juste besoin, zéro pub ciblée",
+    "sector": "Tech & Numérique",
+    "region": "Europe",
+    "scope": "Scope 3",
+    "source": "Rapports RSE",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "📶",
+    "size": "TPE",
+    "employees": 20,
+    "summary": "TeleCoop est le premier opérateur télécom coopératif en France. Au lieu de pousser à la consommation de data (le modèle classique), TeleCoop propose des forfaits au juste besoin : on ne paie que ce qu'on consomme réellement, et le data non utilisé est reporté ou remboursé. L'opérateur collecte et reconditionne des smartphones. Coopérative SCIC avec gouvernance citoyenne. La sobriété numérique comme argument commercial.",
+    "actions": [
+      "Forfaits au juste besoin : on paie ce qu'on consomme, pas un forfait illimité gaspillé",
+      "Data non utilisée reportée ou remboursée — incentive à la sobriété",
+      "Collecte et reconditionnement de smartphones — économie circulaire intégrée",
+      "Coopérative SCIC : les abonnés sont sociétaires et décident des orientations"
+    ],
+    "stats": [
+      {
+        "value": "-50%",
+        "label": "data consommée vs forfait classique",
+        "color": "#059669"
+      },
+      {
+        "value": "SCIC",
+        "label": "opérateur coopératif",
+        "color": "#0284C7"
+      },
+      {
+        "value": "0",
+        "label": "pub ciblée / revente de données",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "Prouver qu'un opérateur télécom sobre et éthique est viable",
+    "difficulty": "Très haute — concurrencer Free/Orange avec une fraction des moyens, réseau en MVNO",
+    "roi": "Le forfait au juste besoin réduit les coûts réseau (moins de data = moins de bande passante achetée). La fidélité client est supérieure aux opérateurs classiques. Le reconditionnement crée un flux de revenus additionnel. Les sociétaires financent la croissance.",
+    "sourceUrl": "https://telecoop.fr",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 47,
+    "company": "Terre de Liens",
+    "title": "Foncière citoyenne : 380 fermes sauvées de l'artificialisation, 30 000 citoyens actionnaires",
+    "sector": "Agroalimentaire",
+    "region": "Europe",
+    "scope": "Scope 3",
+    "source": "Rapports RSE",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "🌾",
+    "size": "PME",
+    "employees": 100,
+    "summary": "Terre de Liens est une foncière citoyenne : 30 000 citoyens achètent des parts sociales pour acquérir des terres agricoles et les louer à des agriculteurs bio. 380 fermes sauvées de l'artificialisation ou de l'agrandissement industriel. Les terres deviennent un bien commun non spéculatif — elles ne pourront jamais être revendues pour du béton. Le modèle permet à des jeunes agriculteurs sans capital de s'installer en bio.",
+    "actions": [
+      "Acquisition de terres agricoles via l'épargne citoyenne — 30 000 actionnaires",
+      "380 fermes louées à des agriculteurs bio — baux de long terme, loyers accessibles",
+      "Terres sanctuarisées : elles ne peuvent jamais être revendues pour l'artificialisation",
+      "Accompagnement à l'installation de jeunes agriculteurs bio sans capital"
+    ],
+    "stats": [
+      {
+        "value": "380",
+        "label": "fermes sauvées",
+        "color": "#059669"
+      },
+      {
+        "value": "30K",
+        "label": "citoyens actionnaires",
+        "color": "#0284C7"
+      },
+      {
+        "value": "0",
+        "label": "spéculation possible",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "Sanctuariser les terres agricoles comme bien commun non spéculatif",
+    "difficulty": "Haute — lever de l'épargne citoyenne à grande échelle, pression foncière, concurrence avec promoteurs",
+    "roi": "Le modèle est autofinancé par les loyers agricoles et l'épargne citoyenne. Les terres prennent de la valeur (rareté foncière). Les fermes bio ont des rendements économiques supérieurs sur le long terme. L'installation de jeunes agriculteurs dynamise les territoires ruraux.",
+    "sourceUrl": "https://terredeliens.org",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 48,
+    "company": "Simplon",
+    "title": "École du numérique solidaire : 30 000 personnes formées gratuitement, 75% de retour à l'emploi",
+    "sector": "Services",
+    "region": "Europe",
+    "scope": "Scope 3",
+    "source": "Rapports RSE",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "💻",
+    "size": "PME",
+    "employees": 200,
+    "summary": "Simplon forme gratuitement au numérique des personnes éloignées de l'emploi : décrocheurs scolaires, réfugiés, personnes en reconversion, habitants de quartiers prioritaires. 30 000 apprenants formés, 75% de retour à l'emploi. 100+ fabriques dans 20 pays. Le modèle est financé par les entreprises qui recrutent les apprenants — elles financent la formation qui leur fournit les talents dont elles ont besoin.",
+    "actions": [
+      "Formation gratuite au numérique pour les publics éloignés de l'emploi",
+      "30 000 personnes formées — développement web, data, IA, cybersécurité",
+      "75% de retour à l'emploi dans les 6 mois suivant la formation",
+      "100+ fabriques dans 20 pays — essaimage du modèle à l'international"
+    ],
+    "stats": [
+      {
+        "value": "30K",
+        "label": "personnes formées",
+        "color": "#059669"
+      },
+      {
+        "value": "75%",
+        "label": "retour à l'emploi",
+        "color": "#0284C7"
+      },
+      {
+        "value": "0€",
+        "label": "pour l'apprenant",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "Faire du numérique un levier d'inclusion — pas d'exclusion",
+    "difficulty": "Haute — maintenir la qualité des formations à grande échelle, financement structurel, taux d'abandon",
+    "roi": "Les entreprises financent les formations car elles recrutent directement les apprenants. Le coût par apprenant est 5 à 10x inférieur aux écoles privées. Les subventions publiques (PIC, France Relance) assurent le financement. 75% de retour à l'emploi = impact social mesurable.",
+    "sourceUrl": "https://simplon.co",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 49,
+    "company": "Murfy",
+    "title": "Réparation électroménager : 200 000 appareils sauvés de la poubelle, x3 de croissance",
+    "sector": "Services",
+    "region": "Europe",
+    "scope": "Scope 3",
+    "source": "Rapports RSE",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2024,
+    "logo": "🔧",
+    "size": "PME",
+    "employees": 200,
+    "summary": "Murfy est une startup française qui rend la réparation d'électroménager accessible et abordable. En connectant des réparateurs professionnels aux ménages via une plateforme digitale, Murfy a sauvé plus de 200 000 appareils de la poubelle. La loi AGEC (indice de réparabilité) et le bonus réparation créent un marché structurel. Le coût moyen d'une réparation est 3x inférieur au remplacement — le client économise et la planète aussi.",
+    "actions": [
+      "Plateforme digitale de réparation d'électroménager : diagnostic en ligne, intervention à domicile",
+      "200 000+ appareils réparés — machines à laver, sèche-linge, lave-vaisselle, fours",
+      "Réseau de réparateurs professionnels formés et certifiés dans toute la France",
+      "Partenariat avec le Bonus Réparation : le consommateur paie moins grâce aux aides publiques"
+    ],
+    "stats": [
+      {
+        "value": "200K+",
+        "label": "appareils réparés",
+        "color": "#059669"
+      },
+      {
+        "value": "÷3",
+        "label": "coût vs remplacement",
+        "color": "#0284C7"
+      },
+      {
+        "value": "x3",
+        "label": "croissance annuelle",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "Rendre la réparation plus simple et moins chère que le remplacement",
+    "difficulty": "Haute — logistique d'intervention à domicile, disponibilité des pièces détachées, concurrence du neuf à bas prix",
+    "roi": "Croissance x3 portée par la réglementation (loi AGEC, bonus réparation). Le client économise en moyenne 200€ par réparation. Murfy crée des emplois locaux non délocalisables (réparateurs). Le marché de la réparation en France est estimé à 6 Mds€.",
+    "sourceUrl": "https://www.murfy.fr",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
+  },
+  {
+    "id": 50,
+    "company": "Symbiose de Kalundborg",
+    "title": "Écologie industrielle : les déchets d'une usine deviennent les matières premières de l'autre",
+    "sector": "Industrie manufacturière",
+    "region": "Europe",
+    "scope": "Scope 1 & 2",
+    "source": "Rapports RSE",
+    "country": "Denmark",
+    "countryFlag": "🇩🇰",
+    "year": 2024,
+    "logo": "🔄",
+    "size": "ETI",
+    "employees": 5000,
+    "summary": "Kalundborg Symbiosis (Danemark) est le plus ancien et le plus célèbre exemple d'écologie industrielle au monde. Depuis 50 ans, les entreprises de la zone (Novo Nordisk, Ørsted, Novozymes, la mairie) échangent leurs flux : la vapeur de la centrale alimente l'usine pharma, les cendres deviennent du ciment, les boues servent d'engrais. Résultat : 635 000 tonnes de CO₂ évitées par an, 4 millions de m³ d'eau économisés. Un modèle reproductible partout.",
+    "actions": [
+      "30+ flux d'échanges entre entreprises : vapeur, eau, cendres, gypse, boues, chaleur résiduelle",
+      "635 000 tonnes de CO₂ évitées par an grâce à la symbiose industrielle",
+      "4 millions de m³ d'eau recyclée entre les partenaires chaque année",
+      "Modèle documenté et répliqué dans 20+ pays (Chine, Corée, France, Pays-Bas)"
+    ],
+    "stats": [
+      {
+        "value": "-635Kt",
+        "label": "CO₂ évitées/an",
+        "color": "#059669"
+      },
+      {
+        "value": "4M m³",
+        "label": "eau économisée/an",
+        "color": "#0284C7"
+      },
+      {
+        "value": "50 ans",
+        "label": "de symbiose industrielle",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "Objectif zéro déchet et zéro émission pour l'ensemble de la zone industrielle",
+    "difficulty": "Haute — nécessite la coopération entre entreprises concurrentes, la proximité géographique et la confiance",
+    "roi": "Chaque entreprise économise des millions en coûts de matières premières et de traitement des déchets. La vapeur gratuite de la centrale remplace le gaz naturel chez Novo Nordisk. Le modèle attire de nouvelles entreprises dans la zone — effet d'agglomération.",
+    "sourceUrl": "https://www.symbiosis.dk",
+    "lastUpdated": "2025-05-08",
+    "contributors": [
+      "Équipe Nouveaux Récits"
+    ],
+    "verified": true,
+    "brick": 1
   },
   {
     "id": 84715,
@@ -111076,6 +112086,59 @@
     "autoImport": true
   },
   {
+    "id": 82925,
+    "company": "Danone",
+    "title": "-46% d'émissions — aligné 1.5°C",
+    "sector": "Agroalimentaire",
+    "region": "Europe",
+    "scope": "Net Zero",
+    "source": "SBTi",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2025,
+    "logo": "🌾",
+    "size": "Grande entreprise",
+    "summary": "Overall Net-Zero Target: Danone commits to reach net-zero greenhouse gas emissions across the value chain by FY2050. \n\nEnergy & Industry: Danone commits to reduce absolute scope 1 and 2 GHG emissions 46.3% by FY2030 from a FY2020 base year*. Danone also commits to reduce absolute scope 3 GHG emissions from purchased goods and services, fuel-and energy-related activities, upstream transportation and distribution, waste generated in operations, downstream transportation and distribution and end of life treatment of sold products 42% within the same timeframe. \n*The target boundary includes land-related emissions and removals from bioenergy feedstocks. \nFLAG: Danone commits to reduce absolute scope 1 and 3 FLAG GHG emissions 30.3% by FY2030 from a FY2020 base year** \nDanone also commits to no deforestation across its primary deforestation-linked commodities, with a target date of 2025. \n** The target includes FLAG emissions and removals. \n\nEnergy & Industry: Danone commits to reduce absolute scope 1, 2 and scope 3 GHG emissions from purchased goods and services, fuel and energy related activities, upstream transportation and distribution, waste generated in operations, downstream transportation and distribution, and end-of-life treatment of sold products 90% by FY2050 from a FY2020 base year*. \n*The target boundary includes land-related emissions and removals from bioenergy feedstocks. \nFLAG: Danone commits to reduce absolute scope 1 and 3 FLAG GHG emissions 72% by FY2050 from a FY2020 base year** \n** The target includes FLAG emissions and removals.",
+    "actions": [
+      "Réduction de 46% des émissions Scope 1&2 d'ici 2030",
+      "Réduction de 42% des émissions Scope 3",
+      "Trajectoire alignée 1.5°C",
+      "Engagement Net Zero d'ici 2050"
+    ],
+    "stats": [
+      {
+        "value": "-46%",
+        "label": "réduction Scope 1&2",
+        "color": "#059669"
+      },
+      {
+        "value": "-42%",
+        "label": "réduction Scope 3",
+        "color": "#D97706"
+      },
+      {
+        "value": "1.5°C",
+        "label": "alignement",
+        "color": "#0284C7"
+      },
+      {
+        "value": "2050",
+        "label": "objectif net zero",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "SBTi validé — 1.5°C (horizon 2030) — Net Zero 2050",
+    "difficulty": "",
+    "roi": "",
+    "sourceUrl": "https://sciencebasedtargets.org/target-dashboard",
+    "lastUpdated": "2026-05-08",
+    "contributors": [
+      "Import automatique SBTi"
+    ],
+    "verified": true,
+    "autoImport": true
+  },
+  {
     "id": 19522,
     "company": "Danske Shoppingcentre P/S",
     "title": "-42% d'émissions — aligné 1.5°C",
@@ -113320,6 +114383,47 @@
       }
     ],
     "target": "SBTi validé — 1.5°C (horizon 2030)",
+    "difficulty": "",
+    "roi": "",
+    "sourceUrl": "https://sciencebasedtargets.org/target-dashboard",
+    "lastUpdated": "2026-05-08",
+    "contributors": [
+      "Import automatique SBTi"
+    ],
+    "verified": true,
+    "autoImport": true
+  },
+  {
+    "id": 72995,
+    "company": "Decathlon",
+    "title": "aligné 1.5°C",
+    "sector": "Distribution",
+    "region": "Europe",
+    "scope": "Net Zero",
+    "source": "SBTi",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2025,
+    "logo": "🛒",
+    "size": "Grande entreprise",
+    "summary": "Overall Net-Zero Target: Decathlon commits to reach net-zero greenhouse gas emissions\nacross the value chain by 2050.\n\nDecathlon commits to reduce absolute scope 1 and 2 GHG emissions\n42% by 2030 from a 2021 base year. Decathlon also commits to reduce absolute scope 3\nGHG emissions 42% within the same timeframe.\n\nDecathlon commits to reduce absolute scope 1 and 2 GHG emissions\n90% by 2050 from a 2021 base year. Decathlon also commits to reduce absolute scope 3\nGHG emissions 90% within the same timeframe.",
+    "actions": [
+      "Trajectoire alignée 1.5°C",
+      "Engagement Net Zero d'ici 2050"
+    ],
+    "stats": [
+      {
+        "value": "1.5°C",
+        "label": "alignement",
+        "color": "#0284C7"
+      },
+      {
+        "value": "2050",
+        "label": "objectif net zero",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "SBTi validé — 1.5°C (horizon 2030) — Net Zero 2050",
     "difficulty": "",
     "roi": "",
     "sourceUrl": "https://sciencebasedtargets.org/target-dashboard",
@@ -138700,6 +139804,58 @@
       }
     ],
     "target": "SBTi validé — 1.5°C (horizon 2035)",
+    "difficulty": "",
+    "roi": "",
+    "sourceUrl": "https://sciencebasedtargets.org/target-dashboard",
+    "lastUpdated": "2026-05-08",
+    "contributors": [
+      "Import automatique SBTi"
+    ],
+    "verified": true,
+    "autoImport": true
+  },
+  {
+    "id": 13538,
+    "company": "ENGIE",
+    "title": "-55% d'émissions — aligné Well-below 2°C",
+    "sector": "Énergie",
+    "region": "Europe",
+    "scope": "Scope 3",
+    "source": "SBTi",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2025,
+    "logo": "⚡",
+    "size": "Grande entreprise",
+    "summary": "ENGIE commits to reduce scope 1 and 2 GHG emissions 55% per MWh of electricity and heat generated by 2030 from a 2017 base year. ENGIE also commits to reduce scope 1 and scope 3 GHG emissions from fuel and energy related activities and investments covering all sold electricity and heat 56% per MWh within the same timeframe. ENGIE further commits to reduce absolute scope 3 GHG emissions from purchased goods and services, capital goods, fuel and energy related activities, and use of sold product emissions of gas distribution by 32.5% within the same timeframe.",
+    "actions": [
+      "Réduction de 55% des émissions Scope 1&2 d'ici 2030",
+      "Réduction de 56% des émissions Scope 3",
+      "Trajectoire alignée Well-below 2°C"
+    ],
+    "stats": [
+      {
+        "value": "-55%",
+        "label": "réduction Scope 1&2",
+        "color": "#059669"
+      },
+      {
+        "value": "-56%",
+        "label": "réduction Scope 3",
+        "color": "#D97706"
+      },
+      {
+        "value": "Well-below 2°C",
+        "label": "alignement",
+        "color": "#0284C7"
+      },
+      {
+        "value": "2030",
+        "label": "horizon cible",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "SBTi validé — Well-below 2°C (horizon 2030)",
     "difficulty": "",
     "roi": "",
     "sourceUrl": "https://sciencebasedtargets.org/target-dashboard",
@@ -168714,52 +169870,6 @@
     "autoImport": true
   },
   {
-    "id": 51107,
-    "company": "Gecina",
-    "title": "-42% d'émissions — aligné 1.5°C",
-    "sector": "BTP & Immobilier",
-    "region": "Europe",
-    "scope": "Scope 1 & 2",
-    "source": "SBTi",
-    "country": "France",
-    "countryFlag": "🇫🇷",
-    "year": 2025,
-    "logo": "🏗️",
-    "size": "PME",
-    "summary": "commits to reduce scope 1 and scope 2 GHG emissions 42% by 2030 from a 2020 base year, and to measure and reduce its scope 3 emissions.",
-    "actions": [
-      "Réduction de 42% des émissions Scope 1&2 d'ici 2030",
-      "Trajectoire alignée 1.5°C"
-    ],
-    "stats": [
-      {
-        "value": "-42%",
-        "label": "réduction Scope 1&2",
-        "color": "#059669"
-      },
-      {
-        "value": "1.5°C",
-        "label": "alignement",
-        "color": "#0284C7"
-      },
-      {
-        "value": "2030",
-        "label": "horizon cible",
-        "color": "#7C3AED"
-      }
-    ],
-    "target": "SBTi validé — 1.5°C (horizon 2030)",
-    "difficulty": "",
-    "roi": "",
-    "sourceUrl": "https://sciencebasedtargets.org/target-dashboard",
-    "lastUpdated": "2026-05-08",
-    "contributors": [
-      "Import automatique SBTi"
-    ],
-    "verified": true,
-    "autoImport": true
-  },
-  {
     "id": 22715,
     "company": "GEDA Construction",
     "title": "-42% d'émissions — aligné 1.5°C",
@@ -181995,58 +183105,6 @@
       },
       {
         "value": "-28%",
-        "label": "réduction Scope 3",
-        "color": "#D97706"
-      },
-      {
-        "value": "1.5°C",
-        "label": "alignement",
-        "color": "#0284C7"
-      },
-      {
-        "value": "2030",
-        "label": "horizon cible",
-        "color": "#7C3AED"
-      }
-    ],
-    "target": "SBTi validé — 1.5°C (horizon 2030)",
-    "difficulty": "",
-    "roi": "",
-    "sourceUrl": "https://sciencebasedtargets.org/target-dashboard",
-    "lastUpdated": "2026-05-08",
-    "contributors": [
-      "Import automatique SBTi"
-    ],
-    "verified": true,
-    "autoImport": true
-  },
-  {
-    "id": 46598,
-    "company": "Groupe Rocher",
-    "title": "-42% d'émissions — aligné 1.5°C",
-    "sector": "Industrie manufacturière",
-    "region": "Europe",
-    "scope": "Scope 3",
-    "source": "SBTi",
-    "country": "France",
-    "countryFlag": "🇫🇷",
-    "year": 2025,
-    "logo": "🏭",
-    "size": "Grande entreprise",
-    "summary": "Groupe Rocher commits to reduce absolute scope 1 and 2 GHG emissions 42% by 2030 from a 2022 base year.* Groupe Rocher also commits to reduce absolute scope 3 GHG emissions from purchased goods and services, capital goods, fuel and energy related activities, upstream transportation and distribution, waste generated in operations, business travel, employee commuting, end of life treatment of sold products and franchises 25% within the same timeframe.\n*The target boundary includes land-related emissions and removals from bioenergy feedstocks.",
-    "actions": [
-      "Réduction de 42% des émissions Scope 1&2 d'ici 2030",
-      "Réduction de 25% des émissions Scope 3",
-      "Trajectoire alignée 1.5°C"
-    ],
-    "stats": [
-      {
-        "value": "-42%",
-        "label": "réduction Scope 1&2",
-        "color": "#059669"
-      },
-      {
-        "value": "-25%",
         "label": "réduction Scope 3",
         "color": "#D97706"
       },
@@ -296606,6 +297664,59 @@
     "autoImport": true
   },
   {
+    "id": 6074,
+    "company": "Michelin",
+    "title": "-47% d'émissions — aligné 1.5°C",
+    "sector": "Autre",
+    "region": "Europe",
+    "scope": "Net Zero",
+    "source": "SBTi",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2025,
+    "logo": "🏢",
+    "size": "Grande entreprise",
+    "summary": "Overall Net-Zero Target: Michelin commits to reach net-zero greenhouse gas emissions across the value chain by 2050. \nMichelin commits to reduce absolute scope 1 and 2 GHG emissions 47.2% by 2030 from a 2019 base year*. Michelin also commits to reduce absolute scope 3 GHG emissions from purchased goods and services, fuel and energy related activities, upstream transportation and distribution and downstream transportation and distribution 27.5% within the same timeframe.\n*The target boundary includes biogenic emissions and removals from bioenergy feedstocks. \nMichelin commits to reduce absolute scope 1 and 2 GHG emissions 90% by 2050 from a 2019 base year*.  Michelin also commits to reduce absolute scope 3 GHG emissions 90% within the same timeframe.\n*The target boundary includes land-related emissions and removals from bioenergy feedstocks.",
+    "actions": [
+      "Réduction de 47% des émissions Scope 1&2 d'ici 2030",
+      "Réduction de 28% des émissions Scope 3",
+      "Trajectoire alignée 1.5°C",
+      "Engagement Net Zero d'ici 2050"
+    ],
+    "stats": [
+      {
+        "value": "-47%",
+        "label": "réduction Scope 1&2",
+        "color": "#059669"
+      },
+      {
+        "value": "-28%",
+        "label": "réduction Scope 3",
+        "color": "#D97706"
+      },
+      {
+        "value": "1.5°C",
+        "label": "alignement",
+        "color": "#0284C7"
+      },
+      {
+        "value": "2050",
+        "label": "objectif net zero",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "SBTi validé — 1.5°C (horizon 2030) — Net Zero 2050",
+    "difficulty": "",
+    "roi": "",
+    "sourceUrl": "https://sciencebasedtargets.org/target-dashboard",
+    "lastUpdated": "2026-05-08",
+    "contributors": [
+      "Import automatique SBTi"
+    ],
+    "verified": true,
+    "autoImport": true
+  },
+  {
     "id": 60301,
     "company": "Michelmores",
     "title": "-50% d'émissions — aligné 1.5°C",
@@ -344263,6 +345374,59 @@
       }
     ],
     "target": "SBTi validé — 1.5°C (horizon 2033)",
+    "difficulty": "",
+    "roi": "",
+    "sourceUrl": "https://sciencebasedtargets.org/target-dashboard",
+    "lastUpdated": "2026-05-08",
+    "contributors": [
+      "Import automatique SBTi"
+    ],
+    "verified": true,
+    "autoImport": true
+  },
+  {
+    "id": 55426,
+    "company": "Ørsted",
+    "title": "-93% d'émissions — aligné 1.5°C",
+    "sector": "Énergie",
+    "region": "Europe",
+    "scope": "Net Zero",
+    "source": "SBTi",
+    "country": "Denmark",
+    "countryFlag": "🇩🇰",
+    "year": 2025,
+    "logo": "⚡",
+    "size": "Grande entreprise",
+    "summary": "Ørsted commits to reach net-zero greenhouse gas emissions across the value chain by 2040. \n\nØrsted commits to reduce scope 1, 2 and 3 GHG emissions (excluding from use of sold products) 77% per kWh by 2030 from a 2018 base year.* Within this target, Ørsted commits to reduce scope 1 and 2 GHG emissions 93% per kWh by 2025 from a 2018 base year, equivalent to a 98% reduction per kWh by 2025 from a 2006 base year.* Ørsted also commits to reduce scope 1 and 2 GHG emissions 96% per kWh by 2030 from a 2018 base year, equivalent to a 99% reduction per kWh by 2030 from a 2006 base year.* Ørsted further commits to reduce scope 1, 2, and 3 GHG emissions from all sold electricity 86.4% by 2030 from a 2018 base year.* Ørsted finally commits to reduce absolute scope 3 GHG emissions 50.4% within the same timeframe. Within this target, Ørsted commits to reduce absolute scope 3 GHG emissions from use of sold products for sold fossil fuels 67% within the same timeframe.\n*The target boundary includes land-related emissions and removals from bioenergy feedstocks.\n\nØrsted commits to reduce scope 1, 2 and 3 GHG emissions (excluding from use of sold products) 99% per kWh by 2040 from a 2018 base year.* Within this target, Ørsted commits to reduce scope 1 and 2 GHG emissions 99% per kWh by 2040 from a 2018 base year, equivalent to a 99.8% reduction per kWh by 2040 from a 2006 base year.* Ørsted also commits to reduce absolute scope 3 GHG emissions from use of sold products 90% by 2040 from a 2018 base year.\n*The target boundary includes land-related emissions and removals from bioenergy feedstocks",
+    "actions": [
+      "Réduction de 93% des émissions Scope 1&2 d'ici 2030",
+      "Réduction de 50% des émissions Scope 3",
+      "Trajectoire alignée 1.5°C",
+      "Engagement Net Zero d'ici 2040"
+    ],
+    "stats": [
+      {
+        "value": "-93%",
+        "label": "réduction Scope 1&2",
+        "color": "#059669"
+      },
+      {
+        "value": "-50%",
+        "label": "réduction Scope 3",
+        "color": "#D97706"
+      },
+      {
+        "value": "1.5°C",
+        "label": "alignement",
+        "color": "#0284C7"
+      },
+      {
+        "value": "2040",
+        "label": "objectif net zero",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "SBTi validé — 1.5°C (horizon 2030) — Net Zero 2040",
     "difficulty": "",
     "roi": "",
     "sourceUrl": "https://sciencebasedtargets.org/target-dashboard",
@@ -398609,6 +399773,59 @@
     "autoImport": true
   },
   {
+    "id": 91016,
+    "company": "Schneider Electric",
+    "title": "-76% d'émissions — aligné 1.5°C",
+    "sector": "Industrie manufacturière",
+    "region": "Europe",
+    "scope": "Net Zero",
+    "source": "SBTi",
+    "country": "France",
+    "countryFlag": "🇫🇷",
+    "year": 2025,
+    "logo": "🏭",
+    "size": "Grande entreprise",
+    "summary": "Overall Net-Zero Target French multinational corporation Schneider Electric commits to reach net zero greenhouse gas emissions across the value chain by 2050 from a 2021 base year. \nFrench multinational corporation Schneider Electric commits to reduce absolute scope 1 and 2 GHG emissions 76% by 2030 from a 2021 base year. Schneider Electric also commits to increase annual sourcing of renewable electricity from 82% in 2021 to 100% by 2030. Schneider Electric further commits to reduce absolute scope 3 GHG emissions 25% by 2030 from a 2021 base year. \nFrench multinational corporation Schneider Electric commits to reduce absolute scope 1 and 2 GHG emissions 90% by 2050 from a 2021 base year. Schneider Electric also commits to reduce absolute scope 3 GHG emissions 90% within the same timeframe.",
+    "actions": [
+      "Réduction de 76% des émissions Scope 1&2 d'ici 2030",
+      "Réduction de 25% des émissions Scope 3",
+      "Trajectoire alignée 1.5°C",
+      "Engagement Net Zero d'ici 2050"
+    ],
+    "stats": [
+      {
+        "value": "-76%",
+        "label": "réduction Scope 1&2",
+        "color": "#059669"
+      },
+      {
+        "value": "-25%",
+        "label": "réduction Scope 3",
+        "color": "#D97706"
+      },
+      {
+        "value": "1.5°C",
+        "label": "alignement",
+        "color": "#0284C7"
+      },
+      {
+        "value": "2050",
+        "label": "objectif net zero",
+        "color": "#7C3AED"
+      }
+    ],
+    "target": "SBTi validé — 1.5°C (horizon 2030) — Net Zero 2050",
+    "difficulty": "",
+    "roi": "",
+    "sourceUrl": "https://sciencebasedtargets.org/target-dashboard",
+    "lastUpdated": "2026-05-08",
+    "contributors": [
+      "Import automatique SBTi"
+    ],
+    "verified": true,
+    "autoImport": true
+  },
+  {
     "id": 98663,
     "company": "Schoeller Allibert Services B.V.",
     "title": "-90% d'émissions — aligné 1.5°C",
@@ -401416,52 +402633,6 @@
       }
     ],
     "target": "SBTi validé — 1.5°C (horizon 2030)",
-    "difficulty": "",
-    "roi": "",
-    "sourceUrl": "https://sciencebasedtargets.org/target-dashboard",
-    "lastUpdated": "2026-05-08",
-    "contributors": [
-      "Import automatique SBTi"
-    ],
-    "verified": true,
-    "autoImport": true
-  },
-  {
-    "id": 17608,
-    "company": "Séché Environnement",
-    "title": "-25% d'émissions — aligné Well-below 2°C",
-    "sector": "Énergie",
-    "region": "Europe",
-    "scope": "Scope 1 & 2",
-    "source": "SBTi",
-    "country": "France",
-    "countryFlag": "🇫🇷",
-    "year": 2025,
-    "logo": "⚡",
-    "size": "Grande entreprise",
-    "summary": "Séché Environnement commits to reduce absolute scope 1 and 2 GHG emissions 25% by 2030 from a 2020 base year.* *The target boundary includes biogenic land-related emissions and removals from bioenergy feedstocks.",
-    "actions": [
-      "Réduction de 25% des émissions Scope 1&2 d'ici 2030",
-      "Trajectoire alignée Well-below 2°C"
-    ],
-    "stats": [
-      {
-        "value": "-25%",
-        "label": "réduction Scope 1&2",
-        "color": "#059669"
-      },
-      {
-        "value": "Well-below 2°C",
-        "label": "alignement",
-        "color": "#0284C7"
-      },
-      {
-        "value": "2030",
-        "label": "horizon cible",
-        "color": "#7C3AED"
-      }
-    ],
-    "target": "SBTi validé — Well-below 2°C (horizon 2030)",
     "difficulty": "",
     "roi": "",
     "sourceUrl": "https://sciencebasedtargets.org/target-dashboard",
@@ -552575,58 +553746,6 @@
     "autoImport": true
   },
   {
-    "id": 61823,
-    "company": "Crédit Coopératif",
-    "title": "Bilan GES déclaré — 1 ktCO₂ (Scope 1&2)",
-    "sector": "Autre",
-    "region": "Europe",
-    "scope": "Scope 1 & 2",
-    "source": "ADEME",
-    "country": "France",
-    "countryFlag": "🇫🇷",
-    "year": 2014,
-    "logo": "📊",
-    "size": "Grande entreprise",
-    "summary": "Le périmètre organisationnel concerne l’ensemble des émissions des agences et des sièges du Crédit Coopératif et de ses 3 filiales sur le territoire français.\nLa collecte des données a été réalisée pa Émissions déclarées (2014) : 1 ktCO₂ (Scope 1&2). Objectif de réduction : 620 tCO₂.",
-    "actions": [
-      "Scope 1 : Le volume de réduction attendu pour les scopes 1 et 2 est de 620",
-      "Scope 2 : Le volume de réduction attendu pour les scopes 1 et 2 est de 620",
-      "Scope 3 : Le groupe va poursuivre la réduction de ses émissions liées aux déplacements par :"
-    ],
-    "stats": [
-      {
-        "value": "1 ktCO₂",
-        "label": "émissions Scope 1&2 (2014)",
-        "color": "#DC2626"
-      },
-      {
-        "value": "11 ktCO₂",
-        "label": "Scope 3",
-        "color": "#D97706"
-      },
-      {
-        "value": "1 837",
-        "label": "salariés",
-        "color": "#0284C7"
-      },
-      {
-        "value": "-620 tCO₂",
-        "label": "objectif réduction",
-        "color": "#059669"
-      }
-    ],
-    "target": "Bilan GES réglementaire — année de reporting 2014",
-    "difficulty": "",
-    "roi": "",
-    "sourceUrl": "http://bilans-ges.ademe.fr/fr/bilanenligne/detail/index/idElement/2170/back/bilans",
-    "lastUpdated": "2026-05-08",
-    "contributors": [
-      "Import automatique ADEME"
-    ],
-    "verified": true,
-    "autoImport": true
-  },
-  {
     "id": 76300,
     "company": "Toupargel",
     "title": "Bilan GES déclaré — 18 ktCO₂ (Scope 1&2)",
@@ -598941,57 +600060,6 @@
     "difficulty": "",
     "roi": "",
     "sourceUrl": "http://bilans-ges.ademe.fr/fr/bilanenligne/detail/index/idElement/5788/back/bilans",
-    "lastUpdated": "2026-05-08",
-    "contributors": [
-      "Import automatique ADEME"
-    ],
-    "verified": true,
-    "autoImport": true
-  },
-  {
-    "id": 27396,
-    "company": "Convivio",
-    "title": "Bilan GES déclaré — 4 ktCO₂ (Scope 1&2)",
-    "sector": "Autre",
-    "region": "Europe",
-    "scope": "Scope 1 & 2",
-    "source": "ADEME",
-    "country": "France",
-    "countryFlag": "🇫🇷",
-    "year": 2019,
-    "logo": "📊",
-    "size": "Grande entreprise",
-    "summary": "Émissions déclarées (2019) : 4 ktCO₂ (Scope 1&2). Objectif de réduction : 200 tCO₂.",
-    "actions": [
-      "Scope 1 : Le volume de réduction attendu pour les scopes 1 et 2 est de 200",
-      "Scope 2 : Le volume de réduction attendu pour les scopes 1 et 2 est de 200"
-    ],
-    "stats": [
-      {
-        "value": "4 ktCO₂",
-        "label": "émissions Scope 1&2 (2019)",
-        "color": "#DC2626"
-      },
-      {
-        "value": "1 ktCO₂",
-        "label": "Scope 3",
-        "color": "#D97706"
-      },
-      {
-        "value": "2 600",
-        "label": "salariés",
-        "color": "#0284C7"
-      },
-      {
-        "value": "-200 tCO₂",
-        "label": "objectif réduction",
-        "color": "#059669"
-      }
-    ],
-    "target": "Bilan GES réglementaire — année de reporting 2019",
-    "difficulty": "",
-    "roi": "",
-    "sourceUrl": "http://bilans-ges.ademe.fr/fr/bilanenligne/detail/index/idElement/5792/back/bilans",
     "lastUpdated": "2026-05-08",
     "contributors": [
       "Import automatique ADEME"
