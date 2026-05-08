@@ -4,209 +4,216 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nouveaux Récits d'Entreprise — Changer ? Certains l'ont déjà fait.</title>
-<meta name="description" content="Changer ? Certains l'ont déjà fait. Base de données ouverte de 10 000+ entreprises qui réussissent leur décarbonation. Cas réels, chiffrés, sourcés.">
+<meta name="description" content="Changer ? Certains l'ont déjà fait. Base de données ouverte de trajectoires de décarbonation réussies. Cas réels, chiffrés, sourcés.">
 <meta name="theme-color" content="#0F2921">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;600;700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--g9:#0F2921;--g8:#1B3A2D;--g7:#2D5A3F;--g6:#40916C;--g5:#52B788;--g4:#6EE7B7;--g1:#D1FAE5;--g0:#ECFDF5;
---t1:#1a1a1a;--t2:#4b5563;--t3:#9ca3af;--bg:#FAFAF7;--card:#fff;--bd:#e5e7eb;
---sf:'Source Serif 4',Georgia,serif;--ss:'IBM Plex Sans',system-ui,sans-serif}
+--t1:#1a1a1a;--t2:#4b5563;--t3:#9ca3af;--bg:#F8F7F4;--card:#fff;--bd:#e5e7eb;
+--sf:'Newsreader',Georgia,serif;--ss:'DM Sans',system-ui,sans-serif;
+--amber:#92400E;--amber-bg:#FFFBEB;--amber-bd:#FDE68A}
 body{font-family:var(--ss);background:var(--bg);color:var(--t1);line-height:1.6;-webkit-font-smoothing:antialiased}
 button{font-family:var(--ss);cursor:pointer}input{font-family:var(--ss)}
 
-.hd{background:linear-gradient(160deg,var(--g9),var(--g8) 40%,var(--g7));position:sticky;top:0;z-index:100;box-shadow:0 4px 30px rgba(0,0,0,.2)}
-.hd-in{max-width:1260px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px}
-.logo{font-family:var(--sf);font-weight:900;font-size:1.05rem;color:#fff;letter-spacing:-.5px}
-.logo sup{font-size:.55rem;color:var(--g4);font-weight:700;letter-spacing:1.5px;vertical-align:super;margin-left:6px}
-.nav{display:flex;gap:4px}
-.nav-b{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:#fff;padding:6px 14px;border-radius:10px;font-size:.78rem;font-weight:600;transition:.2s}
-.nav-b:hover{background:rgba(255,255,255,.18)}
+/* ── Header ── */
+.hd{background:var(--g9);position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.08)}
+.hd-in{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:52px}
+.logo{font-family:var(--sf);font-weight:800;font-size:.95rem;color:#fff;letter-spacing:-.3px}
+.logo span{color:var(--g4);font-weight:400;font-size:.7rem;margin-left:6px;letter-spacing:1px;vertical-align:2px}
+.nav{display:flex;gap:6px}
+.nav-b{background:none;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.7);padding:5px 12px;border-radius:8px;font-size:.72rem;font-weight:600;transition:.2s}
+.nav-b:hover{background:rgba(255,255,255,.08);color:#fff}
 
-.hero{background:linear-gradient(175deg,var(--g9),var(--g8) 60%,#1a4a35);padding:48px 24px 56px;text-align:center;color:#fff;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;opacity:.03;background-image:radial-gradient(circle at 2px 2px,#fff 1px,transparent 0);background-size:32px 32px}
+/* ── Hero ── */
+.hero{background:var(--g9);padding:40px 24px 44px;text-align:center;color:#fff;position:relative}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to bottom,transparent,var(--bg))}
 .hero *{position:relative}
-.hero-tag{font-size:.7rem;color:var(--g4);font-weight:800;text-transform:uppercase;letter-spacing:3px;margin-bottom:14px}
-.hero h1{font-family:var(--sf);font-size:clamp(1.8rem,5vw,2.8rem);font-weight:900;line-height:1.12;max-width:700px;margin:0 auto 14px}
-.hero p{font-size:1rem;opacity:.7;max-width:540px;margin:0 auto 28px;line-height:1.7}
-.src-w{max-width:560px;margin:0 auto;position:relative}
-.src-i{width:100%;padding:16px 20px 16px 50px;border-radius:16px;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:#fff;font-size:.95rem;font-family:var(--sf);outline:none;box-sizing:border-box;backdrop-filter:blur(10px)}
-.src-i::placeholder{color:rgba(255,255,255,.4)}
-.src-ic{position:absolute;left:18px;top:50%;transform:translateY(-50%);font-size:1.15rem;opacity:.5}
-.hero-m{margin-top:18px;display:flex;justify-content:center;gap:20px;font-size:.75rem;opacity:.5;flex-wrap:wrap}
+.hero h1{font-family:var(--sf);font-size:clamp(1.6rem,4.5vw,2.5rem);font-weight:800;line-height:1.15;max-width:600px;margin:0 auto 12px}
+.hero p{font-size:.88rem;opacity:.55;max-width:480px;margin:0 auto 0;line-height:1.65}
 
-.brk{max-width:1260px;margin:0 auto;padding:20px 24px 0}
-.brk-tabs{display:flex;gap:8px;flex-wrap:wrap}
-.brk-tab{flex:1;min-width:140px;padding:14px 16px;border-radius:14px;border:2px solid var(--bd);background:#fff;cursor:pointer;text-align:left;transition:.2s;display:flex;gap:10px;align-items:flex-start}
-.brk-tab:hover{border-color:var(--g6)}
-.brk-tab.on{border-color:var(--g8);background:var(--g0)}
-.brk-em{font-size:1.3rem;flex-shrink:0}
-.brk-ti{display:block;font-size:.85rem;font-weight:800;color:var(--g8);font-family:var(--sf);line-height:1.2}
-.brk-su{display:block;font-size:.68rem;color:var(--t3);margin-top:2px;line-height:1.3}
-.disc{margin-top:12px;padding:14px 16px;border-radius:12px;background:#FFFBEB;border:1px solid #FDE68A;display:flex;gap:10px;align-items:flex-start;font-size:.78rem;color:#78716C;line-height:1.55}
-.disc-ic{font-size:1.1rem;flex-shrink:0;margin-top:1px}
-.disc strong{color:#92400E;font-weight:700}
-.disc em{font-style:normal;font-weight:600;color:#92400E}
+/* ── Brick Selector (main entry) ── */
+.entry{max-width:1200px;margin:-20px auto 0;padding:0 24px;position:relative;z-index:10}
+.entry-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.entry-card{padding:24px 22px;border-radius:16px;border:2px solid var(--bd);background:#fff;cursor:pointer;transition:.25s;position:relative;overflow:hidden}
+.entry-card:hover{border-color:var(--g5);transform:translateY(-2px);box-shadow:0 8px 30px rgba(27,58,45,.08)}
+.entry-card.on{border-color:var(--g8);background:var(--g0)}
+.entry-card.on::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--g5)}
+.ec-num{font-size:2rem;font-weight:800;font-family:var(--sf);color:var(--g8);line-height:1}
+.ec-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--t3);margin-top:6px}
+.ec-title{font-family:var(--sf);font-size:1.1rem;font-weight:800;color:var(--g8);margin-top:10px;line-height:1.25}
+.ec-desc{font-size:.78rem;color:var(--t2);margin-top:6px;line-height:1.5}
+.entry-card:nth-child(2) .ec-num{color:var(--t3)}
+.entry-card:nth-child(2).on{border-color:#B45309;background:var(--amber-bg)}
+.entry-card:nth-child(2).on::before{background:#D97706}
+.entry-card:nth-child(2).on .ec-title{color:var(--amber)}
 
-.flt{max-width:1260px;margin:0 auto;padding:20px 24px 0}
-.flt-g{margin-bottom:8px}
-.flt-l{font-size:.63rem;font-weight:800;color:var(--t3);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
-.flt-r{display:flex;gap:4px;flex-wrap:wrap}
-.flt-gs{display:flex;gap:20px;flex-wrap:wrap}
-.pill{padding:4px 12px;border-radius:18px;font-size:.75rem;font-weight:400;border:1.5px solid var(--bd);background:#fff;color:var(--t2);transition:.2s;white-space:nowrap}
+/* ── Disclaimer ── */
+.disc{max-width:1200px;margin:0 auto;padding:12px 24px 0;display:none}
+.disc.vis{display:block}
+.disc-in{padding:12px 16px;border-radius:10px;background:var(--amber-bg);border:1px solid var(--amber-bd);font-size:.76rem;color:#78716C;line-height:1.55;display:flex;gap:8px;align-items:flex-start}
+.disc-in strong{color:var(--amber)}
+
+/* ── Toolbar (search + sector) ── */
+.tb{max-width:1200px;margin:0 auto;padding:20px 24px 0}
+.tb-top{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.src-w{flex:1;min-width:200px;position:relative}
+.src-i{width:100%;padding:10px 14px 10px 38px;border-radius:10px;border:1.5px solid var(--bd);background:#fff;color:var(--t1);font-size:.85rem;outline:none;transition:.2s}
+.src-i:focus{border-color:var(--g6);box-shadow:0 0 0 3px rgba(82,183,136,.12)}
+.src-ic{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:.9rem;color:var(--t3)}
+.tb-count{font-size:.78rem;color:var(--t3);white-space:nowrap}
+.tb-sectors{margin-top:10px;display:flex;gap:4px;flex-wrap:wrap}
+.pill{padding:5px 13px;border-radius:20px;font-size:.73rem;font-weight:500;border:1.5px solid var(--bd);background:#fff;color:var(--t2);transition:.15s;white-space:nowrap}
 .pill.on{border-color:var(--g8);background:var(--g8);color:#fff;font-weight:700}
 .pill:hover:not(.on){border-color:var(--t3)}
-.res-bar{margin-top:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
-.res-c{font-size:.8rem;color:var(--t3);font-style:italic}
 
-.gr-s{max-width:1260px;margin:0 auto;padding:16px 24px 40px}
-.gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+/* ── Grid ── */
+.gr-s{max-width:1200px;margin:0 auto;padding:16px 24px 40px}
+.gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
 .empty{text-align:center;padding:60px 20px;color:var(--t3)}
 
-.cd{background:var(--card);border-radius:18px;overflow:hidden;cursor:pointer;box-shadow:0 1px 6px rgba(0,0,0,.04);transition:.3s cubic-bezier(.25,.8,.25,1);display:flex;flex-direction:column;border:1px solid #f0f0f0}
-.cd:hover{transform:translateY(-4px);box-shadow:0 10px 35px rgba(27,58,45,.1)}
+/* ── Cards ── */
+.cd{background:var(--card);border-radius:14px;overflow:hidden;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.03);transition:.25s;display:flex;flex-direction:column;border:1px solid #f0f0f0}
+.cd:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(27,58,45,.08)}
 .cd-top{padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #f5f5f5}
-.cd-logo{font-size:1.5rem;flex-shrink:0;width:36px;text-align:center}
-.cd-co{font-size:.9rem;font-weight:800;color:#111;font-family:var(--sf);line-height:1.2}
-.cd-meta{font-size:.65rem;color:var(--t3)}
-.cd-badge{font-size:.58rem;font-weight:700;padding:2px 8px;border-radius:6px;flex-shrink:0}
+.cd-logo{font-size:1.4rem;flex-shrink:0;width:32px;text-align:center}
+.cd-co{font-size:.88rem;font-weight:800;color:#111;font-family:var(--sf);line-height:1.2}
+.cd-meta{font-size:.63rem;color:var(--t3)}
+.cd-badge{font-size:.56rem;font-weight:700;padding:2px 8px;border-radius:6px;flex-shrink:0}
 .cd-badge.enr{background:var(--g0);color:#059669}
-.cd-badge.b2{background:#FEF3C7;color:#92400E}
+.cd-badge.b2{background:#FEF3C7;color:var(--amber)}
 .cd-badge.auto{background:#f3f4f6;color:#6b7280}
 .cd-body{padding:14px 16px;flex:1}
-.cd-body h3{font-size:.85rem;font-weight:700;color:var(--g8);margin-bottom:8px;line-height:1.35;font-family:var(--sf)}
-.cd-body p{font-size:.77rem;color:var(--t2);line-height:1.55;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cd-body h3{font-size:.83rem;font-weight:700;color:var(--g8);margin-bottom:8px;line-height:1.35;font-family:var(--sf)}
+.cd-body p{font-size:.76rem;color:var(--t2);line-height:1.55;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .cd-body p.expanded{-webkit-line-clamp:unset;display:block}
 .rm-btn{display:none;background:none;border:none;color:var(--g6);font-size:.7rem;font-weight:600;padding:2px 0;margin-bottom:10px;cursor:pointer}
 .rm-btn.vis{display:inline-block}
 .st-r{display:flex;gap:5px;flex-wrap:wrap}
-.st{text-align:center;padding:10px 6px;flex:1;min-width:70px;border-radius:12px}
-.st-v{font-size:1.2rem;font-weight:900;font-family:var(--sf);line-height:1}
-.st-l{font-size:.6rem;color:var(--t2);margin-top:4px;line-height:1.2}
-.cd-ft{padding:8px 16px;border-top:1px solid #f5f5f5;display:flex;justify-content:space-between;align-items:center;font-size:.62rem;color:var(--t3)}
-.sd{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:3px}
+.st{text-align:center;padding:9px 6px;flex:1;min-width:70px;border-radius:10px}
+.st-v{font-size:1.1rem;font-weight:800;font-family:var(--sf);line-height:1}
+.st-l{font-size:.58rem;color:var(--t2);margin-top:3px;line-height:1.2}
+.cd-ft{padding:7px 16px;border-top:1px solid #f5f5f5;display:flex;justify-content:space-between;align-items:center;font-size:.6rem;color:var(--t3)}
+.sd{width:6px;height:6px;border-radius:50%;display:inline-block;margin-right:3px}
 
+/* ── Pagination ── */
 .pg{display:flex;justify-content:center;gap:6px;margin-top:20px;flex-wrap:wrap;align-items:center}
 .pg span{font-size:.8rem;color:var(--t3);padding:6px 12px}
 
-.cta-s{max-width:1260px;margin:0 auto;padding:0 24px 40px}
-.cta-in{background:linear-gradient(135deg,var(--g9),var(--g8));border-radius:22px;padding:36px 44px;color:#fff;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;position:relative;overflow:hidden}
-.cta-in::after{content:'';position:absolute;right:-40px;top:-40px;width:200px;height:200px;border-radius:50%;background:rgba(110,231,183,.06)}
-.cta-in h2{font-size:1.4rem;font-weight:900;font-family:var(--sf);margin-bottom:6px}
-.cta-in p{font-size:.88rem;opacity:.7;line-height:1.6}
-.btn-a{background:var(--g4);color:var(--g9);border:none;padding:12px 28px;border-radius:12px;font-weight:800;font-size:.88rem}
-.btn-p{background:var(--g8);color:#fff;border:none;padding:10px 22px;border-radius:10px;font-weight:700;font-size:.8rem}
-.btn-s{background:#fff;color:var(--g8);border:2px solid var(--g8);padding:10px 22px;border-radius:10px;font-weight:700;font-size:.8rem}
-.btn-g{background:#fff;color:var(--t2);border:1.5px solid var(--bd);padding:10px 22px;border-radius:10px;font-weight:600;font-size:.8rem}
+/* ── CTA ── */
+.cta-s{max-width:1200px;margin:0 auto;padding:0 24px 40px}
+.cta-in{background:var(--g9);border-radius:16px;padding:32px 36px;color:#fff;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.cta-in h2{font-size:1.2rem;font-weight:800;font-family:var(--sf);margin-bottom:4px}
+.cta-in p{font-size:.82rem;opacity:.6;line-height:1.6}
+.btn-a{background:var(--g4);color:var(--g9);border:none;padding:10px 24px;border-radius:10px;font-weight:800;font-size:.82rem;transition:.2s}
+.btn-a:hover{background:#a7f3d0}
+.btn-p{background:var(--g8);color:#fff;border:none;padding:9px 20px;border-radius:8px;font-weight:700;font-size:.78rem}
+.btn-s{background:#fff;color:var(--g8);border:2px solid var(--g8);padding:9px 20px;border-radius:8px;font-weight:700;font-size:.78rem}
+.btn-g{background:#fff;color:var(--t2);border:1.5px solid var(--bd);padding:9px 20px;border-radius:8px;font-weight:600;font-size:.78rem}
 
-.ft{background:var(--g9);color:rgba(255,255,255,.4);padding:24px;text-align:center;font-size:.73rem}
-.ft b{color:rgba(255,255,255,.6)}
+/* ── Footer ── */
+.ft{background:var(--g9);color:rgba(255,255,255,.35);padding:20px 24px;text-align:center;font-size:.7rem}
+.ft b{color:rgba(255,255,255,.55)}
 
-/* Modal */
-.mo{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:40px 16px;overflow-y:auto;backdrop-filter:blur(4px)}
+/* ── Modal ── */
+.mo{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:40px 16px;overflow-y:auto;backdrop-filter:blur(3px)}
 .mo.open{display:flex}
-.ml{background:#fff;border-radius:22px;max-width:700px;width:100%;box-shadow:0 25px 80px rgba(0,0,0,.25);overflow:hidden;animation:mIn .3s ease}
-@keyframes mIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.ml-hd{background:linear-gradient(135deg,var(--g9),var(--g8),var(--g7));padding:28px 32px;color:#fff;position:relative}
-.ml-x{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.15);border:none;border-radius:50%;width:34px;height:34px;color:#fff;font-size:1rem;display:flex;align-items:center;justify-content:center}
-.ml-bd{padding:24px 32px}
-.ml-act{padding:9px 12px;border-radius:8px;margin-bottom:3px;font-size:.83rem;color:#374151;display:flex;gap:8px;align-items:flex-start}
+.ml{background:#fff;border-radius:18px;max-width:680px;width:100%;box-shadow:0 25px 80px rgba(0,0,0,.2);overflow:hidden;animation:mIn .3s ease}
+@keyframes mIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.ml-hd{background:linear-gradient(135deg,var(--g9),var(--g8));padding:24px 28px;color:#fff;position:relative}
+.ml-x{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.12);border:none;border-radius:50%;width:32px;height:32px;color:#fff;font-size:.9rem;display:flex;align-items:center;justify-content:center;transition:.2s}
+.ml-x:hover{background:rgba(255,255,255,.25)}
+.ml-bd{padding:22px 28px}
+.ml-act{padding:8px 12px;border-radius:8px;margin-bottom:3px;font-size:.82rem;color:#374151;display:flex;gap:8px;align-items:flex-start}
 .ml-act:nth-child(odd){background:#f9fafb}
-.ml-mg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
-.ml-mc{padding:10px 12px;background:#f9fafb;border-radius:10px;border-left:3px solid var(--g8)}
-.ml-mc label{font-size:.6rem;color:var(--t3);font-weight:700;text-transform:uppercase;letter-spacing:.7px}
-.ml-mc div{font-size:.8rem;color:#374151;line-height:1.4;margin-top:2px}
+.ml-mg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.ml-mc{padding:10px 12px;background:#f9fafb;border-radius:8px;border-left:3px solid var(--g8)}
+.ml-mc label{font-size:.58rem;color:var(--t3);font-weight:700;text-transform:uppercase;letter-spacing:.7px}
+.ml-mc div{font-size:.78rem;color:#374151;line-height:1.4;margin-top:2px}
 
-/* Panels */
-.pn{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+/* ── Panels ── */
+.pn{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(3px)}
 .pn.open{display:flex}
-.pn-c{background:#fff;border-radius:22px;max-width:600px;width:100%;padding:32px 36px;box-shadow:0 25px 80px rgba(0,0,0,.2);max-height:85vh;overflow-y:auto;animation:mIn .3s ease}
-.pn-c h2{font-size:1.3rem;font-weight:900;color:var(--g8);font-family:var(--sf);margin-bottom:8px}
+.pn-c{background:#fff;border-radius:18px;max-width:560px;width:100%;padding:28px 32px;box-shadow:0 25px 80px rgba(0,0,0,.2);max-height:85vh;overflow-y:auto;animation:mIn .3s ease}
+.pn-c h2{font-size:1.2rem;font-weight:800;color:var(--g8);font-family:var(--sf);margin-bottom:8px}
 
+/* ── Responsive ── */
 @media(max-width:768px){
-  .hd-in{padding:0 14px}.logo{font-size:.9rem}.nav-b .nl{display:none}
-  .hero{padding:32px 14px 40px}.flt,.gr-s,.cta-s{padding-left:14px;padding-right:14px}
-  .gr{grid-template-columns:1fr}.flt-gs{gap:12px}
-  .brk-tabs{flex-direction:column}.brk-tab{min-width:auto}
-  .ml-bd{padding:18px}.ml-hd{padding:22px 18px}.ml-mg{grid-template-columns:1fr}
-  .cta-in{padding:24px 20px}.pn-c{padding:24px 20px}
+  .hd-in{padding:0 14px}.logo{font-size:.85rem}
+  .hero{padding:28px 14px 36px}
+  .entry,.tb,.gr-s,.cta-s{padding-left:14px;padding-right:14px}
+  .entry-grid{grid-template-columns:1fr}
+  .gr{grid-template-columns:1fr}
+  .ml-bd{padding:16px}.ml-hd{padding:20px 16px}.ml-mg{grid-template-columns:1fr}
+  .cta-in{padding:20px 18px}.pn-c{padding:20px 18px}
+  .disc{padding:8px 14px 0}
 }
 </style>
 </head>
 <body>
 
 <header class="hd"><div class="hd-in">
-  <div><span class="logo">Nouveaux Récits d'Entreprise<sup>β</sup></span></div>
+  <div><span class="logo">Nouveaux Récits<span>β</span></span></div>
   <nav class="nav">
-    <button class="nav-b" onclick="openP('src')">📊 <span class="nl">Sources</span></button>
-    <button class="nav-b" onclick="openP('ctr')">✏️ <span class="nl">Contribuer</span></button>
+    <button class="nav-b" onclick="openP('src')">Sources</button>
+    <button class="nav-b" onclick="openP('ctr')">Contribuer</button>
   </nav>
 </div></header>
 
 <section class="hero">
-  <div class="hero-tag">Base de données ouverte & collaborative</div>
-  <h1>Changer ? Certains l'ont déjà fait.</h1>
-  <p>Des entreprises ont engagé leur décarbonation — et ça marche. Cas réels, chiffrés, sourcés. Pour professeurs, conférenciers et décideurs.</p>
-  <div class="src-w"><span class="src-ic">⌕</span><input type="text" class="src-i" placeholder="Rechercher une entreprise, un secteur, un pays…" id="q" oninput="D()"></div>
-  <div class="hero-m"><span id="tot">📁 Chargement…</span><span>🔍 Sources vérifiées</span><span>✏️ Open source</span></div>
+  <h1>La transition écologique, ça marche.</h1>
+  <p>Des entreprises ont changé leur modèle — et ça crée de la valeur. Cas réels, chiffrés, sourcés.</p>
 </section>
 
-<section class="brk">
-  <div class="brk-tabs">
-    <button class="brk-tab on" data-b="1" onclick="sB(1)">
-      <span class="brk-em">🌱</span>
-      <span class="brk-ti">Certains l'ont déjà fait</span>
-      <span class="brk-su">Entreprises dont le modèle est la transition</span>
-    </button>
-    <button class="brk-tab" data-b="2" onclick="sB(2)">
-      <span class="brk-em">🔄</span>
-      <span class="brk-ti">Certains le font déjà</span>
-      <span class="brk-su">Grands groupes avec des actions concrètes</span>
-    </button>
-    <button class="brk-tab" data-b="0" onclick="sB(0)">
-      <span class="brk-em">📁</span>
-      <span class="brk-ti">Tout voir</span>
-      <span class="brk-su">Toutes les fiches</span>
-    </button>
-  </div>
-  <div class="disc" id="disc2" style="display:none">
-    <span class="disc-ic">⚠️</span>
-    <div>
-      <strong>Note de transparence</strong> — Ces fiches documentent des <em>actions concrètes et mesurables</em>, pas une validation globale de l'entreprise. Un grand groupe peut mener des initiatives positives tout en ayant un modèle d'ensemble encore incompatible avec les limites planétaires. Nous documentons les faits, pas les intentions.
+<!-- ── Two entry doors ── -->
+<section class="entry">
+  <div class="entry-grid">
+    <div class="entry-card on" data-b="1" onclick="sB(1)">
+      <div class="ec-num" id="cnt1">50</div>
+      <div class="ec-label">récits vérifiés</div>
+      <div class="ec-title">Certains l'ont déjà fait.</div>
+      <div class="ec-desc">Entreprises dont le modèle est la transition. Impact business documenté : croissance, marque employeur, résilience.</div>
+    </div>
+    <div class="entry-card" data-b="2" onclick="sB(2)">
+      <div class="ec-num" id="cnt2">13 000+</div>
+      <div class="ec-label">objectifs déclarés</div>
+      <div class="ec-title">Certains le font déjà.</div>
+      <div class="ec-desc">Entreprises avec des objectifs SBTi ou bilans ADEME. Actions déclarées — pas une validation globale.</div>
     </div>
   </div>
 </section>
 
-<section class="flt">
-  <div class="flt-g"><div class="flt-l">Secteur</div><div class="flt-r" id="fSec"></div></div>
-  <div class="flt-gs">
-    <div><div class="flt-l">Périmètre</div><div class="flt-r" id="fSco"></div></div>
-    <div><div class="flt-l">Taille</div><div class="flt-r" id="fSiz"></div></div>
-    <div><div class="flt-l">Région</div><div class="flt-r" id="fReg"></div></div>
+<div class="disc" id="disc2">
+  <div class="disc-in">
+    <strong>⚠️</strong>
+    <div>Ces fiches documentent des <strong>objectifs déclarés</strong>, pas une validation globale de l'entreprise. Un grand groupe peut afficher des engagements tout en ayant un modèle incompatible avec les limites planétaires.</div>
   </div>
-  <div class="res-bar">
-    <span class="res-c" id="cnt"></span>
-    <div class="flt-r">
-      <button class="pill on" data-s="r" onclick="S('r')">Plus récents</button>
-      <button class="pill" data-s="a" onclick="S('a')">A → Z</button>
-    </div>
+</div>
+
+<!-- ── Toolbar ── -->
+<section class="tb">
+  <div class="tb-top">
+    <div class="src-w"><span class="src-ic">⌕</span><input type="text" class="src-i" placeholder="Rechercher…" id="q" oninput="D()"></div>
+    <span class="tb-count" id="cnt"></span>
   </div>
+  <div class="tb-sectors" id="fSec"></div>
 </section>
 
+<!-- ── Cards grid ── -->
 <section class="gr-s"><div id="G"></div></section>
 
+<!-- ── CTA ── -->
 <section class="cta-s"><div class="cta-in">
-  <div style="position:relative;max-width:460px">
+  <div style="max-width:400px">
     <h2>Vous connaissez un cas inspirant ?</h2>
     <p>Proposez un projet, corrigez un chiffre. Tout est versionné et transparent.</p>
   </div>
-  <button class="btn-a" onclick="openP('ctr')">✏️ Contribuer</button>
+  <button class="btn-a" onclick="openP('ctr')">Contribuer →</button>
 </div></section>
 
 <footer class="ft">
-  <div><b>Nouveaux Récits d'Entreprise</b> — Plateforme libre & open source</div>
-  <div style="margin-top:4px">Données SBTi + ADEME · Contributif · Hébergement gratuit · Pro bono</div>
+  <b>Nouveaux Récits d'Entreprise</b> — Libre, open source, pro bono · Données SBTi + ADEME · CC BY-SA 4.0
 </footer>
 
 <!-- Modal -->
@@ -214,68 +221,64 @@ button{font-family:var(--ss);cursor:pointer}input{font-family:var(--ss)}
 
 <!-- Sources Panel -->
 <div class="pn" id="srcP" onclick="closeP('src')"><div class="pn-c" onclick="event.stopPropagation()">
-  <h2>Nos sources de données</h2>
-  <p style="font-size:.85rem;color:var(--t2);margin-bottom:20px;line-height:1.6">Chaque fiche est alimentée par des bases publiques et vérifiables.</p>
+  <h2>Sources de données</h2>
+  <p style="font-size:.82rem;color:var(--t2);margin-bottom:16px;line-height:1.6">Chaque fiche est alimentée par des bases publiques et vérifiables.</p>
   <div style="display:flex;flex-direction:column;gap:8px" id="srcL"></div>
-  <button class="btn-p" style="width:100%;margin-top:16px" onclick="closeP('src')">Fermer</button>
+  <button class="btn-p" style="width:100%;margin-top:14px" onclick="closeP('src')">Fermer</button>
 </div></div>
 
 <!-- Contribute Panel -->
 <div class="pn" id="ctrP" onclick="closeP('ctr')"><div class="pn-c" onclick="event.stopPropagation()">
-  <h2>Contribuer à la plateforme</h2>
-  <p style="font-size:.85rem;color:var(--t2);margin-bottom:20px;line-height:1.6">Modèle collaboratif type Wikipedia. Chaque contribution est tracée.</p>
+  <h2>Contribuer</h2>
+  <p style="font-size:.82rem;color:var(--t2);margin-bottom:16px;line-height:1.6">Modèle collaboratif type Wikipedia. Chaque contribution est tracée sur GitHub.</p>
   <div style="display:flex;flex-direction:column;gap:8px">
-    <a href="https://github.com/sebastienfrin/nouveaux-recits/edit/main/data/editorial.json" target="_blank" style="padding:14px 16px;background:#f9fafb;border-radius:12px;display:flex;gap:12px;text-decoration:none;border:1.5px solid transparent;transition:.2s" onmouseover="this.style.borderColor='var(--g8)'" onmouseout="this.style.borderColor='transparent'">
-      <span style="font-size:1.4rem">📄</span>
-      <div><div style="font-size:.88rem;font-weight:700;color:var(--g8);font-family:var(--sf)">Proposer un nouveau cas</div><div style="font-size:.78rem;color:var(--t2);margin-top:2px">Soumettez une fiche avec sources vérifiées</div></div>
+    <a href="https://github.com/sebastienfrin/nouveaux-recits/edit/main/data/editorial.json" target="_blank" style="padding:14px 16px;background:#f9fafb;border-radius:10px;display:flex;gap:12px;text-decoration:none;border:1.5px solid transparent;transition:.2s" onmouseover="this.style.borderColor='var(--g8)'" onmouseout="this.style.borderColor='transparent'">
+      <span style="font-size:1.3rem">📄</span>
+      <div><div style="font-size:.85rem;font-weight:700;color:var(--g8);font-family:var(--sf)">Proposer un nouveau cas</div><div style="font-size:.75rem;color:var(--t2);margin-top:2px">Soumettez une fiche sourcée via Pull Request</div></div>
     </a>
-    <a href="https://github.com/sebastienfrin/nouveaux-recits/issues/new" target="_blank" style="padding:14px 16px;background:#f9fafb;border-radius:12px;display:flex;gap:12px;text-decoration:none;border:1.5px solid transparent;transition:.2s" onmouseover="this.style.borderColor='var(--g8)'" onmouseout="this.style.borderColor='transparent'">
-      <span style="font-size:1.4rem">🔍</span>
-      <div><div style="font-size:.88rem;font-weight:700;color:var(--g8);font-family:var(--sf)">Signaler une erreur</div><div style="font-size:.78rem;color:var(--t2);margin-top:2px">Chiffre obsolète ? Source invalide ?</div></div>
+    <a href="https://github.com/sebastienfrin/nouveaux-recits/issues/new" target="_blank" style="padding:14px 16px;background:#f9fafb;border-radius:10px;display:flex;gap:12px;text-decoration:none;border:1.5px solid transparent;transition:.2s" onmouseover="this.style.borderColor='var(--g8)'" onmouseout="this.style.borderColor='transparent'">
+      <span style="font-size:1.3rem">🔍</span>
+      <div><div style="font-size:.85rem;font-weight:700;color:var(--g8);font-family:var(--sf)">Signaler une erreur</div><div style="font-size:.75rem;color:var(--t2);margin-top:2px">Chiffre obsolète ? Source invalide ?</div></div>
     </a>
   </div>
-  <div style="padding:14px 16px;background:var(--g0);border-radius:12px;border:1px solid #BBF7D0;margin-top:16px">
-    <div style="font-size:.78rem;font-weight:700;color:#166534;margin-bottom:4px">🏗️ Architecture</div>
-    <div style="font-size:.75rem;color:var(--t2);line-height:1.6">Fiches en JSON sur GitHub. Modifications via Pull Request — versionné, tracé, réversible. Hébergement gratuit Netlify.</div>
-  </div>
-  <button class="btn-p" style="width:100%;margin-top:16px" onclick="closeP('ctr')">Compris</button>
+  <button class="btn-p" style="width:100%;margin-top:14px" onclick="closeP('ctr')">Fermer</button>
 </div></div>
 
 <script>
 const SI={
-  "SBTi":{u:"https://sciencebasedtargets.org/target-dashboard",d:"10 000+ entreprises avec objectifs validés",c:"#059669"},
-  "CDP":{u:"https://data.cdp.net",d:"Scores A-F, Open Data Portal",c:"#0284C7"},
+  "SBTi":{u:"https://sciencebasedtargets.org/target-dashboard",d:"10 000+ entreprises, objectifs validés",c:"#059669"},
+  "CDP":{u:"https://data.cdp.net",d:"Scores A-F, données environnementales",c:"#0284C7"},
   "Climate Action 100+":{u:"https://climateaction100.org",d:"169 plus gros émetteurs évalués",c:"#D97706"},
-  "ADEME":{u:"https://data.ademe.fr",d:"Base Carbone®, Plans de Transition Sectoriels",c:"#7C3AED"},
-  "SBTi + ADEME":{u:"https://sciencebasedtargets.org/target-dashboard",d:"Données croisées SBTi et bilans GES ADEME",c:"#059669"},
+  "ADEME":{u:"https://data.ademe.fr",d:"Bilans GES + plans d'action",c:"#7C3AED"},
+  "SBTi + ADEME":{u:"https://sciencebasedtargets.org/target-dashboard",d:"Données croisées SBTi et ADEME",c:"#059669"},
   "Rapports RSE":{u:"#",d:"Rapports annuels de durabilité",c:"#6B7280"}
 };
 
-const SCOPES=["Tous","Scope 1 & 2","Scope 3","Net Zero"];
-const SIZES=["Toutes","PME","Grande entreprise"];
-let P=[],F={sec:"Tous",sco:"Tous",reg:"Toutes",siz:"Toutes"},so="r",pg=1,PS=30,curB=1;
-
-// Build sources panel
 document.getElementById("srcL").innerHTML=Object.entries(SI).map(([n,i])=>
-  `<div style="padding:14px 16px;border-radius:12px;border:1.5px solid ${i.c}25;background:${i.c}06">
-    <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
-      <span style="width:9px;height:9px;border-radius:50%;background:${i.c}"></span>
-      <span style="font-size:.9rem;font-weight:800;color:#111;font-family:var(--sf)">${n}</span>
+  `<div style="padding:12px 14px;border-radius:10px;border:1.5px solid ${i.c}20;background:${i.c}06">
+    <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">
+      <span style="width:7px;height:7px;border-radius:50%;background:${i.c}"></span>
+      <span style="font-size:.85rem;font-weight:700;color:#111;font-family:var(--sf)">${n}</span>
     </div>
-    <div style="font-size:.78rem;color:var(--t2);margin-bottom:4px">${i.d}</div>
-    <a href="${i.u}" target="_blank" style="font-size:.72rem;color:${i.c};font-weight:600;text-decoration:none">Accéder →</a>
+    <div style="font-size:.75rem;color:var(--t2)">${i.d}</div>
   </div>`
 ).join('');
 
+let P=[],F={sec:"Tous"},so="r",pg=1,PS=30,curB=1;
+
 fetch("data/projects.json").then(r=>r.json()).then(d=>{P=d;init()}).catch(()=>{
-  document.getElementById("G").innerHTML='<div class="empty"><div style="font-size:3rem;margin-bottom:12px">⚠️</div>Erreur de chargement.</div>';
+  document.getElementById("G").innerHTML='<div class="empty"><div style="font-size:2.5rem;margin-bottom:10px">⚠️</div>Erreur de chargement.</div>';
 });
 
 function init(){
-  document.getElementById("tot").textContent=`📁 ${P.length.toLocaleString()} projets documentés`;
+  // Count bricks
+  let b1=P.filter(p=>!p.autoImport&&(p.brick||1)===1).length;
+  let b2=P.filter(p=>p.autoImport||(p.brick||1)===2).length;
+  document.getElementById("cnt1").textContent=b1;
+  document.getElementById("cnt2").textContent=b2.toLocaleString();
+
   let secs=["Tous",...new Set(P.map(p=>p.sector).filter(Boolean))].sort((a,b)=>a==="Tous"?-1:b==="Tous"?1:a.localeCompare(b));
-  let regs=["Toutes",...new Set(P.map(p=>p.region).filter(Boolean))].sort((a,b)=>a==="Toutes"?-1:b==="Toutes"?1:a.localeCompare(b));
-  bF("fSec",secs,"sec");bF("fSco",SCOPES,"sco");bF("fReg",regs,"reg");bF("fSiz",SIZES,"siz");
+  bF("fSec",secs,"sec");
   D();
 }
 
@@ -286,54 +289,47 @@ function bF(id,items,key){
 }
 
 function sF(k,v){F[k]=v;pg=1;
-  let m={sec:"fSec",sco:"fSco",reg:"fReg",siz:"fSiz"};
-  let lists={sec:null,sco:SCOPES,reg:null,siz:SIZES};
-  // Rebuild just this filter row
-  let el=document.getElementById(m[k]);
-  el.querySelectorAll('.pill').forEach(b=>{
+  document.getElementById("fSec").querySelectorAll('.pill').forEach(b=>{
     b.classList.toggle('on',b.textContent===v);
   });
   D();
 }
 
-function S(s){so=s;pg=1;
-  document.querySelectorAll('[data-s]').forEach(b=>b.classList.toggle('on',b.dataset.s===s));D();
+function sB(b){curB=b;pg=1;
+  document.querySelectorAll('.entry-card').forEach(c=>c.classList.toggle('on',parseInt(c.dataset.b)===b));
+  document.getElementById('disc2').classList.toggle('vis',b===2);
+  D();
 }
 
 function D(){
   let q=(document.getElementById("q").value||"").toLowerCase();
   let fl=P.filter(p=>{
     let ms=!q||((p.company||'')+(p.title||'')+(p.summary||'')+(p.sector||'')+(p.country||'')).toLowerCase().includes(q);
-    let bm=curB===0||(!p.autoImport&&(p.brick||1)===curB)||(p.autoImport&&curB===0);
-    return ms&&bm
-      &&(F.sec==="Tous"||p.sector===F.sec)
-      &&(F.sco==="Tous"||p.scope===F.sco)
-      &&(F.reg==="Toutes"||p.region===F.reg)
-      &&(F.siz==="Toutes"||p.size===F.siz);
+    let bm=curB===1?(!p.autoImport&&(p.brick||1)===1):(p.autoImport||(p.brick||1)===2);
+    return ms&&bm&&(F.sec==="Tous"||p.sector===F.sec);
   });
   fl.sort((a,b)=>{
     if(!a.autoImport&&b.autoImport)return -1;
     if(a.autoImport&&!b.autoImport)return 1;
-    return so==="r"?(b.year||0)-(a.year||0):(a.company||'').localeCompare(b.company||'');
+    return (b.year||0)-(a.year||0);
   });
   let tot=fl.length,tp=Math.ceil(tot/PS);
   if(pg>tp)pg=1;
   let items=fl.slice((pg-1)*PS,pg*PS);
-  let enr=fl.filter(p=>!p.autoImport).length;
-  document.getElementById("cnt").innerHTML=`${tot.toLocaleString()} projet${tot>1?'s':''} trouvé${tot>1?'s':''} <span style="opacity:.5">· dont ${enr} fiches enrichies</span>`;
+  document.getElementById("cnt").textContent=`${tot.toLocaleString()} résultat${tot>1?'s':''}`;
   R(items,tot,tp);
 }
 
 function R(items,tot,tp){
   let g=document.getElementById("G");
-  if(!items.length){g.innerHTML='<div class="empty"><div style="font-size:3rem;margin-bottom:12px">🔍</div><div style="font-family:var(--sf);font-size:1rem">Aucun projet trouvé.</div><div style="font-size:.85rem;margin-top:6px">Élargissez vos filtres.</div></div>';return;}
+  if(!items.length){g.innerHTML='<div class="empty"><div style="font-size:2.5rem;margin-bottom:10px">🔍</div><div style="font-family:var(--sf);font-size:.95rem">Aucun résultat.</div><div style="font-size:.8rem;margin-top:4px;color:var(--t3)">Essayez un autre terme ou changez de filtre.</div></div>';return;}
 
   let h='<div class="gr">';
   h+=items.map(p=>{
     let sc=(SI[p.source]||{}).c||'#6B7280';
-    let badge=p.autoImport?'<span class="cd-badge auto">SBTi</span>':(p.brick===2?'<span class="cd-badge b2">Action documentée</span>':'<span class="cd-badge enr">✓ Modèle engagé</span>');
+    let badge=p.autoImport?'<span class="cd-badge auto">SBTi</span>':(p.brick===2?'<span class="cd-badge b2">Objectif déclaré</span>':'<span class="cd-badge enr">✓ Vérifié</span>');
     let stats=(p.stats||[]).map(s=>
-      `<div class="st" style="background:${s.color}08;border:1px solid ${s.color}15"><div class="st-v" style="color:${s.color}">${s.value}</div><div class="st-l">${s.label}</div></div>`
+      `<div class="st" style="background:${s.color}08;border:1px solid ${s.color}12"><div class="st-v" style="color:${s.color}">${s.value}</div><div class="st-l">${s.label}</div></div>`
     ).join('');
     return `<article class="cd" onclick="oM(${p.id})">
       <div class="cd-top">
@@ -349,7 +345,7 @@ function R(items,tot,tp){
       </div>
       <div class="cd-ft">
         <span><span class="sd" style="background:${sc}"></span>${p.source||''}</span>
-        <span>${p.size&&p.size!=='Non renseigné'?p.size+' · ':''}MàJ ${p.lastUpdated||''}</span>
+        <span>${p.size&&p.size!=='Non renseigné'?p.size+' · ':''}${p.lastUpdated||''}</span>
       </div>
     </article>`;
   }).join('');
@@ -358,7 +354,6 @@ function R(items,tot,tp){
   if(tp>1){
     h+='<div class="pg">';
     if(pg>1)h+=`<button class="pill" onclick="gP(${pg-1})">← Précédent</button>`;
-    // Page numbers
     let start=Math.max(1,pg-2),end=Math.min(tp,pg+2);
     for(let i=start;i<=end;i++){
       h+=`<button class="pill${i===pg?' on':''}" onclick="gP(${i})">${i}</button>`;
@@ -377,7 +372,6 @@ function checkRM(){
     if(btn&&p.scrollHeight>p.clientHeight+2)btn.classList.add('vis');
   });
 }
-
 function togRM(id){
   let p=document.getElementById('sum-'+id);
   let b=document.getElementById('rm-'+id);
@@ -385,58 +379,48 @@ function togRM(id){
   let exp=p.classList.toggle('expanded');
   b.textContent=exp?'Réduire ↑':'Lire plus ↓';
 }
-
-function sB(b){curB=b;pg=1;
-  document.querySelectorAll('.brk-tab').forEach(t=>t.classList.toggle('on',parseInt(t.dataset.b)===b));
-  document.getElementById('disc2').style.display=b===2?'flex':'none';
-  D();
-}
-
-function gP(n){pg=n;D();window.scrollTo({top:480,behavior:'smooth'});}
+function gP(n){pg=n;D();window.scrollTo({top:360,behavior:'smooth'});}
 
 function oM(id){
   let p=P.find(x=>x.id===id);if(!p)return;
-  let sc=(SI[p.source]||{}).c||'#6B7280';
   document.getElementById("Mc").innerHTML=`
     <div class="ml-hd">
       <button class="ml-x" onclick="cM()">✕</button>
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px">
-        <span style="font-size:2.4rem">${p.logo||'🏢'}</span>
-        <div><div style="font-size:1.4rem;font-weight:900;font-family:var(--sf)">${p.company}</div>
-        <div style="font-size:.82rem;opacity:.7">${p.countryFlag||''} ${p.country||''} · ${p.sector||''} · ${p.size||''}</div></div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+        <span style="font-size:2.2rem">${p.logo||'🏢'}</span>
+        <div><div style="font-size:1.3rem;font-weight:800;font-family:var(--sf)">${p.company}</div>
+        <div style="font-size:.78rem;opacity:.6">${p.countryFlag||''} ${p.country||''} · ${p.sector||''} · ${p.size||''}</div></div>
       </div>
-      <div style="font-size:1.05rem;font-weight:600;line-height:1.35;font-family:var(--sf);opacity:.95">${p.title}</div>
+      <div style="font-size:1rem;font-weight:600;line-height:1.3;font-family:var(--sf);opacity:.9">${p.title}</div>
     </div>
     <div class="ml-bd">
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
-        ${(p.stats||[]).map(s=>`<div style="text-align:center;padding:16px 12px;flex:1;min-width:100px;background:${s.color}08;border-radius:14px;border:1.5px solid ${s.color}20">
-          <div style="font-size:1.7rem;font-weight:900;color:${s.color};font-family:var(--sf)">${s.value}</div>
-          <div style="font-size:.72rem;color:var(--t2);margin-top:3px">${s.label}</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px">
+        ${(p.stats||[]).map(s=>`<div style="text-align:center;padding:14px 10px;flex:1;min-width:90px;background:${s.color}08;border-radius:12px;border:1.5px solid ${s.color}18">
+          <div style="font-size:1.5rem;font-weight:800;color:${s.color};font-family:var(--sf)">${s.value}</div>
+          <div style="font-size:.68rem;color:var(--t2);margin-top:2px">${s.label}</div>
         </div>`).join('')}
       </div>
-      <p style="font-size:.92rem;color:#374151;line-height:1.75;margin-bottom:20px">${p.summary||''}</p>
-      ${(p.actions&&p.actions.length)?`<div style="margin-bottom:20px">
-        <div style="font-size:.8rem;font-weight:800;color:var(--g8);margin-bottom:8px;font-family:var(--sf);text-transform:uppercase;letter-spacing:1.2px">Actions clés</div>
-        ${p.actions.map((a,i)=>`<div class="ml-act"><span style="color:#059669;font-weight:800;font-size:.78rem;flex-shrink:0">${String(i+1).padStart(2,'0')}</span>${a}</div>`).join('')}
+      <p style="font-size:.88rem;color:#374151;line-height:1.7;margin-bottom:18px">${p.summary||''}</p>
+      ${(p.actions&&p.actions.length)?`<div style="margin-bottom:18px">
+        <div style="font-size:.75rem;font-weight:700;color:var(--g8);margin-bottom:6px;font-family:var(--sf);text-transform:uppercase;letter-spacing:1px">Actions clés</div>
+        ${p.actions.map((a,i)=>`<div class="ml-act"><span style="color:#059669;font-weight:800;font-size:.75rem;flex-shrink:0">${String(i+1).padStart(2,'0')}</span>${a}</div>`).join('')}
       </div>`:''}
       <div class="ml-mg">
         <div class="ml-mc"><label>🎯 Objectif</label><div>${p.target||''}</div></div>
         <div class="ml-mc"><label>📎 Source</label><div>${p.source||''}</div></div>
         ${p.difficulty?`<div class="ml-mc"><label>⚙️ Difficulté</label><div>${p.difficulty}</div></div>`:''}
-        ${p.roi?`<div class="ml-mc"><label>💰 Impact économique</label><div>${p.roi}</div></div>`:''}
+        ${p.roi?`<div class="ml-mc"><label>💰 Impact business</label><div>${p.roi}</div></div>`:''}
       </div>
-      ${p.brick===2?`<div style="padding:14px 16px;background:#FEF3C7;border-radius:12px;border:1px solid #FDE68A;margin-bottom:16px">
-        <div style="font-size:.72rem;font-weight:700;color:#92400E;margin-bottom:4px">⚠️ Note de transparence</div>
-        <div style="font-size:.78rem;color:#78716C;line-height:1.5">Cette fiche documente des <strong style="color:#92400E">actions concrètes et mesurables</strong>, pas une validation globale de l'entreprise. Le modèle d'ensemble peut rester incompatible avec les limites planétaires.</div>
+      ${p.brick===2||p.autoImport?`<div style="padding:12px 14px;background:var(--amber-bg);border-radius:10px;border:1px solid var(--amber-bd);margin-bottom:14px">
+        <div style="font-size:.7rem;font-weight:700;color:var(--amber);margin-bottom:3px">⚠️ Note de transparence</div>
+        <div style="font-size:.75rem;color:#78716C;line-height:1.5">Cette fiche documente des <strong style="color:var(--amber)">objectifs déclarés ou actions ponctuelles</strong>, pas une validation globale de l'entreprise.</div>
       </div>`:''}
-      <div style="padding:14px 16px;background:#FFFBEB;border-radius:12px;border:1px solid #FDE68A;margin-bottom:16px">
-        <div style="font-size:.72rem;font-weight:700;color:#92400E;margin-bottom:4px">📝 Contributions</div>
-        <div style="font-size:.78rem;color:#78716C">Contributeurs : ${(p.contributors||[]).join(', ')} · MàJ ${p.lastUpdated||''}</div>
+      <div style="padding:12px 14px;background:#f9fafb;border-radius:10px;margin-bottom:14px">
+        <div style="font-size:.68rem;color:var(--t3)">Contributeurs : ${(p.contributors||[]).join(', ')} · MàJ ${p.lastUpdated||''}</div>
       </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        ${!p.autoImport?'<button class="btn-p">📥 Télécharger la fiche</button>':''}
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
         <button class="btn-s" onclick="openP('ctr');cM()">✏️ Modifier</button>
-        <button class="btn-g" onclick="navigator.share?.({title:'${p.company.replace(/'/g,"\\'")}',url:location.href}).catch(()=>{})">🔗 Partager</button>
+        <button class="btn-g" onclick="navigator.share?.({title:'${p.company.replace(/'/g,"\\'")}',url:location.href}).catch(()=>{})">Partager</button>
       </div>
     </div>`;
   document.getElementById("Mo").classList.add("open");document.body.style.overflow="hidden";
