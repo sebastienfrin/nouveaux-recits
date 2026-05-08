@@ -160,7 +160,7 @@ def build_sbti_entry(row):
         s = re.sub(r'https?://\S+\s*', '', target_lang)
         s = re.sub(r'This target was approved.*?(?:SMEs|enterprises)\.\s*', '', s, flags=re.DOTALL|re.I)
         s = re.sub(r'^Near-[Tt]erm [Tt]argets?:?\s*', '', s.strip())
-        summary = (s[:300] + "...") if len(s) > 300 else s
+        summary = (s[:800] + "...") if len(s) > 800 else s
     if not summary:
         summary = f"{name} a fait valider ses objectifs SBTi ({classification or 'Accord de Paris'}). Secteur : {sector}."
 
